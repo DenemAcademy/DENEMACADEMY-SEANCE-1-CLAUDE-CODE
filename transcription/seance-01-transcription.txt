@@ -1,0 +1,1313 @@
+Séance 01 - Transcription
+Vidéo source : Guide complet _ Bien démarrer avec Cloud Code.mp4
+
+Bonjour à tous et à toutes j'espère que vous allez bien donc on va parler sur cette séance de Claude Code qui va être notre outil principal tout au long de la formation ça va être très important de suivre cette séance là pourquoi parce qu'on va parler du coup d'installation on va voir comment bien l'utiliser on va se faire un petit exercice sur la création d'un site web et une étude de marché donc je vous invite à bien suivre vous allez voir c'est pas bien complexe même si
+si derrière vous n'avez jamais mis les mains dans un terminal au fur et à mesure de la formation vous allez avoir les compétences pour gérer n'importe quel projet sur Claude Code encore une fois mon objectif c'est de vous accompagner sur la création de projet donc sur par exemple un blog automatique vous allez très bien pouvoir ensuite revendre cette compétence là mais vous allez aussi très bien pouvoir vous adapter au marché donc si un client vous fait une demande
+sur un projet que vous avez pas réalisé sur cette formation là vous allez pouvoir le faire sans problème parce que vous avez compris du coup cet outil et vous avez compris comment suivre une bonne méthodologie pour arriver à votre objectif final donc on va voir un petit peu la différence entre ChatGPT du coup
+et Claude Code donc ChatGPT ça va être plus un chatbot où derrière je vais lui poser une question où il va nous donner du texte après ça va être à nous de copier-coller créer les fichiers et tout faire à la main en gros si je fais une demande à ChatGPT de me créer un site internet de freelance il va me donner un code HTML je vais devoir le copier créer un fichier directement dans bloc note et l'enregistrer sous en .html et ensuite je vais sélectionner où je souhaite le déposer
+par exemple sur un dossier que j'ai créé après je vais devoir cliquer dessus Claude Code ça va être vraiment différent comme on va le voir sur cette séance là il va vraiment agir sur notre ordinateur donc il va créer notre fichier directement dans le dossier et il va l'ouvrir aussi on va gagner vraiment beaucoup de temps
+maintenant ce que ça va changer pour toi c'est que si tu sais pas coder c'est pas grave parce que Claude Code code pour nous directement il faut pas avoir le syndrome de l'imposteur en se disant voilà je vais avoir des lignes de code je connais rien au code etc
+enfin j'ai pas les compétences pour au départ j'étais un petit peu comme ça en sachant que moi j'avais quand même un petit background de code derrière je faisais du Python du Java du HTML etc
+maintenant il faut savoir que j'écris plus du tout une ligne de code c'est vraiment Claude Code qui le fait pour moi il faut se mettre en tête que quand on utilise Claude Code c'est comme avoir un développeur à côté de moi H24 il a vraiment les compétences de tout faire et c'est ça qu'on va voir tout au long de la formation
+maintenant on va parler coût donc combien ça coûte ? on a la partie abonnement derrière on a 3 abos le pro à 20 euros par mois je vous le conseille pas du tout pourquoi ? parce que vous allez très vite limiter en termes de quota
+si vous bossez sur un projet de la formation vous allez voir que le quota va être vite dépassé que vous allez devoir attendre le lendemain pour que ça se remette à jour vous allez perdre du temps
+je vous conseille de foncer soit sur l'abonnement 5 fois ou soit sur l'abonnement x20 sachant que moi j'ai cet abonnement en 4 fois donc je paye à peu près 850 euros par mois mais derrière je suis rentable
+parce que si vous vendez un projet client par exemple automatisation de gestion d'avis Google avis et bien derrière vous vendez 2000 euros vous avez remboursé votre abonnement
+même si derrière cet abonnement a passé à 1500 euros par mois je le prendrai quand même parce que je sais que je vais être rentable
+n'hésitez pas je sais que ça peut paraître cher mais foncez c'est une opportune si peu chère qui peut nous permettre de réaliser énormément de choses
+on a aussi une autre partie donc API je pense que tout le monde en a entendu parler mais ça on va l'utiliser plus que sur des projets clients
+ou par exemple on va on va enfin un client nous demande un système de réponse automatique par mail et bien sur le système en question on va utiliser une clé API anthropique
+plateforme que derrière l'utilisateur envoie un email à notre système et bien la réponse qu'on va faire de manière automatique et bien écoutez par exemple 5 centimes
+5 centimes là je serai à 8 dollars et 1 centime donc on va payer par exécution donc c'est ça la différence nous on va utiliser API key juste c'est ça qu'on va connecter au système
+on va voir comment installer cloud code installez vous bien on va prendre du temps on va faire étape par étape il faut savoir que moi je suis sur Mac
+donc si vous êtes sur Windows ça va être un petit peu différent mais une fois que vous aurez installé cloud code ça va être exactement la même chose
+donc vous inquiétez pas vous perdre tout au long de la formation
+donc sur Mac comment on va faire tout d'abord on va aller dans notre bureau nouveau dossier
+on va créer un dossier directement le renommé voilà ce que je vais faire ensuite c'est que je vais faire clic gauche
+nouveau terminal au dossier donc là comme on peut voir j'ai une session terminale connectée à mon dossier
+donc on peut passer à l'étape 2 qu'est-ce que je dois faire c'est que je dois installer Node.js
+donc pour installer Node.js sur ma barre de recherche Node.js une fois que c'est fait je mets GetNode.js
+juste ici et là j'installe tout est safe il n'y a pas de progressage et lui l'a installé la première fois
+je vais continuer accepter installer
+on passe l'installation l'installation est terminée donc je peux fermer la partie là mais tu n'es pas placé dans Corbeil
+cliquez sur conserver et on peut passer du coup à la prochaine étape qui est l'étape 3
+l'étape 3 c'est installer Cloud Code
+on sait que maintenant Node.js est là on a besoin d'une seule commande donc vous allez sur le support technique
+vous cliquez retourner du coup et vous faites entrer
+et Cloud Code ça prend un petit peu de temps
+ok c'est terminé
+maintenant on voit qu'on a trois packages installés
+Cloud Code a bien été installé
+on peut voir la version aussi qu'on a
+donc vous copiez cette commande là
+entrée, autre version
+donc c'est la dernière
+on peut passer à l'étape 4
+on va revenir rapidement sur la partie
+on arrive du coup sur l'interface officielle de Cloud
+donc si vous n'avez pas de compte
+vous en créez un avec votre adresse email
+et vous allez arriver du coup sur cette interface là
+donc vous allez cliquer sur le profil en bas à gauche
+les forfaits, simplement pas utile tout au long de la formation
+vous allez vous retrouver trop vite bloqué
+vous allez perdre du temps
+donc je vous conseille de partir directement sur l'abonnement Max
+l'abonnement Max
+qui est facturé avec 20%
+c'est Max qui s'offre à vous
+20 fois plus d'utilisation pro
+et la version du coup je vous conseille celle-ci
+derrière vous allez être safe en terme de quota
+une fois que vous avez sélectionné votre forfait
+vous allez passer commande
+une fois que vous avez validé votre abonnement
+de manière automatique
+votre profil juste en bas va se mettre à jour
+l'abonnement que vous avez sélectionné
+ce qu'on va faire ensuite
+on va passer du coup à l'étape 5
+lancer Cloud Code
+pour lancer Cloud Code
+c'est pas compliqué
+relancer du coup
+moi personnellement je vais sur le dark mode
+parce que moi je me suis habitué à ça
+mais ça change pas grand chose si vous préférez le light mode
+entrez
+ensuite 3 options s'offrent
+on a la Cloud Hakune question
+avec abonnement
+on a la partie par API
+donc ça c'est ce qu'on a vu tout à l'heure
+payer par exécution
+ça va vous revenir très cher si vous utilisez l'option là
+on a une entrée
+et là ça nous redirige directement
+vers
+c'est
+Cloud Code
+souhaite se connecter
+Cloud Chat
+accéder à vos informations
+distribuer à l'utilisation
+du forfait Cloud
+accéder à vos sessions
+Cloud Code
+utiliser et gérer vos connecteurs
+téléverser des fichiers
+cliquer sur autoriser
+connecter à mon abonnement
+entrer
+j'utilise comme de base
+et là
+vous êtes sur l'interface Cloud Code
+connecter directement
+à votre terminal
+donc tout est bien installé
+on peut passer du coup
+une étape
+Cloud Code marche de plusieurs façons
+on peut l'utiliser
+VS Code
+VS Code
+on peut l'utiliser sur le web
+donc sur le web
+c'est juste ici
+si vous allez
+sur l'interface
+sur code à gauche
+marche sur Cloud Code
+le problème
+c'est que vous êtes obligé
+de vous connecter avec Github
+si vous travaillez
+sur Cloud Web
+vous allez travailler
+sur des repos Github
+c'est un petit peu problématique
+en termes d'organisation
+donc je vous recommande pas
+cette partie
+je vous recommande par contre
+c'est intéressant
+si derrière
+le terminal
+mais si vous travaillez sur le terminal
+vous allez utiliser
+l'application desktop
+ou Cloud
+donc ça marche
+pareil que le terminal
+vous pouvez
+travailler directement
+avec un dossier
+donc pareil
+et là si on lui envoie un message
+derrière
+il va travailler à l'intérieur
+de ce dossier là
+donc il doit nous créer un site internet
+il le mettra à l'intérieur
+de ce dossier
+donc maintenant
+on va tout simplement
+lui demander
+de nous créer
+un petit site internet
+donc créer
+relativement simple
+le but
+c'est un petit peu
+à dire
+utiliser
+complètement
+consulter profil
+existant en mémoire
+donc là il va voir
+que derrière
+on a rien du tout
+sur le dossier
+on va créer un site
+en automatisation
+il y a
+je vais construire un site
+moderne responsive
+et complet
+on pourra lui donner
+un meilleur prompt
+pour qu'il améliore le design
+encore une fois
+le but c'est de faire
+quelque chose de très simple
+pour le moment
+comprendre un petit peu
+on va utiliser
+là le ton qui réfléchit
+très bien
+le faire travailler
+le dossier qu'on a créé
+au tout départ
+clic gauche
+nouveau terminale au dossier
+donc là
+hop ça nous ouvre
+et derrière
+on a encore une fois
+l'interface de code code
+qui est connecté
+du coup à notre dossier
+qu'on a créé tout à l'heure
+en parallèle
+du site internet
+qu'il est en train de nous créer
+on pourrait lui dire
+je suis
+freelance
+en automatisation
+il y a
+je souhaite
+faire
+pousser
+csv
+donc là
+on lance
+notre prompt
+et on peut voir
+qu'il est en train de réfléchir
+et qu'il travaille
+en parallèle
+de la création
+de notre site internet
+donc là on gagne déjà
+beaucoup de temps
+on fait deux choses
+en même temps
+ça ça va être important
+de comprendre
+cette partie là
+pourquoi
+parce que
+on va
+chaque fois
+sur chaque projet
+mettre en place
+une stratégie similaire
+pour qu'on puisse bull
+rapidement
+sur des projets réels
+par exemple
+avec un client
+travailler sur
+cinq interfaces différentes
+pour
+à la place
+de prendre trois jours
+prendre tout simplement
+cinq à six heures
+et du coup
+être plus rentable
+sur le mois
+donc là
+il a pratiquement fini
+l'index.html
+là
+il a réfléchi
+il nous a demandé
+des informations similaires
+donc France uniquement
+qui nous dit
+angle de l'étude
+tu veux analyser le marché
+de l'automatisation
+Thaï
+et France
+je veux tout analyser
+donc on va pas se prendre la tête
+parce que là
+juste en phase exemple
+on pourrait très bien
+du coup améliorer cette partie là
+donc là
+c'est top
+en train de travailler en parallèle
+on pourrait aussi très bien
+je sais pas
+si vous avez une autre idée
+demander à Claude
+directement
+sur un nouveau terminal
+d'aller analyser
+LinkedIn
+qui sont intéressants
+dans votre niche
+dans une recherche
+sur tous les accents parallèles
+ok c'est top
+on va ouvrir
+le dossier juste ici
+on va voir
+s'il a terminé
+le coup
+il a créé trois fichiers
+une partie html
+une partie
+et là on peut voir
+qu'il a internet
+donc freelance
+automatisation
+il y a
+comme je vous ai dit
+au tout départ
+il ouvre automatiquement
+donc quand il a terminé
+ça qui est vraiment
+intéressant
+donc c'est vraiment un agent
+qui agit directement
+sur notre ordinateur
+je transforme vos processus
+avec l'intelligence artificielle
+quand on est vraiment
+sur un site
+tout simple
+il faut pousser
+mais c'est un bon départ
+on peut très bien
+tout simplement
+travailler
+enfin le retravailler
+donc là on pourrait
+lui dire
+sur le lien
+en question
+un tout simple
+entre temps
+la demande
+il y a deux agents
+qui ont terminé
+sur cinq
+donc si par exemple
+je fais flèche du bas
+là juste ici
+on voit qu'il y a trois
+local agents
+donc là ils sont en train
+comme on voit
+une ligne
+donc travailler
+et une fois
+qu'ils ont terminé
+leurs tâches
+eh bien CloudCode
+va nous mentionner
+que c'est bon
+le fichier csv est prêt
+et on va voir
+directement
+juste ici
+je suis en train
+d'écrire des lignes de code
+là je lui ai demandé
+de changer
+du coup la couleur
+ou l'util css
+vous allez voir
+au départ
+c'est un petit peu
+complexe
+vous n'avez pas l'habitude
+de travailler
+sur un terminal
+mais au fur et à mesure
+en fait ça va vous paraître
+très simple
+parce que mis à part
+faire des demandes
+à CloudCode
+vous n'avez pratiquement
+rien à faire
+le plus important
+c'est vraiment
+bien structurer
+votre projet
+avoir un bon système
+de prompting
+et comprendre
+la réflexion
+de CloudCode
+pour arriver à votre objectif
+le plus rapidement possible
+et c'est ce qu'on va voir
+tout au long
+de la formation
+donc là
+on va bientôt terminer
+parce que
+pour le light mode
+donc là il est en train
+d'ajouter un light mode
+top
+on peut voir
+que juste ici
+on a 3 agents
+qui ont terminé
+donc là c'est super
+on a fini
+enfin CloudCode
+a fini du coup
+le site internet
+il l'a bien remis
+en full blanc
+des itérations
+pour arriver à une version
+qui est
+je clique dessus
+ça va bien m'envoyer
+après je ne vais pas donner le bon lien
+mais vers Linkedin
+voilà le lien que j'ai mis
+vous pouvez très bien aussi
+envoyer un screen à CloudCode
+votre tête
+pour qu'il l'ajoute
+automatiquement
+maintenant
+comme vous l'avez vu
+c'est un dialogue
+ça ne va pas être un formulaire
+donc si je lui dis
+de créer un fichier HTML
+avec un titre mon site
+il va le faire directement
+il va créer des vrais fichiers
+on l'a vu aussi
+je l'ai créé
+usage
+extra usage
+utilisé 22%
+aujourd'hui
+donc ça va se réinitialiser
+dans 24 minutes
+et on a une partie
+qui se réinitialise
+tous les lundis à 11h
+donc là j'ai utilisé 30%
+donc je suis assez safe
+en termes de taille
+et là on a la partie
+usage supplémentaire
+ça c'est quand tout simplement
+j'ai trop utilisé
+bonnement
+j'utilise par API
+mais ça vous n'allez pas avoir besoin
+parce que je travaille
+avec beaucoup de clients
+et du coup je suis obligé parfois
+de travailler
+donc voilà
+voir comment bien lui parler
+donc comme vous l'avez vu
+là je suis allé sur des promes
+basiques
+donc la règle numéro 1
+c'est être vraiment précis
+donc fais moi un site
+ça ne va pas être top
+il ne va pas comprendre
+il va te faire un site basique
+on ne sait même pas
+sur quel secteur d'activité
+il va aller etc
+donc c'est là où derrière
+il va quand même nous poser
+des questions par la suite
+pour le souhaiter réellement
+c'est pour ça qu'il faut être vraiment précis
+créez moi un site vitrine
+pour un plombier à Lyon
+là on lui donne l'information
+à un plombier
+et que c'est à Lyon
+il nous faut une page d'accueil
+avec un héros
+service avec 4 cartes
+formulaire de contact
+là il va vraiment nous créer
+ce qu'on lui a demandé
+ensuite la règle numéro 2
+c'est de lui donner du contexte
+on va lui dire
+pour qui
+pourquoi
+quel style
+plus il sait mieux c'est
+c'est pas
+ça va servir à rien
+de créer un prompt
+de 600 euros
+là il va se perdre
+il va commencer à halluciner
+il va sortir
+votre demande
+et réaliser quelque chose
+qui n'a rien à voir
+donc c'est pour ça qu'il va
+bien falloir
+structurer notre prompt
+ce qu'on va voir au fur et à mesure
+de la formation
+par exemple
+s'il a derrière
+de créer un script
+d'une part
+on lui donne l'information script
+qu'on peut faire
+ensuite
+qu'il scrappe les restaurants
+donc là
+il va savoir que c'est les restaurants
+c'est pas les plombiers
+c'est pas les avocats etc
+et de Lyon
+donc on lui donne le secteur géographique
+c'est seulement des leads de Lyon
+récupérés seulement sur Google Maps
+donc là il a toutes les informations
+de ce qu'il doit faire
+et ensuite
+ce qu'on lui demande comme résultat
+c'est qu'on veut les noms
+l'adresse
+les téléphones
+et la note qu'il a sur Google Maps
+une fois qu'il a toutes ces informations là
+il nous font un CSV
+qu'on va utiliser
+pour le mettre sur Google Sheet
+voilà la partie
+avec beaucoup de contexte
+un prompt tout simple
+court
+derrière
+on est sûr qu'il va pas se tromper
+et la règle numéro 3
+sur des gros projets
+ça va être d'itérer
+on lui donne une instruction
+juste ici
+on regarde les résultats
+si ça nous plait pas
+change ça
+ajoute ça
+enlève ça
+tu re-regarde
+et quand c'est bon
+on peut passer
+à la prochaine phase
+donc là on va parler
+par la suite
+fichiers MD
+tout d'abord on va voir
+un petit peu
+les résultats
+donc ça
+par défaut
+on peut voir juste ici en bas
+height effort
+on peut très bien réduire
+si j'ai plus de token
+on peut partir en medium effort
+en low effort
+moi je pars directement
+sur le plus puissant
+donc max effort
+je vous conseille de faire de même
+ok sur entrée
+si derrière
+vous voulez changer de modèle
+sonner 4.6
+avec un million de contexte
+ou sonner directement
+celui-ci
+je crois que celui-ci
+il a 5 millions de contexte
+lui il a 1 million de contexte
+le contexte c'est quoi ?
+c'est la mémoire de code code
+si derrière
+je sais pas
+on travaille avec lui
+pendant une heure
+ça va pas se reset
+du coup
+on va pouvoir travailler
+avec lui bon temps
+avec beaucoup de contexte
+et il va comprendre constamment
+les axes d'amélioration
+qu'on souhaite
+plus souvent on a juste
+un million de contexte
+c'est déjà énorme
+on peut voir juste à droite
+par contre il est toujours
+en train de travailler
+au niveau de l'étude de marché
+donc maintenant
+ce qu'on va faire
+c'est qu'on va sectionner
+on va parler de la partie
+MD
+donc le fichier MD
+c'est un fichier texte
+que tu mets dans ton projet
+donc notre projet
+c'est notre dossier
+juste ici
+et ensuite
+cloud code
+lit automatiquement chaque session
+et du coup
+il va savoir
+ce que je fais actuellement
+et comment je veux bosser
+plus besoin de répéter
+constamment le code
+donc si
+il va le faire
+ensuite on va l'ouvrir
+fais moi
+il fait chier
+il a trouvé un pattern
+donc le pattern
+c'est notre site
+il a déjà créé leur ennemi
+donc on va pouvoir très bien
+l'ouvrir
+comme on peut voir
+derrière
+il est juste ici
+dans notre dossier
+donc il l'a créé directement
+encore une fois
+dans notre dossier
+si je fais clic droit
+clic gauche pardon
+ouvrir
+avec
+text edit
+on peut voir
+que derrière
+Baptistefort
+site freelance
+automatisation
+il y a
+site vitrine personnelle
+et freelance en automatisation
+il y a
+donc là on voit la structure
+du projet
+donc index.html
+style sss
+effet etc
+le style
+design
+le script js
+pour les animations
+du coup
+le redmi ce fichier là
+des sections
+pour le service
+la méthode
+le cas client
+les témoignages
+à propos
+et la partie contact
+stack html css
+donc utiliser
+la police d'écriture
+les icônes
+les fonctionnalités
+la personnalisation
+les informations
+à mettre à jour
+email remplacer
+contact
+Baptistefort
+dans index
+donc voilà
+là
+l'objectif d'avoir
+ce redmi là
+c'est que si derrière
+je quitte cette session
+et que je la relance
+par la suite
+je vais lui dire
+de lire le redmi
+donc on va le faire
+terminer
+réouvrir du coup
+une nouvelle session
+comme on a fait tout à l'heure
+clic gauche
+nouveau terminal
+au dossier
+on tape la commande cloud
+pour activer cloud code
+et ensuite
+il y a deux solutions
+soit je lui dis
+je peux très bien
+faire ça
+le fichier
+il va le lire automatiquement
+le redmi d'un site
+vitine finance
+pour Baptistefort
+donc moi
+spécialise en automatisation
+il y a
+projet
+site statique
+html
+donc il a bien compris
+le code qu'on avait
+4 fichiers
+7 sections
+etc
+chose à finaliser
+selon le redmi
+remplacer l'email
+donc là
+c'est superbe
+il a bien compris
+le lien twitter
+remplacer les témoignages
+par des vrais avis
+connecter le formulaire
+de contact
+France prix
+aux autres
+on pourrait très bien
+lui dire
+remplace
+l'adresse
+email
+par
+arrobase
+là on a terminé aussi
+notre étude de marché
+avec 13 fichiers csv
+41
+codes de données
+structurés
+donc là
+ce qui va être relou
+c'est que si on a 14
+fichiers csv
+ça va être compliqué
+donc là
+ce qu'on va lui dire
+tout simplement
+un seul csv
+exporté
+directement
+donc les deux
+occurrences
+dans html
+ont été mises à jour
+donc là on peut voir
+qu'il a fini aussi
+l'autre tâche
+qu'on lui a demandé
+la tâche
+j'ai l'adresse email
+mon dossier
+Claude
+clique sur index
+.html
+email
+donc là il a bien
+mis à jour
+baptiste
+arrobasevisionia.io
+vous pouvez vraiment
+modifier tout ce que
+vous souhaitez
+on peut changer la couleur
+comme on l'a vu tout à l'heure
+on peut changer
+la taille des boutons
+on peut changer le texte
+on peut lui demander
+de créer une nouvelle page
+donc là
+ça va être vraiment
+un site basique
+pas très poussé
+on n'a pas utilisé
+un bon système de prompting
+ça on verra un petit peu plus
+par la suite
+et puis
+on peut voir déjà
+un petit peu
+juste en 30 minutes
+la puissance de cloud code
+sur ce que vous pouvez faire
+assez rapidement
+on peut vous apporter
+de la plus-value
+donc CSV
+déjà on a
+un site web
+plutôt qualitatif
+ça reste quand même simple
+avec des liens cliquables
+on a une partie
+étude de marché
+qui a été terminée
+on pourrait très bien
+ensuite
+créer une nouvelle session
+et lui dire
+travailler maintenant
+sur
+une stratégie de prospection
+ou une stratégie
+de récupération
+de leads
+automatique
+on va pas aller trop
+dans le complexe
+sur cette première séance
+là
+j'ai pas envie
+de vous perdre
+mais le but
+c'est vraiment voilà
+de s'entraîner un petit peu
+aussi de votre côté
+donc créer votre propre
+site internet
+même si vous allez pas
+forcément l'utiliser
+aussi créer votre étude
+de marché
+de faire des petits tests
+si vous avez une idée
+en tête
+que ce soit
+par exemple
+un petit dashboard
+pour suivre vos leads
+vous pouvez le faire
+vraiment prendre du temps
+à comprendre
+cloud code
+comprendre comment l'utiliser
+à tester aussi
+les commandes
+ça sera que bénéfique
+par la suite
+quand on va rentrer
+plus dans le dur
+pour vous parler un petit peu
+commandes
+c'est pour ça que moi
+je préfère du codex
+c'est qu'on a des fonctionnalités
+qui sont extrêmement puissantes
+quand je vous dis puissantes
+c'est que derrière
+vous allez pouvoir
+faire des choses
+qui sont stratosphériques
+business du long terme
+par exemple
+la commande chrome
+qui est en bêta actuellement
+qui vient de sortir
+vous allez avoir
+cloud code
+qui va contrôler
+votre ordinateur
+donc que dire de faire
+vraiment tout
+ça c'est assez intéressant
+on a aussi
+la partie
+slash
+remote control
+donc si vous avez un lien ici
+vous allez vous l'envoyer
+directement
+au téléphone
+et vous allez ouvrir
+ce lien
+en question
+sur votre téléphone
+et vous allez écrire
+un message
+et pouvoir travailler
+sur votre téléphone
+directement
+en full remote
+ça peut vous faire gagner
+beaucoup de temps
+si vous êtes en déplacement
+ça peut être intéressant
+on a aussi
+une commande
+qu'on va beaucoup utiliser
+c'est la partie MCP
+ou derrière
+faire des tests utilisateurs
+c'est incroyable
+cette commande aussi
+vient de sortir
+il n'y a pas si longtemps
+pour vous donner un ordre d'idée
+il y a 3-4 mois
+je faisais mes tests utilisateurs
+moi-même
+donc je perdais beaucoup de temps
+dans le sens où
+si je faisais un chatbot
+SAV pour un client
+je vais moi-même
+créer des conversations
+du coup
+pour une conversation
+pour un IA
+complète 5 minutes
+là
+avec cette commande là
+je vais pouvoir
+lui demander
+de contrôler mon ordinateur
+de me créer
+à peu près
+20 ou 30 pages
+Chrome
+pour faire des tests
+faire ces tests là
+et du coup
+à la fin
+on va lui demander
+de créer un rapport
+on va voir les résultats
+et on va lui demander
+d'ajuster du coup
+et ça
+c'est un gamme temps
+assez incroyable
+encore une fois
+mon objectif personnel
+tout au long
+de cette formation
+c'est d'une part
+vous donner accès
+à des workflows
+très intéressants
+pour la revendre
+par exemple
+des blogs automatiques
+pour facturer
+à 3500 euros
+peu importe
+ça dépend
+le client
+que vous avez
+mais aussi
+avoir
+à la fin
+une compréhension globale
+de tous ces outils là
+qui sont en train
+de révolutionner le monde
+donc vous allez pouvoir
+très bien vous adapter
+aux demandes clients
+c'est ça
+qui est le plus important
+dans le marché
+par exemple
+B2P d'entreprise
+et bien vous allez pouvoir
+avoir aussi des solutions
+qui vous sont demandées
+sur mesure
+et c'est à vous
+après
+de mettre ça en place
+donc
+à la fin de la formation
+si vous me suivez bien tout
+vous allez avoir les capacités
+ça j'ai pas de doute
+et puis
+faut pas oublier
+que voilà
+je suis disponible sur Slack
+vous pouvez me des demandes
+des messages
+pour que derrière
+si vous vous bloquez
+je puisse vous aider
+il n'y a pas de problème
+donc là on voit
+qu'il est travaillé
+ça fait quand même assez longtemps
+donc là il est en train de vérifier
+il est terminé
+on voit qu'il a 387 lignes
+il y a 16 sections dans le fichier
+donc c'est top
+l'étude de marché
+quand même assez détaillée
+maintenant on va aller sur
+le vierge
+portée
+le marché
+est assez longue
+assez longue
+pardon
+pratiquement
+illisible
+on voit qu'il y a le TGM moyen
+il a fait des recherches sur internet
+c'est top
+on pourrait lui demander
+de rajouter les sources
+mais les sources
+donc c'est top
+pour l'eau à lire
+donc nous on se demandait
+faire
+améliore
+un CSV
+on va travailler
+un fichier Excel directement
+puisse avoir quand même
+une étude de marché
+l'étude de marché
+on peut plus
+le travail
+d'internet
+là l'objectif c'est vraiment
+de vous montrer
+qu'on peut travailler
+sur le même projet
+mais sur une problématique
+qui est différente
+pour gagner du temps
+si derrière
+j'aurais attendu
+de finir mon site internet
+j'aurais perdu du temps
+le but c'est pas ça
+en fait le marché
+est tellement grand
+il y a plusieurs contrats
+le but c'est
+de ne pas la qualité
+l'organisation
+là
+sur un projet
+j'ai deux terminal
+des terminal différents
+par projet
+mais
+si j'avais
+un client
+par exemple
+qui demande une automatisation
+SAV
+donc ce que j'aurais fait
+c'est que j'aurais ouvert
+un terminal
+juste ici
+directement
+du coup
+au dossier client 1
+je leur ai dit
+travail
+travail sur
+une base de données
+une base de données
+Supabase
+voilà
+je leur ai donné une première mission
+pour aller plus vite
+ensuite
+j'aurais ouvert
+le terminal
+j'aurais très bien pu lui dire
+en HTML
+et après voilà
+au fur et à mesure
+avoir plusieurs onglets
+qui travaillent en même temps
+pour ne pas perdre du temps
+donc là hop
+premier projet
+deuxième projet
+etc
+jusqu'à temps que
+malheureusement
+on va avoir d'autres onglets
+parce que sinon
+vous allez vite vous perdre
+mais c'est vraiment
+essayer d'optimiser
+un maximum son temps
+pour
+simplement
+délivrer le plus vite
+et passer
+rapidement
+autre chose
+donc ça on le verra aussi
+par la suite
+du fichier Excel
+vraiment
+amusez-vous
+à créer n'importe quoi
+prenez du temps
+ça va être important
+ne vous précipitez pas
+à passer directement
+sur la séance 2
+faites vous plaisir
+découvrez l'outil
+si vous ne l'avez jamais
+découvert
+créez tout et n'importe quoi
+comprenez la puissance
+qui peut vous apporter
+faites des petits jeux
+demandez de créer
+snake.io
+vraiment
+prenez votre temps
+ça va être très important
+si vous n'avez jamais baigné
+si vous n'avez jamais travaillé
+avec Cloud Code
+pour que par la suite
+tout au long de la formation
+ça paraît bien plus simple
+que ce soit Codex
+que ce soit Cowork
+que ce soit N8N
+parce que les projets
+vont être de plus en plus durs
+et le but
+c'est pas que vous vous retrouviez
+bloqué
+parce que vous n'avez pas compris
+quelque chose
+vraiment
+testez tout
+tout
+tout
+créez un bel projet
+encore une fois
+je vais vous donner un petit conseil aussi
+n'ayez pas le syndrome
+de l'imposteur
+je sais que c'est pas simple
+souvent quand on se lance
+dans un nouveau domaine
+on peut se dire
+ouais mais j'ai pas les compétences
+aptes
+pour travailler
+à l'intérieur
+de ce domaine là
+j'étais comme vous au départ
+et au fur et à mesure
+quand vous allez avoir
+vous promets que vos clients
+vont être satisfait
+eh bien
+là
+va disparaître
+croyez vraiment en vous
+je suis certain
+que derrière
+si vous suivez bien
+la formation
+vous allez avoir
+toutes les compétences adéquates
+pour proposer quelque chose
+de qualitatif
+à n'importe quel client
+c'est juste qu'il faut bien suivre
+beaucoup travailler
+et prendre son temps aussi
+c'est pas grave si
+derrière vous bloquez sur une module
+encore une fois vous me contactez
+et puis derrière j'essaierai
+sur la partie en question
+donc là comme on peut voir
+il a terminé notre étude de marché
+on va pouvoir l'importer
+pour voir la différence
+entre la v1 et la v2
+il y a le cheat
+importer
+tout à l'heure
+étude de marché
+on récupère
+le feuille de calcul
+et là on peut voir
+que c'est bien différent
+la qualité est assez
+plutôt pas mal
+petite synthèse
+on a une partie globale
+en France
+c'est
+2,6 milliards
+on peut voir qu'il y a une projection
+du coût de 2026
+nous on en 2026
+4,6 milliards
+donc ça fait
+une belle hausse
+on a les sources juste ici
+les segments technologiques
+et taille croissante
+donc là vraiment
+on a de quoi faire
+pour bien comprendre
+le marché en question
+donc ça a pas pris beaucoup de temps
+comme vous voyez
+c'est ça qui est vraiment intéressant
+avoir un système
+qui est capable
+de nous proposer quelque chose
+de qualitatif
+en peu de temps
+c'est assez incroyable
+et ça peut être très important
+très intéressant
+sur tous les projets
+qu'on va voir ensemble
+et sur les projets aussi que vous avez
+vous allez délivrer
+liste détaillé par secteur
+donc la finance assurance
+maturité
+il y a 8 sur 10
+collectivité locale
+voilà
+ça peut être tout ça
+par la suite
+quand vous avez créé votre propre
+de marché
+et comprendre sur quoi
+vous voulez vous positionner
+on peut faire
+et à quoi ça sert
+d'itérer constamment
+d'autres demandes
+pour avoir quelque chose
+qui est de plus en plus
+pour revenir du coup
+un petit peu
+sur le support technique
+on peut voir
+qu'on a aussi
+des commandes
+essentiel
+donc il y en a pas 50
+mais voilà
+que tu vas utiliser du coup
+tous les jours
+la partie help
+clear
+cost
+compact
+compressé quand la conversation
+est trop longue
+si là je retourne ici
+je fais générer un cloud md
+ça on l'a vu
+on peut voir qu'il peut gérer les fichiers
+donc tu parles français
+lire le fichier index.html
+modifier le titre
+il va le faire
+on peut lancer des commandes du coup
+qu'on a vu
+on peut voir aussi
+qu'il y a des limites
+parfois il peut se tromper
+c'est pour ça qu'il faut bien
+analyser
+fait
+qu'il voit aussi
+la meilleure astuce
+c'est
+des petites étapes
+pour avoir vraiment
+un résultat qui est parfait
+donc là je vous ai mis
+une petite liste d'exemples
+que vous pouvez
+on se retrouve tout de suite
+pour l'étape 2 du coup
+qui va parler de codex
+qui est un outil similaire
+du coup à code code
+et on va voir comment
+utiliser les deux
+pour gagner en efficacité

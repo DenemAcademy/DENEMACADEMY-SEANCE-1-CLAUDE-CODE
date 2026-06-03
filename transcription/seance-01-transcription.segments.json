@@ -1,0 +1,7872 @@
+{
+  "meta": {
+    "video": "01-claude-code/Guide complet _ Bien démarrer avec Cloud Code.mp4",
+    "model": "large-v3-turbo",
+    "language": "fr",
+    "language_probability": 1,
+    "duration": 3064.7089375,
+    "created_elapsed_seconds": 425.23
+  },
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.05,
+      "end": 29.93,
+      "text": "Bonjour à tous et à toutes j'espère que vous allez bien donc on va parler sur cette séance de Claude Code qui va être notre outil principal tout au long de la formation ça va être très important de suivre cette séance là pourquoi parce qu'on va parler du coup d'installation on va voir comment bien l'utiliser on va se faire un petit exercice sur la création d'un site web et une étude de marché donc je vous invite à bien suivre vous allez voir c'est pas bien complexe même si"
+    },
+    {
+      "id": 2,
+      "start": 29.93,
+      "end": 59.81,
+      "text": "si derrière vous n'avez jamais mis les mains dans un terminal au fur et à mesure de la formation vous allez avoir les compétences pour gérer n'importe quel projet sur Claude Code encore une fois mon objectif c'est de vous accompagner sur la création de projet donc sur par exemple un blog automatique vous allez très bien pouvoir ensuite revendre cette compétence là mais vous allez aussi très bien pouvoir vous adapter au marché donc si un client vous fait une demande"
+    },
+    {
+      "id": 3,
+      "start": 59.81,
+      "end": 83.37,
+      "text": "sur un projet que vous avez pas réalisé sur cette formation là vous allez pouvoir le faire sans problème parce que vous avez compris du coup cet outil et vous avez compris comment suivre une bonne méthodologie pour arriver à votre objectif final donc on va voir un petit peu la différence entre ChatGPT du coup"
+    },
+    {
+      "id": 4,
+      "start": 83.37,
+      "end": 116.06,
+      "text": "et Claude Code donc ChatGPT ça va être plus un chatbot où derrière je vais lui poser une question où il va nous donner du texte après ça va être à nous de copier-coller créer les fichiers et tout faire à la main en gros si je fais une demande à ChatGPT de me créer un site internet de freelance il va me donner un code HTML je vais devoir le copier créer un fichier directement dans bloc note et l'enregistrer sous en .html et ensuite je vais sélectionner où je souhaite le déposer"
+    },
+    {
+      "id": 5,
+      "start": 116.06,
+      "end": 134.63,
+      "text": "par exemple sur un dossier que j'ai créé après je vais devoir cliquer dessus Claude Code ça va être vraiment différent comme on va le voir sur cette séance là il va vraiment agir sur notre ordinateur donc il va créer notre fichier directement dans le dossier et il va l'ouvrir aussi on va gagner vraiment beaucoup de temps"
+    },
+    {
+      "id": 6,
+      "start": 134.63,
+      "end": 151.02,
+      "text": "maintenant ce que ça va changer pour toi c'est que si tu sais pas coder c'est pas grave parce que Claude Code code pour nous directement il faut pas avoir le syndrome de l'imposteur en se disant voilà je vais avoir des lignes de code je connais rien au code etc"
+    },
+    {
+      "id": 7,
+      "start": 151.02,
+      "end": 162.94,
+      "text": "enfin j'ai pas les compétences pour au départ j'étais un petit peu comme ça en sachant que moi j'avais quand même un petit background de code derrière je faisais du Python du Java du HTML etc"
+    },
+    {
+      "id": 8,
+      "start": 162.94,
+      "end": 181.7,
+      "text": "maintenant il faut savoir que j'écris plus du tout une ligne de code c'est vraiment Claude Code qui le fait pour moi il faut se mettre en tête que quand on utilise Claude Code c'est comme avoir un développeur à côté de moi H24 il a vraiment les compétences de tout faire et c'est ça qu'on va voir tout au long de la formation"
+    },
+    {
+      "id": 9,
+      "start": 181.7,
+      "end": 195.44,
+      "text": "maintenant on va parler coût donc combien ça coûte ? on a la partie abonnement derrière on a 3 abos le pro à 20 euros par mois je vous le conseille pas du tout pourquoi ? parce que vous allez très vite limiter en termes de quota"
+    },
+    {
+      "id": 10,
+      "start": 195.44,
+      "end": 206.92,
+      "text": "si vous bossez sur un projet de la formation vous allez voir que le quota va être vite dépassé que vous allez devoir attendre le lendemain pour que ça se remette à jour vous allez perdre du temps"
+    },
+    {
+      "id": 11,
+      "start": 206.92,
+      "end": 222.06,
+      "text": "je vous conseille de foncer soit sur l'abonnement 5 fois ou soit sur l'abonnement x20 sachant que moi j'ai cet abonnement en 4 fois donc je paye à peu près 850 euros par mois mais derrière je suis rentable"
+    },
+    {
+      "id": 12,
+      "start": 222.06,
+      "end": 236.6,
+      "text": "parce que si vous vendez un projet client par exemple automatisation de gestion d'avis Google avis et bien derrière vous vendez 2000 euros vous avez remboursé votre abonnement"
+    },
+    {
+      "id": 13,
+      "start": 236.6,
+      "end": 243.6,
+      "text": "même si derrière cet abonnement a passé à 1500 euros par mois je le prendrai quand même parce que je sais que je vais être rentable"
+    },
+    {
+      "id": 14,
+      "start": 243.6,
+      "end": 256.92,
+      "text": "n'hésitez pas je sais que ça peut paraître cher mais foncez c'est une opportune si peu chère qui peut nous permettre de réaliser énormément de choses"
+    },
+    {
+      "id": 15,
+      "start": 256.92,
+      "end": 267.1,
+      "text": "on a aussi une autre partie donc API je pense que tout le monde en a entendu parler mais ça on va l'utiliser plus que sur des projets clients"
+    },
+    {
+      "id": 16,
+      "start": 267.1,
+      "end": 281.18,
+      "text": "ou par exemple on va on va enfin un client nous demande un système de réponse automatique par mail et bien sur le système en question on va utiliser une clé API anthropique"
+    },
+    {
+      "id": 17,
+      "start": 281.18,
+      "end": 306.65,
+      "text": "plateforme que derrière l'utilisateur envoie un email à notre système et bien la réponse qu'on va faire de manière automatique et bien écoutez par exemple 5 centimes"
+    },
+    {
+      "id": 18,
+      "start": 306.65,
+      "end": 330.23,
+      "text": "5 centimes là je serai à 8 dollars et 1 centime donc on va payer par exécution donc c'est ça la différence nous on va utiliser API key juste c'est ça qu'on va connecter au système"
+    },
+    {
+      "id": 19,
+      "start": 330.23,
+      "end": 342.9,
+      "text": "on va voir comment installer cloud code installez vous bien on va prendre du temps on va faire étape par étape il faut savoir que moi je suis sur Mac"
+    },
+    {
+      "id": 20,
+      "start": 342.9,
+      "end": 350.06,
+      "text": "donc si vous êtes sur Windows ça va être un petit peu différent mais une fois que vous aurez installé cloud code ça va être exactement la même chose"
+    },
+    {
+      "id": 21,
+      "start": 350.06,
+      "end": 356.08,
+      "text": "donc vous inquiétez pas vous perdre tout au long de la formation"
+    },
+    {
+      "id": 22,
+      "start": 356.08,
+      "end": 363.81,
+      "text": "donc sur Mac comment on va faire tout d'abord on va aller dans notre bureau nouveau dossier"
+    },
+    {
+      "id": 23,
+      "start": 363.81,
+      "end": 373.22,
+      "text": "on va créer un dossier directement le renommé voilà ce que je vais faire ensuite c'est que je vais faire clic gauche"
+    },
+    {
+      "id": 24,
+      "start": 373.22,
+      "end": 383.34,
+      "text": "nouveau terminal au dossier donc là comme on peut voir j'ai une session terminale connectée à mon dossier"
+    },
+    {
+      "id": 25,
+      "start": 383.34,
+      "end": 396.01,
+      "text": "donc on peut passer à l'étape 2 qu'est-ce que je dois faire c'est que je dois installer Node.js"
+    },
+    {
+      "id": 26,
+      "start": 396.01,
+      "end": 412.49,
+      "text": "donc pour installer Node.js sur ma barre de recherche Node.js une fois que c'est fait je mets GetNode.js"
+    },
+    {
+      "id": 27,
+      "start": 412.49,
+      "end": 456.34,
+      "text": "juste ici et là j'installe tout est safe il n'y a pas de progressage et lui l'a installé la première fois"
+    },
+    {
+      "id": 28,
+      "start": 456.34,
+      "end": 461.85,
+      "text": "je vais continuer accepter installer"
+    },
+    {
+      "id": 29,
+      "start": 461.85,
+      "end": 480.36,
+      "text": "on passe l'installation l'installation est terminée donc je peux fermer la partie là mais tu n'es pas placé dans Corbeil"
+    },
+    {
+      "id": 30,
+      "start": 480.36,
+      "end": 488.18,
+      "text": "cliquez sur conserver et on peut passer du coup à la prochaine étape qui est l'étape 3"
+    },
+    {
+      "id": 31,
+      "start": 488.18,
+      "end": 491.94,
+      "text": "l'étape 3 c'est installer Cloud Code"
+    },
+    {
+      "id": 32,
+      "start": 491.94,
+      "end": 497.98,
+      "text": "on sait que maintenant Node.js est là on a besoin d'une seule commande donc vous allez sur le support technique"
+    },
+    {
+      "id": 33,
+      "start": 497.98,
+      "end": 513.75,
+      "text": "vous cliquez retourner du coup et vous faites entrer"
+    },
+    {
+      "id": 34,
+      "start": 513.75,
+      "end": 523.72,
+      "text": "et Cloud Code ça prend un petit peu de temps"
+    },
+    {
+      "id": 35,
+      "start": 523.72,
+      "end": 526.65,
+      "text": "ok c'est terminé"
+    },
+    {
+      "id": 36,
+      "start": 526.65,
+      "end": 528.65,
+      "text": "maintenant on voit qu'on a trois packages installés"
+    },
+    {
+      "id": 37,
+      "start": 528.65,
+      "end": 533.21,
+      "text": "Cloud Code a bien été installé"
+    },
+    {
+      "id": 38,
+      "start": 533.21,
+      "end": 535.21,
+      "text": "on peut voir la version aussi qu'on a"
+    },
+    {
+      "id": 39,
+      "start": 535.21,
+      "end": 537.21,
+      "text": "donc vous copiez cette commande là"
+    },
+    {
+      "id": 40,
+      "start": 537.21,
+      "end": 541.61,
+      "text": "entrée, autre version"
+    },
+    {
+      "id": 41,
+      "start": 541.61,
+      "end": 546.42,
+      "text": "donc c'est la dernière"
+    },
+    {
+      "id": 42,
+      "start": 546.42,
+      "end": 550.31,
+      "text": "on peut passer à l'étape 4"
+    },
+    {
+      "id": 43,
+      "start": 550.31,
+      "end": 552.31,
+      "text": "on va revenir rapidement sur la partie"
+    },
+    {
+      "id": 44,
+      "start": 552.31,
+      "end": 568.9,
+      "text": "on arrive du coup sur l'interface officielle de Cloud"
+    },
+    {
+      "id": 45,
+      "start": 568.9,
+      "end": 571.45,
+      "text": "donc si vous n'avez pas de compte"
+    },
+    {
+      "id": 46,
+      "start": 571.45,
+      "end": 573.45,
+      "text": "vous en créez un avec votre adresse email"
+    },
+    {
+      "id": 47,
+      "start": 573.45,
+      "end": 575.7,
+      "text": "et vous allez arriver du coup sur cette interface là"
+    },
+    {
+      "id": 48,
+      "start": 575.7,
+      "end": 582.2,
+      "text": "donc vous allez cliquer sur le profil en bas à gauche"
+    },
+    {
+      "id": 49,
+      "start": 582.2,
+      "end": 595.24,
+      "text": "les forfaits, simplement pas utile tout au long de la formation"
+    },
+    {
+      "id": 50,
+      "start": 595.24,
+      "end": 597.37,
+      "text": "vous allez vous retrouver trop vite bloqué"
+    },
+    {
+      "id": 51,
+      "start": 597.37,
+      "end": 599.37,
+      "text": "vous allez perdre du temps"
+    },
+    {
+      "id": 52,
+      "start": 599.37,
+      "end": 601.59,
+      "text": "donc je vous conseille de partir directement sur l'abonnement Max"
+    },
+    {
+      "id": 53,
+      "start": 601.59,
+      "end": 603.91,
+      "text": "l'abonnement Max"
+    },
+    {
+      "id": 54,
+      "start": 603.91,
+      "end": 616.63,
+      "text": "qui est facturé avec 20%"
+    },
+    {
+      "id": 55,
+      "start": 616.63,
+      "end": 620.04,
+      "text": "c'est Max qui s'offre à vous"
+    },
+    {
+      "id": 56,
+      "start": 620.04,
+      "end": 622.04,
+      "text": "20 fois plus d'utilisation pro"
+    },
+    {
+      "id": 57,
+      "start": 622.04,
+      "end": 628.71,
+      "text": "et la version du coup je vous conseille celle-ci"
+    },
+    {
+      "id": 58,
+      "start": 628.71,
+      "end": 630.87,
+      "text": "derrière vous allez être safe en terme de quota"
+    },
+    {
+      "id": 59,
+      "start": 630.87,
+      "end": 632.87,
+      "text": "une fois que vous avez sélectionné votre forfait"
+    },
+    {
+      "id": 60,
+      "start": 632.87,
+      "end": 635.67,
+      "text": "vous allez passer commande"
+    },
+    {
+      "id": 61,
+      "start": 635.67,
+      "end": 637.67,
+      "text": "une fois que vous avez validé votre abonnement"
+    },
+    {
+      "id": 62,
+      "start": 637.67,
+      "end": 639.67,
+      "text": "de manière automatique"
+    },
+    {
+      "id": 63,
+      "start": 639.67,
+      "end": 642.12,
+      "text": "votre profil juste en bas va se mettre à jour"
+    },
+    {
+      "id": 64,
+      "start": 642.12,
+      "end": 646.04,
+      "text": "l'abonnement que vous avez sélectionné"
+    },
+    {
+      "id": 65,
+      "start": 646.04,
+      "end": 648.62,
+      "text": "ce qu'on va faire ensuite"
+    },
+    {
+      "id": 66,
+      "start": 648.62,
+      "end": 651.03,
+      "text": "on va passer du coup à l'étape 5"
+    },
+    {
+      "id": 67,
+      "start": 651.03,
+      "end": 653.03,
+      "text": "lancer Cloud Code"
+    },
+    {
+      "id": 68,
+      "start": 653.03,
+      "end": 655.03,
+      "text": "pour lancer Cloud Code"
+    },
+    {
+      "id": 69,
+      "start": 655.03,
+      "end": 658.54,
+      "text": "c'est pas compliqué"
+    },
+    {
+      "id": 70,
+      "start": 658.54,
+      "end": 680.82,
+      "text": "relancer du coup"
+    },
+    {
+      "id": 71,
+      "start": 680.82,
+      "end": 685.03,
+      "text": "moi personnellement je vais sur le dark mode"
+    },
+    {
+      "id": 72,
+      "start": 685.03,
+      "end": 687.03,
+      "text": "parce que moi je me suis habitué à ça"
+    },
+    {
+      "id": 73,
+      "start": 687.03,
+      "end": 691.53,
+      "text": "mais ça change pas grand chose si vous préférez le light mode"
+    },
+    {
+      "id": 74,
+      "start": 691.53,
+      "end": 694.65,
+      "text": "entrez"
+    },
+    {
+      "id": 75,
+      "start": 694.65,
+      "end": 699.27,
+      "text": "ensuite 3 options s'offrent"
+    },
+    {
+      "id": 76,
+      "start": 699.27,
+      "end": 701.75,
+      "text": "on a la Cloud Hakune question"
+    },
+    {
+      "id": 77,
+      "start": 701.75,
+      "end": 703.75,
+      "text": "avec abonnement"
+    },
+    {
+      "id": 78,
+      "start": 703.75,
+      "end": 705.75,
+      "text": "on a la partie par API"
+    },
+    {
+      "id": 79,
+      "start": 705.75,
+      "end": 708.07,
+      "text": "donc ça c'est ce qu'on a vu tout à l'heure"
+    },
+    {
+      "id": 80,
+      "start": 708.07,
+      "end": 710.46,
+      "text": "payer par exécution"
+    },
+    {
+      "id": 81,
+      "start": 710.46,
+      "end": 718.7,
+      "text": "ça va vous revenir très cher si vous utilisez l'option là"
+    },
+    {
+      "id": 82,
+      "start": 718.7,
+      "end": 721.88,
+      "text": "on a une entrée"
+    },
+    {
+      "id": 83,
+      "start": 721.88,
+      "end": 723.88,
+      "text": "et là ça nous redirige directement"
+    },
+    {
+      "id": 84,
+      "start": 723.88,
+      "end": 726.74,
+      "text": "vers"
+    },
+    {
+      "id": 85,
+      "start": 726.74,
+      "end": 728.67,
+      "text": "c'est"
+    },
+    {
+      "id": 86,
+      "start": 728.67,
+      "end": 732.39,
+      "text": "Cloud Code"
+    },
+    {
+      "id": 87,
+      "start": 732.39,
+      "end": 733.39,
+      "text": "souhaite se connecter"
+    },
+    {
+      "id": 88,
+      "start": 733.39,
+      "end": 735.45,
+      "text": "Cloud Chat"
+    },
+    {
+      "id": 89,
+      "start": 735.45,
+      "end": 739.46,
+      "text": "accéder à vos informations"
+    },
+    {
+      "id": 90,
+      "start": 739.46,
+      "end": 743.25,
+      "text": "distribuer à l'utilisation"
+    },
+    {
+      "id": 91,
+      "start": 743.25,
+      "end": 744.25,
+      "text": "du forfait Cloud"
+    },
+    {
+      "id": 92,
+      "start": 744.25,
+      "end": 746.25,
+      "text": "accéder à vos sessions"
+    },
+    {
+      "id": 93,
+      "start": 746.25,
+      "end": 747.25,
+      "text": "Cloud Code"
+    },
+    {
+      "id": 94,
+      "start": 747.25,
+      "end": 748.25,
+      "text": "utiliser et gérer vos connecteurs"
+    },
+    {
+      "id": 95,
+      "start": 748.25,
+      "end": 750.25,
+      "text": "téléverser des fichiers"
+    },
+    {
+      "id": 96,
+      "start": 750.25,
+      "end": 753.27,
+      "text": "cliquer sur autoriser"
+    },
+    {
+      "id": 97,
+      "start": 753.27,
+      "end": 762.06,
+      "text": "connecter à mon abonnement"
+    },
+    {
+      "id": 98,
+      "start": 762.06,
+      "end": 771.7,
+      "text": "entrer"
+    },
+    {
+      "id": 99,
+      "start": 771.7,
+      "end": 776.28,
+      "text": "j'utilise comme de base"
+    },
+    {
+      "id": 100,
+      "start": 776.28,
+      "end": 777.28,
+      "text": "et là"
+    },
+    {
+      "id": 101,
+      "start": 777.28,
+      "end": 779.54,
+      "text": "vous êtes sur l'interface Cloud Code"
+    },
+    {
+      "id": 102,
+      "start": 779.54,
+      "end": 781.54,
+      "text": "connecter directement"
+    },
+    {
+      "id": 103,
+      "start": 781.54,
+      "end": 783.6,
+      "text": "à votre terminal"
+    },
+    {
+      "id": 104,
+      "start": 783.6,
+      "end": 785.6,
+      "text": "donc tout est bien installé"
+    },
+    {
+      "id": 105,
+      "start": 785.6,
+      "end": 788.62,
+      "text": "on peut passer du coup"
+    },
+    {
+      "id": 106,
+      "start": 788.62,
+      "end": 790.58,
+      "text": "une étape"
+    },
+    {
+      "id": 107,
+      "start": 790.58,
+      "end": 795.14,
+      "text": "Cloud Code marche de plusieurs façons"
+    },
+    {
+      "id": 108,
+      "start": 795.14,
+      "end": 798.35,
+      "text": "on peut l'utiliser"
+    },
+    {
+      "id": 109,
+      "start": 798.35,
+      "end": 799.35,
+      "text": "VS Code"
+    },
+    {
+      "id": 110,
+      "start": 799.35,
+      "end": 801.09,
+      "text": "VS Code"
+    },
+    {
+      "id": 111,
+      "start": 801.09,
+      "end": 802.09,
+      "text": "on peut l'utiliser sur le web"
+    },
+    {
+      "id": 112,
+      "start": 802.09,
+      "end": 803.15,
+      "text": "donc sur le web"
+    },
+    {
+      "id": 113,
+      "start": 803.15,
+      "end": 804.18,
+      "text": "c'est juste ici"
+    },
+    {
+      "id": 114,
+      "start": 804.18,
+      "end": 805.18,
+      "text": "si vous allez"
+    },
+    {
+      "id": 115,
+      "start": 805.18,
+      "end": 806.63,
+      "text": "sur l'interface"
+    },
+    {
+      "id": 116,
+      "start": 806.63,
+      "end": 810.23,
+      "text": "sur code à gauche"
+    },
+    {
+      "id": 117,
+      "start": 810.23,
+      "end": 815.58,
+      "text": "marche sur Cloud Code"
+    },
+    {
+      "id": 118,
+      "start": 815.58,
+      "end": 817.22,
+      "text": "le problème"
+    },
+    {
+      "id": 119,
+      "start": 817.22,
+      "end": 818.22,
+      "text": "c'est que vous êtes obligé"
+    },
+    {
+      "id": 120,
+      "start": 818.22,
+      "end": 819.22,
+      "text": "de vous connecter avec Github"
+    },
+    {
+      "id": 121,
+      "start": 819.22,
+      "end": 821.96,
+      "text": "si vous travaillez"
+    },
+    {
+      "id": 122,
+      "start": 821.96,
+      "end": 824.66,
+      "text": "sur Cloud Web"
+    },
+    {
+      "id": 123,
+      "start": 824.66,
+      "end": 825.66,
+      "text": "vous allez travailler"
+    },
+    {
+      "id": 124,
+      "start": 825.66,
+      "end": 827.66,
+      "text": "sur des repos Github"
+    },
+    {
+      "id": 125,
+      "start": 827.66,
+      "end": 828.66,
+      "text": "c'est un petit peu problématique"
+    },
+    {
+      "id": 126,
+      "start": 828.66,
+      "end": 830.7,
+      "text": "en termes d'organisation"
+    },
+    {
+      "id": 127,
+      "start": 830.7,
+      "end": 831.7,
+      "text": "donc je vous recommande pas"
+    },
+    {
+      "id": 128,
+      "start": 831.7,
+      "end": 832.7,
+      "text": "cette partie"
+    },
+    {
+      "id": 129,
+      "start": 832.7,
+      "end": 834.72,
+      "text": "je vous recommande par contre"
+    },
+    {
+      "id": 130,
+      "start": 834.72,
+      "end": 836.94,
+      "text": "c'est intéressant"
+    },
+    {
+      "id": 131,
+      "start": 836.94,
+      "end": 837.94,
+      "text": "si derrière"
+    },
+    {
+      "id": 132,
+      "start": 837.94,
+      "end": 841.02,
+      "text": "le terminal"
+    },
+    {
+      "id": 133,
+      "start": 841.02,
+      "end": 842.59,
+      "text": "mais si vous travaillez sur le terminal"
+    },
+    {
+      "id": 134,
+      "start": 842.59,
+      "end": 843.59,
+      "text": "vous allez utiliser"
+    },
+    {
+      "id": 135,
+      "start": 843.59,
+      "end": 846.71,
+      "text": "l'application desktop"
+    },
+    {
+      "id": 136,
+      "start": 846.71,
+      "end": 848.8,
+      "text": "ou Cloud"
+    },
+    {
+      "id": 137,
+      "start": 848.8,
+      "end": 850.28,
+      "text": "donc ça marche"
+    },
+    {
+      "id": 138,
+      "start": 850.28,
+      "end": 851.28,
+      "text": "pareil que le terminal"
+    },
+    {
+      "id": 139,
+      "start": 851.28,
+      "end": 852.47,
+      "text": "vous pouvez"
+    },
+    {
+      "id": 140,
+      "start": 852.47,
+      "end": 853.47,
+      "text": "travailler directement"
+    },
+    {
+      "id": 141,
+      "start": 853.47,
+      "end": 854.47,
+      "text": "avec un dossier"
+    },
+    {
+      "id": 142,
+      "start": 854.47,
+      "end": 857.42,
+      "text": "donc pareil"
+    },
+    {
+      "id": 143,
+      "start": 857.42,
+      "end": 858.42,
+      "text": "et là si on lui envoie un message"
+    },
+    {
+      "id": 144,
+      "start": 858.42,
+      "end": 859.42,
+      "text": "derrière"
+    },
+    {
+      "id": 145,
+      "start": 860.9,
+      "end": 861.9,
+      "text": "il va travailler à l'intérieur"
+    },
+    {
+      "id": 146,
+      "start": 861.9,
+      "end": 863.0,
+      "text": "de ce dossier là"
+    },
+    {
+      "id": 147,
+      "start": 863.0,
+      "end": 864.0,
+      "text": "donc il doit nous créer un site internet"
+    },
+    {
+      "id": 148,
+      "start": 864.0,
+      "end": 865.0,
+      "text": "il le mettra à l'intérieur"
+    },
+    {
+      "id": 149,
+      "start": 865.0,
+      "end": 866.58,
+      "text": "de ce dossier"
+    },
+    {
+      "id": 150,
+      "start": 866.58,
+      "end": 867.58,
+      "text": "donc maintenant"
+    },
+    {
+      "id": 151,
+      "start": 867.58,
+      "end": 869.64,
+      "text": "on va tout simplement"
+    },
+    {
+      "id": 152,
+      "start": 869.64,
+      "end": 871.6,
+      "text": "lui demander"
+    },
+    {
+      "id": 153,
+      "start": 871.6,
+      "end": 874.49,
+      "text": "de nous créer"
+    },
+    {
+      "id": 154,
+      "start": 874.49,
+      "end": 875.55,
+      "text": "un petit site internet"
+    },
+    {
+      "id": 155,
+      "start": 875.55,
+      "end": 876.55,
+      "text": "donc créer"
+    },
+    {
+      "id": 156,
+      "start": 876.55,
+      "end": 893.68,
+      "text": "relativement simple"
+    },
+    {
+      "id": 157,
+      "start": 893.68,
+      "end": 894.68,
+      "text": "le but"
+    },
+    {
+      "id": 158,
+      "start": 894.68,
+      "end": 896.86,
+      "text": "c'est un petit peu"
+    },
+    {
+      "id": 159,
+      "start": 896.86,
+      "end": 899.59,
+      "text": "à dire"
+    },
+    {
+      "id": 160,
+      "start": 899.59,
+      "end": 903.28,
+      "text": "utiliser"
+    },
+    {
+      "id": 161,
+      "start": 903.28,
+      "end": 904.79,
+      "text": "complètement"
+    },
+    {
+      "id": 162,
+      "start": 904.79,
+      "end": 905.79,
+      "text": "consulter profil"
+    },
+    {
+      "id": 163,
+      "start": 905.79,
+      "end": 906.79,
+      "text": "existant en mémoire"
+    },
+    {
+      "id": 164,
+      "start": 906.79,
+      "end": 907.79,
+      "text": "donc là il va voir"
+    },
+    {
+      "id": 165,
+      "start": 907.79,
+      "end": 908.95,
+      "text": "que derrière"
+    },
+    {
+      "id": 166,
+      "start": 908.95,
+      "end": 909.95,
+      "text": "on a rien du tout"
+    },
+    {
+      "id": 167,
+      "start": 909.95,
+      "end": 920.46,
+      "text": "sur le dossier"
+    },
+    {
+      "id": 168,
+      "start": 920.46,
+      "end": 922.26,
+      "text": "on va créer un site"
+    },
+    {
+      "id": 169,
+      "start": 922.26,
+      "end": 923.26,
+      "text": "en automatisation"
+    },
+    {
+      "id": 170,
+      "start": 923.26,
+      "end": 924.26,
+      "text": "il y a"
+    },
+    {
+      "id": 171,
+      "start": 924.26,
+      "end": 925.26,
+      "text": "je vais construire un site"
+    },
+    {
+      "id": 172,
+      "start": 925.26,
+      "end": 926.26,
+      "text": "moderne responsive"
+    },
+    {
+      "id": 173,
+      "start": 926.26,
+      "end": 927.51,
+      "text": "et complet"
+    },
+    {
+      "id": 174,
+      "start": 927.51,
+      "end": 928.51,
+      "text": "on pourra lui donner"
+    },
+    {
+      "id": 175,
+      "start": 928.51,
+      "end": 929.51,
+      "text": "un meilleur prompt"
+    },
+    {
+      "id": 176,
+      "start": 929.51,
+      "end": 930.8,
+      "text": "pour qu'il améliore le design"
+    },
+    {
+      "id": 177,
+      "start": 930.8,
+      "end": 931.8,
+      "text": "encore une fois"
+    },
+    {
+      "id": 178,
+      "start": 931.8,
+      "end": 932.8,
+      "text": "le but c'est de faire"
+    },
+    {
+      "id": 179,
+      "start": 932.8,
+      "end": 933.8,
+      "text": "quelque chose de très simple"
+    },
+    {
+      "id": 180,
+      "start": 933.8,
+      "end": 936.14,
+      "text": "pour le moment"
+    },
+    {
+      "id": 181,
+      "start": 936.14,
+      "end": 937.14,
+      "text": "comprendre un petit peu"
+    },
+    {
+      "id": 182,
+      "start": 937.14,
+      "end": 939.46,
+      "text": "on va utiliser"
+    },
+    {
+      "id": 183,
+      "start": 939.46,
+      "end": 942.13,
+      "text": "là le ton qui réfléchit"
+    },
+    {
+      "id": 184,
+      "start": 942.13,
+      "end": 943.35,
+      "text": "très bien"
+    },
+    {
+      "id": 185,
+      "start": 943.35,
+      "end": 944.35,
+      "text": "le faire travailler"
+    },
+    {
+      "id": 186,
+      "start": 944.35,
+      "end": 952.3,
+      "text": "le dossier qu'on a créé"
+    },
+    {
+      "id": 187,
+      "start": 952.3,
+      "end": 953.3,
+      "text": "au tout départ"
+    },
+    {
+      "id": 188,
+      "start": 953.3,
+      "end": 954.98,
+      "text": "clic gauche"
+    },
+    {
+      "id": 189,
+      "start": 954.98,
+      "end": 957.39,
+      "text": "nouveau terminale au dossier"
+    },
+    {
+      "id": 190,
+      "start": 957.39,
+      "end": 959.03,
+      "text": "donc là"
+    },
+    {
+      "id": 191,
+      "start": 959.03,
+      "end": 969.7,
+      "text": "hop ça nous ouvre"
+    },
+    {
+      "id": 192,
+      "start": 969.7,
+      "end": 971.09,
+      "text": "et derrière"
+    },
+    {
+      "id": 193,
+      "start": 971.09,
+      "end": 972.09,
+      "text": "on a encore une fois"
+    },
+    {
+      "id": 194,
+      "start": 972.09,
+      "end": 973.09,
+      "text": "l'interface de code code"
+    },
+    {
+      "id": 195,
+      "start": 973.09,
+      "end": 974.09,
+      "text": "qui est connecté"
+    },
+    {
+      "id": 196,
+      "start": 974.09,
+      "end": 975.09,
+      "text": "du coup à notre dossier"
+    },
+    {
+      "id": 197,
+      "start": 975.09,
+      "end": 978.18,
+      "text": "qu'on a créé tout à l'heure"
+    },
+    {
+      "id": 198,
+      "start": 978.18,
+      "end": 979.18,
+      "text": "en parallèle"
+    },
+    {
+      "id": 199,
+      "start": 979.18,
+      "end": 980.21,
+      "text": "du site internet"
+    },
+    {
+      "id": 200,
+      "start": 980.21,
+      "end": 981.21,
+      "text": "qu'il est en train de nous créer"
+    },
+    {
+      "id": 201,
+      "start": 981.21,
+      "end": 983.21,
+      "text": "on pourrait lui dire"
+    },
+    {
+      "id": 202,
+      "start": 983.21,
+      "end": 984.5,
+      "text": "je suis"
+    },
+    {
+      "id": 203,
+      "start": 984.5,
+      "end": 985.56,
+      "text": "freelance"
+    },
+    {
+      "id": 204,
+      "start": 985.56,
+      "end": 989.48,
+      "text": "en automatisation"
+    },
+    {
+      "id": 205,
+      "start": 989.48,
+      "end": 991.12,
+      "text": "il y a"
+    },
+    {
+      "id": 206,
+      "start": 991.12,
+      "end": 992.12,
+      "text": "je souhaite"
+    },
+    {
+      "id": 207,
+      "start": 992.12,
+      "end": 994.18,
+      "text": "faire"
+    },
+    {
+      "id": 208,
+      "start": 994.18,
+      "end": 999.98,
+      "text": "pousser"
+    },
+    {
+      "id": 209,
+      "start": 999.98,
+      "end": 1001.65,
+      "text": "csv"
+    },
+    {
+      "id": 210,
+      "start": 1001.65,
+      "end": 1003.42,
+      "text": "donc là"
+    },
+    {
+      "id": 211,
+      "start": 1003.42,
+      "end": 1004.42,
+      "text": "on lance"
+    },
+    {
+      "id": 212,
+      "start": 1004.42,
+      "end": 1005.42,
+      "text": "notre prompt"
+    },
+    {
+      "id": 213,
+      "start": 1005.42,
+      "end": 1007.06,
+      "text": "et on peut voir"
+    },
+    {
+      "id": 214,
+      "start": 1007.06,
+      "end": 1008.06,
+      "text": "qu'il est en train de réfléchir"
+    },
+    {
+      "id": 215,
+      "start": 1008.06,
+      "end": 1009.06,
+      "text": "et qu'il travaille"
+    },
+    {
+      "id": 216,
+      "start": 1009.06,
+      "end": 1010.06,
+      "text": "en parallèle"
+    },
+    {
+      "id": 217,
+      "start": 1010.06,
+      "end": 1011.06,
+      "text": "de la création"
+    },
+    {
+      "id": 218,
+      "start": 1011.06,
+      "end": 1012.06,
+      "text": "de notre site internet"
+    },
+    {
+      "id": 219,
+      "start": 1012.06,
+      "end": 1013.06,
+      "text": "donc là on gagne déjà"
+    },
+    {
+      "id": 220,
+      "start": 1013.06,
+      "end": 1014.06,
+      "text": "beaucoup de temps"
+    },
+    {
+      "id": 221,
+      "start": 1014.06,
+      "end": 1015.7,
+      "text": "on fait deux choses"
+    },
+    {
+      "id": 222,
+      "start": 1015.7,
+      "end": 1016.7,
+      "text": "en même temps"
+    },
+    {
+      "id": 223,
+      "start": 1016.7,
+      "end": 1017.7,
+      "text": "ça ça va être important"
+    },
+    {
+      "id": 224,
+      "start": 1017.7,
+      "end": 1019.37,
+      "text": "de comprendre"
+    },
+    {
+      "id": 225,
+      "start": 1019.37,
+      "end": 1020.37,
+      "text": "cette partie là"
+    },
+    {
+      "id": 226,
+      "start": 1020.37,
+      "end": 1021.37,
+      "text": "pourquoi"
+    },
+    {
+      "id": 227,
+      "start": 1021.37,
+      "end": 1022.4,
+      "text": "parce que"
+    },
+    {
+      "id": 228,
+      "start": 1022.4,
+      "end": 1023.4,
+      "text": "on va"
+    },
+    {
+      "id": 229,
+      "start": 1023.4,
+      "end": 1024.4,
+      "text": "chaque fois"
+    },
+    {
+      "id": 230,
+      "start": 1024.4,
+      "end": 1025.4,
+      "text": "sur chaque projet"
+    },
+    {
+      "id": 231,
+      "start": 1025.4,
+      "end": 1027.1,
+      "text": "mettre en place"
+    },
+    {
+      "id": 232,
+      "start": 1027.1,
+      "end": 1029.1,
+      "text": "une stratégie similaire"
+    },
+    {
+      "id": 233,
+      "start": 1029.1,
+      "end": 1030.65,
+      "text": "pour qu'on puisse bull"
+    },
+    {
+      "id": 234,
+      "start": 1030.65,
+      "end": 1032.13,
+      "text": "rapidement"
+    },
+    {
+      "id": 235,
+      "start": 1032.13,
+      "end": 1034.22,
+      "text": "sur des projets réels"
+    },
+    {
+      "id": 236,
+      "start": 1034.22,
+      "end": 1035.22,
+      "text": "par exemple"
+    },
+    {
+      "id": 237,
+      "start": 1035.22,
+      "end": 1036.22,
+      "text": "avec un client"
+    },
+    {
+      "id": 238,
+      "start": 1036.22,
+      "end": 1037.22,
+      "text": "travailler sur"
+    },
+    {
+      "id": 239,
+      "start": 1037.22,
+      "end": 1038.22,
+      "text": "cinq interfaces différentes"
+    },
+    {
+      "id": 240,
+      "start": 1038.22,
+      "end": 1039.22,
+      "text": "pour"
+    },
+    {
+      "id": 241,
+      "start": 1039.22,
+      "end": 1040.29,
+      "text": "à la place"
+    },
+    {
+      "id": 242,
+      "start": 1040.29,
+      "end": 1041.29,
+      "text": "de prendre trois jours"
+    },
+    {
+      "id": 243,
+      "start": 1041.29,
+      "end": 1042.7,
+      "text": "prendre tout simplement"
+    },
+    {
+      "id": 244,
+      "start": 1042.7,
+      "end": 1043.7,
+      "text": "cinq à six heures"
+    },
+    {
+      "id": 245,
+      "start": 1043.7,
+      "end": 1044.7,
+      "text": "et du coup"
+    },
+    {
+      "id": 246,
+      "start": 1044.7,
+      "end": 1045.7,
+      "text": "être plus rentable"
+    },
+    {
+      "id": 247,
+      "start": 1045.7,
+      "end": 1047.98,
+      "text": "sur le mois"
+    },
+    {
+      "id": 248,
+      "start": 1047.98,
+      "end": 1050.07,
+      "text": "donc là"
+    },
+    {
+      "id": 249,
+      "start": 1050.07,
+      "end": 1051.07,
+      "text": "il a pratiquement fini"
+    },
+    {
+      "id": 250,
+      "start": 1051.07,
+      "end": 1053.07,
+      "text": "l'index.html"
+    },
+    {
+      "id": 251,
+      "start": 1053.07,
+      "end": 1054.81,
+      "text": "là"
+    },
+    {
+      "id": 252,
+      "start": 1054.81,
+      "end": 1056.81,
+      "text": "il a réfléchi"
+    },
+    {
+      "id": 253,
+      "start": 1056.81,
+      "end": 1057.81,
+      "text": "il nous a demandé"
+    },
+    {
+      "id": 254,
+      "start": 1057.81,
+      "end": 1059.81,
+      "text": "des informations similaires"
+    },
+    {
+      "id": 255,
+      "start": 1059.81,
+      "end": 1069.87,
+      "text": "donc France uniquement"
+    },
+    {
+      "id": 256,
+      "start": 1069.87,
+      "end": 1070.87,
+      "text": "qui nous dit"
+    },
+    {
+      "id": 257,
+      "start": 1070.87,
+      "end": 1071.87,
+      "text": "angle de l'étude"
+    },
+    {
+      "id": 258,
+      "start": 1071.87,
+      "end": 1072.87,
+      "text": "tu veux analyser le marché"
+    },
+    {
+      "id": 259,
+      "start": 1072.87,
+      "end": 1073.87,
+      "text": "de l'automatisation"
+    },
+    {
+      "id": 260,
+      "start": 1073.87,
+      "end": 1074.87,
+      "text": "Thaï"
+    },
+    {
+      "id": 261,
+      "start": 1074.87,
+      "end": 1075.87,
+      "text": "et France"
+    },
+    {
+      "id": 262,
+      "start": 1075.87,
+      "end": 1076.87,
+      "text": "je veux tout analyser"
+    },
+    {
+      "id": 263,
+      "start": 1076.87,
+      "end": 1078.19,
+      "text": "donc on va pas se prendre la tête"
+    },
+    {
+      "id": 264,
+      "start": 1078.19,
+      "end": 1079.19,
+      "text": "parce que là"
+    },
+    {
+      "id": 265,
+      "start": 1079.19,
+      "end": 1080.64,
+      "text": "juste en phase exemple"
+    },
+    {
+      "id": 266,
+      "start": 1080.64,
+      "end": 1081.64,
+      "text": "on pourrait très bien"
+    },
+    {
+      "id": 267,
+      "start": 1081.64,
+      "end": 1082.64,
+      "text": "du coup améliorer cette partie là"
+    },
+    {
+      "id": 268,
+      "start": 1082.64,
+      "end": 1085.08,
+      "text": "donc là"
+    },
+    {
+      "id": 269,
+      "start": 1085.08,
+      "end": 1086.4,
+      "text": "c'est top"
+    },
+    {
+      "id": 270,
+      "start": 1086.4,
+      "end": 1089.32,
+      "text": "en train de travailler en parallèle"
+    },
+    {
+      "id": 271,
+      "start": 1089.32,
+      "end": 1090.32,
+      "text": "on pourrait aussi très bien"
+    },
+    {
+      "id": 272,
+      "start": 1090.32,
+      "end": 1091.32,
+      "text": "je sais pas"
+    },
+    {
+      "id": 273,
+      "start": 1091.32,
+      "end": 1092.32,
+      "text": "si vous avez une autre idée"
+    },
+    {
+      "id": 274,
+      "start": 1092.32,
+      "end": 1096.4,
+      "text": "demander à Claude"
+    },
+    {
+      "id": 275,
+      "start": 1096.4,
+      "end": 1097.4,
+      "text": "directement"
+    },
+    {
+      "id": 276,
+      "start": 1097.4,
+      "end": 1099.82,
+      "text": "sur un nouveau terminal"
+    },
+    {
+      "id": 277,
+      "start": 1099.82,
+      "end": 1101.82,
+      "text": "d'aller analyser"
+    },
+    {
+      "id": 278,
+      "start": 1101.82,
+      "end": 1103.62,
+      "text": "LinkedIn"
+    },
+    {
+      "id": 279,
+      "start": 1103.62,
+      "end": 1104.62,
+      "text": "qui sont intéressants"
+    },
+    {
+      "id": 280,
+      "start": 1104.62,
+      "end": 1105.62,
+      "text": "dans votre niche"
+    },
+    {
+      "id": 281,
+      "start": 1105.62,
+      "end": 1109.56,
+      "text": "dans une recherche"
+    },
+    {
+      "id": 282,
+      "start": 1109.56,
+      "end": 1111.56,
+      "text": "sur tous les accents parallèles"
+    },
+    {
+      "id": 283,
+      "start": 1111.56,
+      "end": 1113.42,
+      "text": "ok c'est top"
+    },
+    {
+      "id": 284,
+      "start": 1113.42,
+      "end": 1117.18,
+      "text": "on va ouvrir"
+    },
+    {
+      "id": 285,
+      "start": 1117.18,
+      "end": 1118.18,
+      "text": "le dossier juste ici"
+    },
+    {
+      "id": 286,
+      "start": 1118.18,
+      "end": 1119.18,
+      "text": "on va voir"
+    },
+    {
+      "id": 287,
+      "start": 1119.18,
+      "end": 1121.94,
+      "text": "s'il a terminé"
+    },
+    {
+      "id": 288,
+      "start": 1121.94,
+      "end": 1123.93,
+      "text": "le coup"
+    },
+    {
+      "id": 289,
+      "start": 1123.93,
+      "end": 1124.93,
+      "text": "il a créé trois fichiers"
+    },
+    {
+      "id": 290,
+      "start": 1124.93,
+      "end": 1126.79,
+      "text": "une partie html"
+    },
+    {
+      "id": 291,
+      "start": 1126.79,
+      "end": 1128.94,
+      "text": "une partie"
+    },
+    {
+      "id": 292,
+      "start": 1128.94,
+      "end": 1129.94,
+      "text": "et là on peut voir"
+    },
+    {
+      "id": 293,
+      "start": 1129.94,
+      "end": 1131.97,
+      "text": "qu'il a internet"
+    },
+    {
+      "id": 294,
+      "start": 1131.97,
+      "end": 1132.97,
+      "text": "donc freelance"
+    },
+    {
+      "id": 295,
+      "start": 1132.97,
+      "end": 1133.97,
+      "text": "automatisation"
+    },
+    {
+      "id": 296,
+      "start": 1133.97,
+      "end": 1134.97,
+      "text": "il y a"
+    },
+    {
+      "id": 297,
+      "start": 1134.97,
+      "end": 1135.97,
+      "text": "comme je vous ai dit"
+    },
+    {
+      "id": 298,
+      "start": 1135.97,
+      "end": 1136.97,
+      "text": "au tout départ"
+    },
+    {
+      "id": 299,
+      "start": 1136.97,
+      "end": 1137.97,
+      "text": "il ouvre automatiquement"
+    },
+    {
+      "id": 300,
+      "start": 1137.97,
+      "end": 1138.97,
+      "text": "donc quand il a terminé"
+    },
+    {
+      "id": 301,
+      "start": 1138.97,
+      "end": 1139.97,
+      "text": "ça qui est vraiment"
+    },
+    {
+      "id": 302,
+      "start": 1139.97,
+      "end": 1140.97,
+      "text": "intéressant"
+    },
+    {
+      "id": 303,
+      "start": 1140.97,
+      "end": 1141.97,
+      "text": "donc c'est vraiment un agent"
+    },
+    {
+      "id": 304,
+      "start": 1141.97,
+      "end": 1142.97,
+      "text": "qui agit directement"
+    },
+    {
+      "id": 305,
+      "start": 1142.97,
+      "end": 1143.97,
+      "text": "sur notre ordinateur"
+    },
+    {
+      "id": 306,
+      "start": 1143.97,
+      "end": 1145.97,
+      "text": "je transforme vos processus"
+    },
+    {
+      "id": 307,
+      "start": 1145.97,
+      "end": 1147.97,
+      "text": "avec l'intelligence artificielle"
+    },
+    {
+      "id": 308,
+      "start": 1147.97,
+      "end": 1148.97,
+      "text": "quand on est vraiment"
+    },
+    {
+      "id": 309,
+      "start": 1148.97,
+      "end": 1149.97,
+      "text": "sur un site"
+    },
+    {
+      "id": 310,
+      "start": 1149.97,
+      "end": 1152.18,
+      "text": "tout simple"
+    },
+    {
+      "id": 311,
+      "start": 1152.18,
+      "end": 1153.25,
+      "text": "il faut pousser"
+    },
+    {
+      "id": 312,
+      "start": 1153.25,
+      "end": 1154.25,
+      "text": "mais c'est un bon départ"
+    },
+    {
+      "id": 313,
+      "start": 1154.25,
+      "end": 1156.7,
+      "text": "on peut très bien"
+    },
+    {
+      "id": 314,
+      "start": 1156.7,
+      "end": 1157.89,
+      "text": "tout simplement"
+    },
+    {
+      "id": 315,
+      "start": 1157.89,
+      "end": 1158.89,
+      "text": "travailler"
+    },
+    {
+      "id": 316,
+      "start": 1158.89,
+      "end": 1159.89,
+      "text": "enfin le retravailler"
+    },
+    {
+      "id": 317,
+      "start": 1159.89,
+      "end": 1160.89,
+      "text": "donc là on pourrait"
+    },
+    {
+      "id": 318,
+      "start": 1160.89,
+      "end": 1162.08,
+      "text": "lui dire"
+    },
+    {
+      "id": 319,
+      "start": 1162.08,
+      "end": 1163.46,
+      "text": "sur le lien"
+    },
+    {
+      "id": 320,
+      "start": 1163.46,
+      "end": 1197.62,
+      "text": "en question"
+    },
+    {
+      "id": 321,
+      "start": 1197.62,
+      "end": 1206.71,
+      "text": "un tout simple"
+    },
+    {
+      "id": 322,
+      "start": 1206.71,
+      "end": 1208.58,
+      "text": "entre temps"
+    },
+    {
+      "id": 323,
+      "start": 1208.58,
+      "end": 1224.26,
+      "text": "la demande"
+    },
+    {
+      "id": 324,
+      "start": 1224.26,
+      "end": 1236.24,
+      "text": "il y a deux agents"
+    },
+    {
+      "id": 325,
+      "start": 1236.24,
+      "end": 1237.24,
+      "text": "qui ont terminé"
+    },
+    {
+      "id": 326,
+      "start": 1237.24,
+      "end": 1238.27,
+      "text": "sur cinq"
+    },
+    {
+      "id": 327,
+      "start": 1238.27,
+      "end": 1240.27,
+      "text": "donc si par exemple"
+    },
+    {
+      "id": 328,
+      "start": 1240.27,
+      "end": 1241.27,
+      "text": "je fais flèche du bas"
+    },
+    {
+      "id": 329,
+      "start": 1241.27,
+      "end": 1243.37,
+      "text": "là juste ici"
+    },
+    {
+      "id": 330,
+      "start": 1243.37,
+      "end": 1244.37,
+      "text": "on voit qu'il y a trois"
+    },
+    {
+      "id": 331,
+      "start": 1244.37,
+      "end": 1245.37,
+      "text": "local agents"
+    },
+    {
+      "id": 332,
+      "start": 1245.37,
+      "end": 1247.33,
+      "text": "donc là ils sont en train"
+    },
+    {
+      "id": 333,
+      "start": 1247.33,
+      "end": 1248.81,
+      "text": "comme on voit"
+    },
+    {
+      "id": 334,
+      "start": 1248.81,
+      "end": 1249.81,
+      "text": "une ligne"
+    },
+    {
+      "id": 335,
+      "start": 1249.81,
+      "end": 1250.87,
+      "text": "donc travailler"
+    },
+    {
+      "id": 336,
+      "start": 1250.87,
+      "end": 1251.87,
+      "text": "et une fois"
+    },
+    {
+      "id": 337,
+      "start": 1251.87,
+      "end": 1252.87,
+      "text": "qu'ils ont terminé"
+    },
+    {
+      "id": 338,
+      "start": 1252.87,
+      "end": 1253.9,
+      "text": "leurs tâches"
+    },
+    {
+      "id": 339,
+      "start": 1253.9,
+      "end": 1254.9,
+      "text": "eh bien CloudCode"
+    },
+    {
+      "id": 340,
+      "start": 1254.9,
+      "end": 1255.9,
+      "text": "va nous mentionner"
+    },
+    {
+      "id": 341,
+      "start": 1255.9,
+      "end": 1256.9,
+      "text": "que c'est bon"
+    },
+    {
+      "id": 342,
+      "start": 1256.9,
+      "end": 1257.9,
+      "text": "le fichier csv est prêt"
+    },
+    {
+      "id": 343,
+      "start": 1257.9,
+      "end": 1260.47,
+      "text": "et on va voir"
+    },
+    {
+      "id": 344,
+      "start": 1260.47,
+      "end": 1261.47,
+      "text": "directement"
+    },
+    {
+      "id": 345,
+      "start": 1261.47,
+      "end": 1272.9,
+      "text": "juste ici"
+    },
+    {
+      "id": 346,
+      "start": 1272.9,
+      "end": 1273.9,
+      "text": "je suis en train"
+    },
+    {
+      "id": 347,
+      "start": 1273.9,
+      "end": 1274.9,
+      "text": "d'écrire des lignes de code"
+    },
+    {
+      "id": 348,
+      "start": 1274.9,
+      "end": 1275.9,
+      "text": "là je lui ai demandé"
+    },
+    {
+      "id": 349,
+      "start": 1275.9,
+      "end": 1277.19,
+      "text": "de changer"
+    },
+    {
+      "id": 350,
+      "start": 1277.19,
+      "end": 1278.19,
+      "text": "du coup la couleur"
+    },
+    {
+      "id": 351,
+      "start": 1278.19,
+      "end": 1284.86,
+      "text": "ou l'util css"
+    },
+    {
+      "id": 352,
+      "start": 1284.86,
+      "end": 1310.78,
+      "text": "vous allez voir"
+    },
+    {
+      "id": 353,
+      "start": 1310.78,
+      "end": 1311.78,
+      "text": "au départ"
+    },
+    {
+      "id": 354,
+      "start": 1311.78,
+      "end": 1312.78,
+      "text": "c'est un petit peu"
+    },
+    {
+      "id": 355,
+      "start": 1312.78,
+      "end": 1313.78,
+      "text": "complexe"
+    },
+    {
+      "id": 356,
+      "start": 1313.78,
+      "end": 1314.78,
+      "text": "vous n'avez pas l'habitude"
+    },
+    {
+      "id": 357,
+      "start": 1314.78,
+      "end": 1315.78,
+      "text": "de travailler"
+    },
+    {
+      "id": 358,
+      "start": 1315.78,
+      "end": 1316.78,
+      "text": "sur un terminal"
+    },
+    {
+      "id": 359,
+      "start": 1316.78,
+      "end": 1317.78,
+      "text": "mais au fur et à mesure"
+    },
+    {
+      "id": 360,
+      "start": 1317.78,
+      "end": 1321.13,
+      "text": "en fait ça va vous paraître"
+    },
+    {
+      "id": 361,
+      "start": 1321.13,
+      "end": 1322.13,
+      "text": "très simple"
+    },
+    {
+      "id": 362,
+      "start": 1322.13,
+      "end": 1323.13,
+      "text": "parce que mis à part"
+    },
+    {
+      "id": 363,
+      "start": 1323.13,
+      "end": 1324.13,
+      "text": "faire des demandes"
+    },
+    {
+      "id": 364,
+      "start": 1324.13,
+      "end": 1325.13,
+      "text": "à CloudCode"
+    },
+    {
+      "id": 365,
+      "start": 1325.13,
+      "end": 1326.13,
+      "text": "vous n'avez pratiquement"
+    },
+    {
+      "id": 366,
+      "start": 1326.13,
+      "end": 1327.13,
+      "text": "rien à faire"
+    },
+    {
+      "id": 367,
+      "start": 1327.13,
+      "end": 1328.13,
+      "text": "le plus important"
+    },
+    {
+      "id": 368,
+      "start": 1328.13,
+      "end": 1329.13,
+      "text": "c'est vraiment"
+    },
+    {
+      "id": 369,
+      "start": 1329.13,
+      "end": 1330.13,
+      "text": "bien structurer"
+    },
+    {
+      "id": 370,
+      "start": 1330.13,
+      "end": 1331.13,
+      "text": "votre projet"
+    },
+    {
+      "id": 371,
+      "start": 1331.13,
+      "end": 1332.13,
+      "text": "avoir un bon système"
+    },
+    {
+      "id": 372,
+      "start": 1332.13,
+      "end": 1333.13,
+      "text": "de prompting"
+    },
+    {
+      "id": 373,
+      "start": 1333.13,
+      "end": 1334.38,
+      "text": "et comprendre"
+    },
+    {
+      "id": 374,
+      "start": 1334.38,
+      "end": 1335.38,
+      "text": "la réflexion"
+    },
+    {
+      "id": 375,
+      "start": 1335.38,
+      "end": 1336.38,
+      "text": "de CloudCode"
+    },
+    {
+      "id": 376,
+      "start": 1336.38,
+      "end": 1337.38,
+      "text": "pour arriver à votre objectif"
+    },
+    {
+      "id": 377,
+      "start": 1337.38,
+      "end": 1338.38,
+      "text": "le plus rapidement possible"
+    },
+    {
+      "id": 378,
+      "start": 1338.38,
+      "end": 1340.74,
+      "text": "et c'est ce qu'on va voir"
+    },
+    {
+      "id": 379,
+      "start": 1340.74,
+      "end": 1341.74,
+      "text": "tout au long"
+    },
+    {
+      "id": 380,
+      "start": 1341.74,
+      "end": 1346.22,
+      "text": "de la formation"
+    },
+    {
+      "id": 381,
+      "start": 1346.22,
+      "end": 1348.44,
+      "text": "donc là"
+    },
+    {
+      "id": 382,
+      "start": 1348.44,
+      "end": 1349.44,
+      "text": "on va bientôt terminer"
+    },
+    {
+      "id": 383,
+      "start": 1349.44,
+      "end": 1354.47,
+      "text": "parce que"
+    },
+    {
+      "id": 384,
+      "start": 1354.47,
+      "end": 1359.15,
+      "text": "pour le light mode"
+    },
+    {
+      "id": 385,
+      "start": 1359.15,
+      "end": 1360.15,
+      "text": "donc là il est en train"
+    },
+    {
+      "id": 386,
+      "start": 1360.15,
+      "end": 1361.15,
+      "text": "d'ajouter un light mode"
+    },
+    {
+      "id": 387,
+      "start": 1361.15,
+      "end": 1362.15,
+      "text": "top"
+    },
+    {
+      "id": 388,
+      "start": 1362.15,
+      "end": 1363.22,
+      "text": "on peut voir"
+    },
+    {
+      "id": 389,
+      "start": 1363.22,
+      "end": 1364.22,
+      "text": "que juste ici"
+    },
+    {
+      "id": 390,
+      "start": 1364.22,
+      "end": 1365.22,
+      "text": "on a 3 agents"
+    },
+    {
+      "id": 391,
+      "start": 1365.22,
+      "end": 1366.31,
+      "text": "qui ont terminé"
+    },
+    {
+      "id": 392,
+      "start": 1366.31,
+      "end": 1367.31,
+      "text": "donc là c'est super"
+    },
+    {
+      "id": 393,
+      "start": 1367.31,
+      "end": 1368.31,
+      "text": "on a fini"
+    },
+    {
+      "id": 394,
+      "start": 1368.31,
+      "end": 1370.72,
+      "text": "enfin CloudCode"
+    },
+    {
+      "id": 395,
+      "start": 1370.72,
+      "end": 1371.72,
+      "text": "a fini du coup"
+    },
+    {
+      "id": 396,
+      "start": 1371.72,
+      "end": 1372.78,
+      "text": "le site internet"
+    },
+    {
+      "id": 397,
+      "start": 1372.78,
+      "end": 1373.78,
+      "text": "il l'a bien remis"
+    },
+    {
+      "id": 398,
+      "start": 1373.78,
+      "end": 1375.65,
+      "text": "en full blanc"
+    },
+    {
+      "id": 399,
+      "start": 1375.65,
+      "end": 1390.41,
+      "text": "des itérations"
+    },
+    {
+      "id": 400,
+      "start": 1390.41,
+      "end": 1393.11,
+      "text": "pour arriver à une version"
+    },
+    {
+      "id": 401,
+      "start": 1393.11,
+      "end": 1396.54,
+      "text": "qui est"
+    },
+    {
+      "id": 402,
+      "start": 1396.54,
+      "end": 1397.54,
+      "text": "je clique dessus"
+    },
+    {
+      "id": 403,
+      "start": 1397.54,
+      "end": 1399.38,
+      "text": "ça va bien m'envoyer"
+    },
+    {
+      "id": 404,
+      "start": 1399.38,
+      "end": 1400.38,
+      "text": "après je ne vais pas donner le bon lien"
+    },
+    {
+      "id": 405,
+      "start": 1400.38,
+      "end": 1401.38,
+      "text": "mais vers Linkedin"
+    },
+    {
+      "id": 406,
+      "start": 1401.38,
+      "end": 1402.41,
+      "text": "voilà le lien que j'ai mis"
+    },
+    {
+      "id": 407,
+      "start": 1402.41,
+      "end": 1403.41,
+      "text": "vous pouvez très bien aussi"
+    },
+    {
+      "id": 408,
+      "start": 1403.41,
+      "end": 1407.14,
+      "text": "envoyer un screen à CloudCode"
+    },
+    {
+      "id": 409,
+      "start": 1407.14,
+      "end": 1408.97,
+      "text": "votre tête"
+    },
+    {
+      "id": 410,
+      "start": 1408.97,
+      "end": 1410.1,
+      "text": "pour qu'il l'ajoute"
+    },
+    {
+      "id": 411,
+      "start": 1410.1,
+      "end": 1411.42,
+      "text": "automatiquement"
+    },
+    {
+      "id": 412,
+      "start": 1411.42,
+      "end": 1419.81,
+      "text": "maintenant"
+    },
+    {
+      "id": 413,
+      "start": 1419.81,
+      "end": 1421.22,
+      "text": "comme vous l'avez vu"
+    },
+    {
+      "id": 414,
+      "start": 1421.22,
+      "end": 1422.22,
+      "text": "c'est un dialogue"
+    },
+    {
+      "id": 415,
+      "start": 1422.22,
+      "end": 1423.22,
+      "text": "ça ne va pas être un formulaire"
+    },
+    {
+      "id": 416,
+      "start": 1423.22,
+      "end": 1424.22,
+      "text": "donc si je lui dis"
+    },
+    {
+      "id": 417,
+      "start": 1424.22,
+      "end": 1425.22,
+      "text": "de créer un fichier HTML"
+    },
+    {
+      "id": 418,
+      "start": 1425.22,
+      "end": 1426.22,
+      "text": "avec un titre mon site"
+    },
+    {
+      "id": 419,
+      "start": 1426.22,
+      "end": 1428.22,
+      "text": "il va le faire directement"
+    },
+    {
+      "id": 420,
+      "start": 1428.22,
+      "end": 1430.12,
+      "text": "il va créer des vrais fichiers"
+    },
+    {
+      "id": 421,
+      "start": 1430.12,
+      "end": 1431.12,
+      "text": "on l'a vu aussi"
+    },
+    {
+      "id": 422,
+      "start": 1431.12,
+      "end": 1436.15,
+      "text": "je l'ai créé"
+    },
+    {
+      "id": 423,
+      "start": 1436.15,
+      "end": 1452.96,
+      "text": "usage"
+    },
+    {
+      "id": 424,
+      "start": 1452.96,
+      "end": 1454.47,
+      "text": "extra usage"
+    },
+    {
+      "id": 425,
+      "start": 1454.47,
+      "end": 1462.14,
+      "text": "utilisé 22%"
+    },
+    {
+      "id": 426,
+      "start": 1462.14,
+      "end": 1463.14,
+      "text": "aujourd'hui"
+    },
+    {
+      "id": 427,
+      "start": 1463.14,
+      "end": 1464.14,
+      "text": "donc ça va se réinitialiser"
+    },
+    {
+      "id": 428,
+      "start": 1464.14,
+      "end": 1465.14,
+      "text": "dans 24 minutes"
+    },
+    {
+      "id": 429,
+      "start": 1465.14,
+      "end": 1467.14,
+      "text": "et on a une partie"
+    },
+    {
+      "id": 430,
+      "start": 1467.14,
+      "end": 1468.14,
+      "text": "qui se réinitialise"
+    },
+    {
+      "id": 431,
+      "start": 1468.14,
+      "end": 1470.14,
+      "text": "tous les lundis à 11h"
+    },
+    {
+      "id": 432,
+      "start": 1470.14,
+      "end": 1472.14,
+      "text": "donc là j'ai utilisé 30%"
+    },
+    {
+      "id": 433,
+      "start": 1472.14,
+      "end": 1473.14,
+      "text": "donc je suis assez safe"
+    },
+    {
+      "id": 434,
+      "start": 1473.14,
+      "end": 1474.14,
+      "text": "en termes de taille"
+    },
+    {
+      "id": 435,
+      "start": 1474.14,
+      "end": 1475.14,
+      "text": "et là on a la partie"
+    },
+    {
+      "id": 436,
+      "start": 1475.14,
+      "end": 1476.14,
+      "text": "usage supplémentaire"
+    },
+    {
+      "id": 437,
+      "start": 1476.14,
+      "end": 1478.68,
+      "text": "ça c'est quand tout simplement"
+    },
+    {
+      "id": 438,
+      "start": 1478.68,
+      "end": 1480.19,
+      "text": "j'ai trop utilisé"
+    },
+    {
+      "id": 439,
+      "start": 1480.19,
+      "end": 1481.8,
+      "text": "bonnement"
+    },
+    {
+      "id": 440,
+      "start": 1481.8,
+      "end": 1482.8,
+      "text": "j'utilise par API"
+    },
+    {
+      "id": 441,
+      "start": 1482.8,
+      "end": 1485.02,
+      "text": "mais ça vous n'allez pas avoir besoin"
+    },
+    {
+      "id": 442,
+      "start": 1485.02,
+      "end": 1487.08,
+      "text": "parce que je travaille"
+    },
+    {
+      "id": 443,
+      "start": 1487.08,
+      "end": 1488.08,
+      "text": "avec beaucoup de clients"
+    },
+    {
+      "id": 444,
+      "start": 1488.08,
+      "end": 1489.08,
+      "text": "et du coup je suis obligé parfois"
+    },
+    {
+      "id": 445,
+      "start": 1489.08,
+      "end": 1490.56,
+      "text": "de travailler"
+    },
+    {
+      "id": 446,
+      "start": 1490.56,
+      "end": 1492.39,
+      "text": "donc voilà"
+    },
+    {
+      "id": 447,
+      "start": 1492.39,
+      "end": 1498.55,
+      "text": "voir comment bien lui parler"
+    },
+    {
+      "id": 448,
+      "start": 1498.55,
+      "end": 1499.55,
+      "text": "donc comme vous l'avez vu"
+    },
+    {
+      "id": 449,
+      "start": 1499.55,
+      "end": 1500.55,
+      "text": "là je suis allé sur des promes"
+    },
+    {
+      "id": 450,
+      "start": 1500.55,
+      "end": 1501.55,
+      "text": "basiques"
+    },
+    {
+      "id": 451,
+      "start": 1501.55,
+      "end": 1503.1,
+      "text": "donc la règle numéro 1"
+    },
+    {
+      "id": 452,
+      "start": 1503.1,
+      "end": 1504.1,
+      "text": "c'est être vraiment précis"
+    },
+    {
+      "id": 453,
+      "start": 1504.1,
+      "end": 1505.1,
+      "text": "donc fais moi un site"
+    },
+    {
+      "id": 454,
+      "start": 1505.1,
+      "end": 1506.1,
+      "text": "ça ne va pas être top"
+    },
+    {
+      "id": 455,
+      "start": 1506.1,
+      "end": 1507.1,
+      "text": "il ne va pas comprendre"
+    },
+    {
+      "id": 456,
+      "start": 1507.1,
+      "end": 1508.1,
+      "text": "il va te faire un site basique"
+    },
+    {
+      "id": 457,
+      "start": 1508.1,
+      "end": 1509.1,
+      "text": "on ne sait même pas"
+    },
+    {
+      "id": 458,
+      "start": 1509.1,
+      "end": 1510.1,
+      "text": "sur quel secteur d'activité"
+    },
+    {
+      "id": 459,
+      "start": 1510.1,
+      "end": 1511.1,
+      "text": "il va aller etc"
+    },
+    {
+      "id": 460,
+      "start": 1511.1,
+      "end": 1512.1,
+      "text": "donc c'est là où derrière"
+    },
+    {
+      "id": 461,
+      "start": 1512.1,
+      "end": 1513.1,
+      "text": "il va quand même nous poser"
+    },
+    {
+      "id": 462,
+      "start": 1513.1,
+      "end": 1514.1,
+      "text": "des questions par la suite"
+    },
+    {
+      "id": 463,
+      "start": 1514.1,
+      "end": 1517.3,
+      "text": "pour le souhaiter réellement"
+    },
+    {
+      "id": 464,
+      "start": 1517.3,
+      "end": 1519.85,
+      "text": "c'est pour ça qu'il faut être vraiment précis"
+    },
+    {
+      "id": 465,
+      "start": 1519.85,
+      "end": 1520.85,
+      "text": "créez moi un site vitrine"
+    },
+    {
+      "id": 466,
+      "start": 1520.85,
+      "end": 1521.85,
+      "text": "pour un plombier à Lyon"
+    },
+    {
+      "id": 467,
+      "start": 1521.85,
+      "end": 1522.85,
+      "text": "là on lui donne l'information"
+    },
+    {
+      "id": 468,
+      "start": 1522.85,
+      "end": 1525.74,
+      "text": "à un plombier"
+    },
+    {
+      "id": 469,
+      "start": 1525.74,
+      "end": 1526.74,
+      "text": "et que c'est à Lyon"
+    },
+    {
+      "id": 470,
+      "start": 1526.74,
+      "end": 1528.77,
+      "text": "il nous faut une page d'accueil"
+    },
+    {
+      "id": 471,
+      "start": 1528.77,
+      "end": 1529.77,
+      "text": "avec un héros"
+    },
+    {
+      "id": 472,
+      "start": 1529.77,
+      "end": 1530.77,
+      "text": "service avec 4 cartes"
+    },
+    {
+      "id": 473,
+      "start": 1530.77,
+      "end": 1531.77,
+      "text": "formulaire de contact"
+    },
+    {
+      "id": 474,
+      "start": 1531.77,
+      "end": 1532.77,
+      "text": "là il va vraiment nous créer"
+    },
+    {
+      "id": 475,
+      "start": 1532.77,
+      "end": 1533.77,
+      "text": "ce qu'on lui a demandé"
+    },
+    {
+      "id": 476,
+      "start": 1533.77,
+      "end": 1536.06,
+      "text": "ensuite la règle numéro 2"
+    },
+    {
+      "id": 477,
+      "start": 1536.06,
+      "end": 1537.06,
+      "text": "c'est de lui donner du contexte"
+    },
+    {
+      "id": 478,
+      "start": 1537.06,
+      "end": 1538.06,
+      "text": "on va lui dire"
+    },
+    {
+      "id": 479,
+      "start": 1538.06,
+      "end": 1539.89,
+      "text": "pour qui"
+    },
+    {
+      "id": 480,
+      "start": 1539.89,
+      "end": 1540.89,
+      "text": "pourquoi"
+    },
+    {
+      "id": 481,
+      "start": 1540.89,
+      "end": 1541.89,
+      "text": "quel style"
+    },
+    {
+      "id": 482,
+      "start": 1541.89,
+      "end": 1543.89,
+      "text": "plus il sait mieux c'est"
+    },
+    {
+      "id": 483,
+      "start": 1543.89,
+      "end": 1544.89,
+      "text": "c'est pas"
+    },
+    {
+      "id": 484,
+      "start": 1544.89,
+      "end": 1546.82,
+      "text": "ça va servir à rien"
+    },
+    {
+      "id": 485,
+      "start": 1546.82,
+      "end": 1547.82,
+      "text": "de créer un prompt"
+    },
+    {
+      "id": 486,
+      "start": 1547.82,
+      "end": 1548.82,
+      "text": "de 600 euros"
+    },
+    {
+      "id": 487,
+      "start": 1548.82,
+      "end": 1549.82,
+      "text": "là il va se perdre"
+    },
+    {
+      "id": 488,
+      "start": 1549.82,
+      "end": 1550.82,
+      "text": "il va commencer à halluciner"
+    },
+    {
+      "id": 489,
+      "start": 1550.82,
+      "end": 1551.82,
+      "text": "il va sortir"
+    },
+    {
+      "id": 490,
+      "start": 1551.82,
+      "end": 1553.3,
+      "text": "votre demande"
+    },
+    {
+      "id": 491,
+      "start": 1553.3,
+      "end": 1554.3,
+      "text": "et réaliser quelque chose"
+    },
+    {
+      "id": 492,
+      "start": 1554.3,
+      "end": 1555.3,
+      "text": "qui n'a rien à voir"
+    },
+    {
+      "id": 493,
+      "start": 1555.3,
+      "end": 1556.3,
+      "text": "donc c'est pour ça qu'il va"
+    },
+    {
+      "id": 494,
+      "start": 1556.3,
+      "end": 1557.3,
+      "text": "bien falloir"
+    },
+    {
+      "id": 495,
+      "start": 1557.3,
+      "end": 1558.3,
+      "text": "structurer notre prompt"
+    },
+    {
+      "id": 496,
+      "start": 1558.3,
+      "end": 1561.06,
+      "text": "ce qu'on va voir au fur et à mesure"
+    },
+    {
+      "id": 497,
+      "start": 1561.06,
+      "end": 1562.06,
+      "text": "de la formation"
+    },
+    {
+      "id": 498,
+      "start": 1562.06,
+      "end": 1563.67,
+      "text": "par exemple"
+    },
+    {
+      "id": 499,
+      "start": 1563.67,
+      "end": 1564.67,
+      "text": "s'il a derrière"
+    },
+    {
+      "id": 500,
+      "start": 1564.67,
+      "end": 1566.31,
+      "text": "de créer un script"
+    },
+    {
+      "id": 501,
+      "start": 1566.31,
+      "end": 1567.31,
+      "text": "d'une part"
+    },
+    {
+      "id": 502,
+      "start": 1567.31,
+      "end": 1568.31,
+      "text": "on lui donne l'information script"
+    },
+    {
+      "id": 503,
+      "start": 1568.31,
+      "end": 1571.14,
+      "text": "qu'on peut faire"
+    },
+    {
+      "id": 504,
+      "start": 1571.14,
+      "end": 1572.14,
+      "text": "ensuite"
+    },
+    {
+      "id": 505,
+      "start": 1572.14,
+      "end": 1573.14,
+      "text": "qu'il scrappe les restaurants"
+    },
+    {
+      "id": 506,
+      "start": 1573.14,
+      "end": 1574.14,
+      "text": "donc là"
+    },
+    {
+      "id": 507,
+      "start": 1574.14,
+      "end": 1575.2,
+      "text": "il va savoir que c'est les restaurants"
+    },
+    {
+      "id": 508,
+      "start": 1575.2,
+      "end": 1576.2,
+      "text": "c'est pas les plombiers"
+    },
+    {
+      "id": 509,
+      "start": 1576.2,
+      "end": 1577.2,
+      "text": "c'est pas les avocats etc"
+    },
+    {
+      "id": 510,
+      "start": 1577.2,
+      "end": 1578.2,
+      "text": "et de Lyon"
+    },
+    {
+      "id": 511,
+      "start": 1578.2,
+      "end": 1580.2,
+      "text": "donc on lui donne le secteur géographique"
+    },
+    {
+      "id": 512,
+      "start": 1580.2,
+      "end": 1584.28,
+      "text": "c'est seulement des leads de Lyon"
+    },
+    {
+      "id": 513,
+      "start": 1584.28,
+      "end": 1586.28,
+      "text": "récupérés seulement sur Google Maps"
+    },
+    {
+      "id": 514,
+      "start": 1586.28,
+      "end": 1587.28,
+      "text": "donc là il a toutes les informations"
+    },
+    {
+      "id": 515,
+      "start": 1587.28,
+      "end": 1588.28,
+      "text": "de ce qu'il doit faire"
+    },
+    {
+      "id": 516,
+      "start": 1588.28,
+      "end": 1589.41,
+      "text": "et ensuite"
+    },
+    {
+      "id": 517,
+      "start": 1589.41,
+      "end": 1591.95,
+      "text": "ce qu'on lui demande comme résultat"
+    },
+    {
+      "id": 518,
+      "start": 1591.95,
+      "end": 1594.4,
+      "text": "c'est qu'on veut les noms"
+    },
+    {
+      "id": 519,
+      "start": 1594.4,
+      "end": 1596.33,
+      "text": "l'adresse"
+    },
+    {
+      "id": 520,
+      "start": 1596.33,
+      "end": 1597.33,
+      "text": "les téléphones"
+    },
+    {
+      "id": 521,
+      "start": 1597.33,
+      "end": 1600.33,
+      "text": "et la note qu'il a sur Google Maps"
+    },
+    {
+      "id": 522,
+      "start": 1600.33,
+      "end": 1604.09,
+      "text": "une fois qu'il a toutes ces informations là"
+    },
+    {
+      "id": 523,
+      "start": 1604.09,
+      "end": 1605.25,
+      "text": "il nous font un CSV"
+    },
+    {
+      "id": 524,
+      "start": 1605.25,
+      "end": 1606.25,
+      "text": "qu'on va utiliser"
+    },
+    {
+      "id": 525,
+      "start": 1606.25,
+      "end": 1608.54,
+      "text": "pour le mettre sur Google Sheet"
+    },
+    {
+      "id": 526,
+      "start": 1608.54,
+      "end": 1610.08,
+      "text": "voilà la partie"
+    },
+    {
+      "id": 527,
+      "start": 1610.08,
+      "end": 1611.08,
+      "text": "avec beaucoup de contexte"
+    },
+    {
+      "id": 528,
+      "start": 1611.08,
+      "end": 1612.08,
+      "text": "un prompt tout simple"
+    },
+    {
+      "id": 529,
+      "start": 1612.08,
+      "end": 1613.08,
+      "text": "court"
+    },
+    {
+      "id": 530,
+      "start": 1613.08,
+      "end": 1614.4,
+      "text": "derrière"
+    },
+    {
+      "id": 531,
+      "start": 1614.4,
+      "end": 1615.4,
+      "text": "on est sûr qu'il va pas se tromper"
+    },
+    {
+      "id": 532,
+      "start": 1615.4,
+      "end": 1616.4,
+      "text": "et la règle numéro 3"
+    },
+    {
+      "id": 533,
+      "start": 1616.4,
+      "end": 1617.4,
+      "text": "sur des gros projets"
+    },
+    {
+      "id": 534,
+      "start": 1617.4,
+      "end": 1619.4,
+      "text": "ça va être d'itérer"
+    },
+    {
+      "id": 535,
+      "start": 1619.4,
+      "end": 1620.78,
+      "text": "on lui donne une instruction"
+    },
+    {
+      "id": 536,
+      "start": 1620.78,
+      "end": 1622.2,
+      "text": "juste ici"
+    },
+    {
+      "id": 537,
+      "start": 1622.2,
+      "end": 1624.58,
+      "text": "on regarde les résultats"
+    },
+    {
+      "id": 538,
+      "start": 1624.58,
+      "end": 1626.57,
+      "text": "si ça nous plait pas"
+    },
+    {
+      "id": 539,
+      "start": 1626.57,
+      "end": 1627.57,
+      "text": "change ça"
+    },
+    {
+      "id": 540,
+      "start": 1627.57,
+      "end": 1628.57,
+      "text": "ajoute ça"
+    },
+    {
+      "id": 541,
+      "start": 1628.57,
+      "end": 1629.57,
+      "text": "enlève ça"
+    },
+    {
+      "id": 542,
+      "start": 1629.57,
+      "end": 1630.57,
+      "text": "tu re-regarde"
+    },
+    {
+      "id": 543,
+      "start": 1630.57,
+      "end": 1631.57,
+      "text": "et quand c'est bon"
+    },
+    {
+      "id": 544,
+      "start": 1631.57,
+      "end": 1632.57,
+      "text": "on peut passer"
+    },
+    {
+      "id": 545,
+      "start": 1632.57,
+      "end": 1633.57,
+      "text": "à la prochaine phase"
+    },
+    {
+      "id": 546,
+      "start": 1633.57,
+      "end": 1635.66,
+      "text": "donc là on va parler"
+    },
+    {
+      "id": 547,
+      "start": 1635.66,
+      "end": 1638.96,
+      "text": "par la suite"
+    },
+    {
+      "id": 548,
+      "start": 1638.96,
+      "end": 1640.06,
+      "text": "fichiers MD"
+    },
+    {
+      "id": 549,
+      "start": 1640.06,
+      "end": 1641.06,
+      "text": "tout d'abord on va voir"
+    },
+    {
+      "id": 550,
+      "start": 1641.06,
+      "end": 1642.66,
+      "text": "un petit peu"
+    },
+    {
+      "id": 551,
+      "start": 1642.66,
+      "end": 1643.66,
+      "text": "les résultats"
+    },
+    {
+      "id": 552,
+      "start": 1643.66,
+      "end": 1661.59,
+      "text": "donc ça"
+    },
+    {
+      "id": 553,
+      "start": 1661.59,
+      "end": 1663.42,
+      "text": "par défaut"
+    },
+    {
+      "id": 554,
+      "start": 1663.42,
+      "end": 1665.84,
+      "text": "on peut voir juste ici en bas"
+    },
+    {
+      "id": 555,
+      "start": 1665.84,
+      "end": 1666.87,
+      "text": "height effort"
+    },
+    {
+      "id": 556,
+      "start": 1666.87,
+      "end": 1671.65,
+      "text": "on peut très bien réduire"
+    },
+    {
+      "id": 557,
+      "start": 1671.65,
+      "end": 1673.64,
+      "text": "si j'ai plus de token"
+    },
+    {
+      "id": 558,
+      "start": 1673.64,
+      "end": 1675.64,
+      "text": "on peut partir en medium effort"
+    },
+    {
+      "id": 559,
+      "start": 1675.64,
+      "end": 1676.64,
+      "text": "en low effort"
+    },
+    {
+      "id": 560,
+      "start": 1676.64,
+      "end": 1678.79,
+      "text": "moi je pars directement"
+    },
+    {
+      "id": 561,
+      "start": 1678.79,
+      "end": 1681.3,
+      "text": "sur le plus puissant"
+    },
+    {
+      "id": 562,
+      "start": 1681.3,
+      "end": 1682.3,
+      "text": "donc max effort"
+    },
+    {
+      "id": 563,
+      "start": 1682.3,
+      "end": 1684.68,
+      "text": "je vous conseille de faire de même"
+    },
+    {
+      "id": 564,
+      "start": 1684.68,
+      "end": 1685.68,
+      "text": "ok sur entrée"
+    },
+    {
+      "id": 565,
+      "start": 1685.68,
+      "end": 1687.19,
+      "text": "si derrière"
+    },
+    {
+      "id": 566,
+      "start": 1687.19,
+      "end": 1689.8,
+      "text": "vous voulez changer de modèle"
+    },
+    {
+      "id": 567,
+      "start": 1689.8,
+      "end": 1692.12,
+      "text": "sonner 4.6"
+    },
+    {
+      "id": 568,
+      "start": 1692.12,
+      "end": 1693.15,
+      "text": "avec un million de contexte"
+    },
+    {
+      "id": 569,
+      "start": 1693.15,
+      "end": 1694.15,
+      "text": "ou sonner directement"
+    },
+    {
+      "id": 570,
+      "start": 1694.15,
+      "end": 1695.15,
+      "text": "celui-ci"
+    },
+    {
+      "id": 571,
+      "start": 1695.15,
+      "end": 1696.6,
+      "text": "je crois que celui-ci"
+    },
+    {
+      "id": 572,
+      "start": 1696.6,
+      "end": 1698.6,
+      "text": "il a 5 millions de contexte"
+    },
+    {
+      "id": 573,
+      "start": 1698.6,
+      "end": 1700.02,
+      "text": "lui il a 1 million de contexte"
+    },
+    {
+      "id": 574,
+      "start": 1700.02,
+      "end": 1701.02,
+      "text": "le contexte c'est quoi ?"
+    },
+    {
+      "id": 575,
+      "start": 1701.02,
+      "end": 1703.3,
+      "text": "c'est la mémoire de code code"
+    },
+    {
+      "id": 576,
+      "start": 1703.3,
+      "end": 1705.3,
+      "text": "si derrière"
+    },
+    {
+      "id": 577,
+      "start": 1705.3,
+      "end": 1706.33,
+      "text": "je sais pas"
+    },
+    {
+      "id": 578,
+      "start": 1706.33,
+      "end": 1707.33,
+      "text": "on travaille avec lui"
+    },
+    {
+      "id": 579,
+      "start": 1707.33,
+      "end": 1708.33,
+      "text": "pendant une heure"
+    },
+    {
+      "id": 580,
+      "start": 1708.33,
+      "end": 1711.73,
+      "text": "ça va pas se reset"
+    },
+    {
+      "id": 581,
+      "start": 1711.73,
+      "end": 1712.73,
+      "text": "du coup"
+    },
+    {
+      "id": 582,
+      "start": 1712.73,
+      "end": 1713.73,
+      "text": "on va pouvoir travailler"
+    },
+    {
+      "id": 583,
+      "start": 1713.73,
+      "end": 1714.98,
+      "text": "avec lui bon temps"
+    },
+    {
+      "id": 584,
+      "start": 1714.98,
+      "end": 1715.98,
+      "text": "avec beaucoup de contexte"
+    },
+    {
+      "id": 585,
+      "start": 1715.98,
+      "end": 1716.98,
+      "text": "et il va comprendre constamment"
+    },
+    {
+      "id": 586,
+      "start": 1716.98,
+      "end": 1717.98,
+      "text": "les axes d'amélioration"
+    },
+    {
+      "id": 587,
+      "start": 1717.98,
+      "end": 1718.98,
+      "text": "qu'on souhaite"
+    },
+    {
+      "id": 588,
+      "start": 1718.98,
+      "end": 1720.98,
+      "text": "plus souvent on a juste"
+    },
+    {
+      "id": 589,
+      "start": 1720.98,
+      "end": 1721.98,
+      "text": "un million de contexte"
+    },
+    {
+      "id": 590,
+      "start": 1721.98,
+      "end": 1722.98,
+      "text": "c'est déjà énorme"
+    },
+    {
+      "id": 591,
+      "start": 1722.98,
+      "end": 1725.29,
+      "text": "on peut voir juste à droite"
+    },
+    {
+      "id": 592,
+      "start": 1725.29,
+      "end": 1726.29,
+      "text": "par contre il est toujours"
+    },
+    {
+      "id": 593,
+      "start": 1726.29,
+      "end": 1727.29,
+      "text": "en train de travailler"
+    },
+    {
+      "id": 594,
+      "start": 1727.29,
+      "end": 1730.25,
+      "text": "au niveau de l'étude de marché"
+    },
+    {
+      "id": 595,
+      "start": 1730.25,
+      "end": 1731.25,
+      "text": "donc maintenant"
+    },
+    {
+      "id": 596,
+      "start": 1731.25,
+      "end": 1733.37,
+      "text": "ce qu'on va faire"
+    },
+    {
+      "id": 597,
+      "start": 1733.37,
+      "end": 1735.01,
+      "text": "c'est qu'on va sectionner"
+    },
+    {
+      "id": 598,
+      "start": 1735.01,
+      "end": 1736.01,
+      "text": "on va parler de la partie"
+    },
+    {
+      "id": 599,
+      "start": 1736.01,
+      "end": 1737.23,
+      "text": "MD"
+    },
+    {
+      "id": 600,
+      "start": 1737.23,
+      "end": 1738.23,
+      "text": "donc le fichier MD"
+    },
+    {
+      "id": 601,
+      "start": 1738.23,
+      "end": 1739.23,
+      "text": "c'est un fichier texte"
+    },
+    {
+      "id": 602,
+      "start": 1739.23,
+      "end": 1740.23,
+      "text": "que tu mets dans ton projet"
+    },
+    {
+      "id": 603,
+      "start": 1740.23,
+      "end": 1741.23,
+      "text": "donc notre projet"
+    },
+    {
+      "id": 604,
+      "start": 1741.23,
+      "end": 1742.23,
+      "text": "c'est notre dossier"
+    },
+    {
+      "id": 605,
+      "start": 1742.23,
+      "end": 1743.23,
+      "text": "juste ici"
+    },
+    {
+      "id": 606,
+      "start": 1743.23,
+      "end": 1745.38,
+      "text": "et ensuite"
+    },
+    {
+      "id": 607,
+      "start": 1745.38,
+      "end": 1746.38,
+      "text": "cloud code"
+    },
+    {
+      "id": 608,
+      "start": 1746.38,
+      "end": 1747.38,
+      "text": "lit automatiquement chaque session"
+    },
+    {
+      "id": 609,
+      "start": 1747.38,
+      "end": 1748.38,
+      "text": "et du coup"
+    },
+    {
+      "id": 610,
+      "start": 1748.38,
+      "end": 1749.38,
+      "text": "il va savoir"
+    },
+    {
+      "id": 611,
+      "start": 1749.38,
+      "end": 1752.27,
+      "text": "ce que je fais actuellement"
+    },
+    {
+      "id": 612,
+      "start": 1752.27,
+      "end": 1754.27,
+      "text": "et comment je veux bosser"
+    },
+    {
+      "id": 613,
+      "start": 1754.27,
+      "end": 1755.62,
+      "text": "plus besoin de répéter"
+    },
+    {
+      "id": 614,
+      "start": 1755.62,
+      "end": 1756.62,
+      "text": "constamment le code"
+    },
+    {
+      "id": 615,
+      "start": 1756.62,
+      "end": 1758.65,
+      "text": "donc si"
+    },
+    {
+      "id": 616,
+      "start": 1758.65,
+      "end": 1765.34,
+      "text": "il va le faire"
+    },
+    {
+      "id": 617,
+      "start": 1765.34,
+      "end": 1766.34,
+      "text": "ensuite on va l'ouvrir"
+    },
+    {
+      "id": 618,
+      "start": 1766.34,
+      "end": 1767.34,
+      "text": "fais moi"
+    },
+    {
+      "id": 619,
+      "start": 1767.34,
+      "end": 1791.96,
+      "text": "il fait chier"
+    },
+    {
+      "id": 620,
+      "start": 1791.96,
+      "end": 1792.96,
+      "text": "il a trouvé un pattern"
+    },
+    {
+      "id": 621,
+      "start": 1792.96,
+      "end": 1793.96,
+      "text": "donc le pattern"
+    },
+    {
+      "id": 622,
+      "start": 1793.96,
+      "end": 1805.84,
+      "text": "c'est notre site"
+    },
+    {
+      "id": 623,
+      "start": 1805.84,
+      "end": 1806.84,
+      "text": "il a déjà créé leur ennemi"
+    },
+    {
+      "id": 624,
+      "start": 1806.84,
+      "end": 1808.84,
+      "text": "donc on va pouvoir très bien"
+    },
+    {
+      "id": 625,
+      "start": 1808.84,
+      "end": 1809.94,
+      "text": "l'ouvrir"
+    },
+    {
+      "id": 626,
+      "start": 1809.94,
+      "end": 1810.94,
+      "text": "comme on peut voir"
+    },
+    {
+      "id": 627,
+      "start": 1810.94,
+      "end": 1811.94,
+      "text": "derrière"
+    },
+    {
+      "id": 628,
+      "start": 1811.94,
+      "end": 1813.0,
+      "text": "il est juste ici"
+    },
+    {
+      "id": 629,
+      "start": 1813.0,
+      "end": 1814.0,
+      "text": "dans notre dossier"
+    },
+    {
+      "id": 630,
+      "start": 1814.0,
+      "end": 1815.0,
+      "text": "donc il l'a créé directement"
+    },
+    {
+      "id": 631,
+      "start": 1815.0,
+      "end": 1816.0,
+      "text": "encore une fois"
+    },
+    {
+      "id": 632,
+      "start": 1816.0,
+      "end": 1817.0,
+      "text": "dans notre dossier"
+    },
+    {
+      "id": 633,
+      "start": 1817.0,
+      "end": 1818.0,
+      "text": "si je fais clic droit"
+    },
+    {
+      "id": 634,
+      "start": 1818.0,
+      "end": 1819.13,
+      "text": "clic gauche pardon"
+    },
+    {
+      "id": 635,
+      "start": 1819.13,
+      "end": 1820.13,
+      "text": "ouvrir"
+    },
+    {
+      "id": 636,
+      "start": 1820.13,
+      "end": 1821.51,
+      "text": "avec"
+    },
+    {
+      "id": 637,
+      "start": 1821.51,
+      "end": 1822.51,
+      "text": "text edit"
+    },
+    {
+      "id": 638,
+      "start": 1822.51,
+      "end": 1824.95,
+      "text": "on peut voir"
+    },
+    {
+      "id": 639,
+      "start": 1824.95,
+      "end": 1825.95,
+      "text": "que derrière"
+    },
+    {
+      "id": 640,
+      "start": 1825.95,
+      "end": 1826.95,
+      "text": "Baptistefort"
+    },
+    {
+      "id": 641,
+      "start": 1826.95,
+      "end": 1828.02,
+      "text": "site freelance"
+    },
+    {
+      "id": 642,
+      "start": 1828.02,
+      "end": 1829.02,
+      "text": "automatisation"
+    },
+    {
+      "id": 643,
+      "start": 1829.02,
+      "end": 1830.02,
+      "text": "il y a"
+    },
+    {
+      "id": 644,
+      "start": 1830.02,
+      "end": 1831.02,
+      "text": "site vitrine personnelle"
+    },
+    {
+      "id": 645,
+      "start": 1831.02,
+      "end": 1832.02,
+      "text": "et freelance en automatisation"
+    },
+    {
+      "id": 646,
+      "start": 1832.02,
+      "end": 1833.02,
+      "text": "il y a"
+    },
+    {
+      "id": 647,
+      "start": 1833.02,
+      "end": 1834.02,
+      "text": "donc là on voit la structure"
+    },
+    {
+      "id": 648,
+      "start": 1834.02,
+      "end": 1835.02,
+      "text": "du projet"
+    },
+    {
+      "id": 649,
+      "start": 1835.02,
+      "end": 1837.11,
+      "text": "donc index.html"
+    },
+    {
+      "id": 650,
+      "start": 1837.11,
+      "end": 1838.11,
+      "text": "style sss"
+    },
+    {
+      "id": 651,
+      "start": 1838.11,
+      "end": 1839.11,
+      "text": "effet etc"
+    },
+    {
+      "id": 652,
+      "start": 1839.11,
+      "end": 1840.11,
+      "text": "le style"
+    },
+    {
+      "id": 653,
+      "start": 1840.11,
+      "end": 1841.85,
+      "text": "design"
+    },
+    {
+      "id": 654,
+      "start": 1841.85,
+      "end": 1842.85,
+      "text": "le script js"
+    },
+    {
+      "id": 655,
+      "start": 1842.85,
+      "end": 1843.85,
+      "text": "pour les animations"
+    },
+    {
+      "id": 656,
+      "start": 1843.85,
+      "end": 1845.14,
+      "text": "du coup"
+    },
+    {
+      "id": 657,
+      "start": 1845.14,
+      "end": 1846.14,
+      "text": "le redmi ce fichier là"
+    },
+    {
+      "id": 658,
+      "start": 1846.14,
+      "end": 1848.51,
+      "text": "des sections"
+    },
+    {
+      "id": 659,
+      "start": 1848.51,
+      "end": 1852.01,
+      "text": "pour le service"
+    },
+    {
+      "id": 660,
+      "start": 1852.01,
+      "end": 1853.01,
+      "text": "la méthode"
+    },
+    {
+      "id": 661,
+      "start": 1853.01,
+      "end": 1854.01,
+      "text": "le cas client"
+    },
+    {
+      "id": 662,
+      "start": 1854.01,
+      "end": 1855.01,
+      "text": "les témoignages"
+    },
+    {
+      "id": 663,
+      "start": 1855.01,
+      "end": 1856.01,
+      "text": "à propos"
+    },
+    {
+      "id": 664,
+      "start": 1856.01,
+      "end": 1857.01,
+      "text": "et la partie contact"
+    },
+    {
+      "id": 665,
+      "start": 1857.01,
+      "end": 1859.01,
+      "text": "stack html css"
+    },
+    {
+      "id": 666,
+      "start": 1859.01,
+      "end": 1860.42,
+      "text": "donc utiliser"
+    },
+    {
+      "id": 667,
+      "start": 1860.42,
+      "end": 1862.78,
+      "text": "la police d'écriture"
+    },
+    {
+      "id": 668,
+      "start": 1862.78,
+      "end": 1863.78,
+      "text": "les icônes"
+    },
+    {
+      "id": 669,
+      "start": 1863.78,
+      "end": 1864.78,
+      "text": "les fonctionnalités"
+    },
+    {
+      "id": 670,
+      "start": 1864.78,
+      "end": 1865.78,
+      "text": "la personnalisation"
+    },
+    {
+      "id": 671,
+      "start": 1865.78,
+      "end": 1866.78,
+      "text": "les informations"
+    },
+    {
+      "id": 672,
+      "start": 1866.78,
+      "end": 1867.78,
+      "text": "à mettre à jour"
+    },
+    {
+      "id": 673,
+      "start": 1867.78,
+      "end": 1868.78,
+      "text": "email remplacer"
+    },
+    {
+      "id": 674,
+      "start": 1868.78,
+      "end": 1869.78,
+      "text": "contact"
+    },
+    {
+      "id": 675,
+      "start": 1869.78,
+      "end": 1870.78,
+      "text": "Baptistefort"
+    },
+    {
+      "id": 676,
+      "start": 1870.78,
+      "end": 1871.78,
+      "text": "dans index"
+    },
+    {
+      "id": 677,
+      "start": 1871.78,
+      "end": 1872.78,
+      "text": "donc voilà"
+    },
+    {
+      "id": 678,
+      "start": 1872.78,
+      "end": 1874.32,
+      "text": "là"
+    },
+    {
+      "id": 679,
+      "start": 1874.32,
+      "end": 1875.32,
+      "text": "l'objectif d'avoir"
+    },
+    {
+      "id": 680,
+      "start": 1875.32,
+      "end": 1876.32,
+      "text": "ce redmi là"
+    },
+    {
+      "id": 681,
+      "start": 1876.32,
+      "end": 1877.54,
+      "text": "c'est que si derrière"
+    },
+    {
+      "id": 682,
+      "start": 1877.54,
+      "end": 1878.54,
+      "text": "je quitte cette session"
+    },
+    {
+      "id": 683,
+      "start": 1878.54,
+      "end": 1879.54,
+      "text": "et que je la relance"
+    },
+    {
+      "id": 684,
+      "start": 1879.54,
+      "end": 1880.54,
+      "text": "par la suite"
+    },
+    {
+      "id": 685,
+      "start": 1880.54,
+      "end": 1881.61,
+      "text": "je vais lui dire"
+    },
+    {
+      "id": 686,
+      "start": 1881.61,
+      "end": 1882.61,
+      "text": "de lire le redmi"
+    },
+    {
+      "id": 687,
+      "start": 1882.61,
+      "end": 1883.61,
+      "text": "donc on va le faire"
+    },
+    {
+      "id": 688,
+      "start": 1883.61,
+      "end": 1888.06,
+      "text": "terminer"
+    },
+    {
+      "id": 689,
+      "start": 1888.06,
+      "end": 1891.34,
+      "text": "réouvrir du coup"
+    },
+    {
+      "id": 690,
+      "start": 1891.34,
+      "end": 1892.34,
+      "text": "une nouvelle session"
+    },
+    {
+      "id": 691,
+      "start": 1892.34,
+      "end": 1894.62,
+      "text": "comme on a fait tout à l'heure"
+    },
+    {
+      "id": 692,
+      "start": 1894.62,
+      "end": 1895.62,
+      "text": "clic gauche"
+    },
+    {
+      "id": 693,
+      "start": 1895.62,
+      "end": 1897.74,
+      "text": "nouveau terminal"
+    },
+    {
+      "id": 694,
+      "start": 1897.74,
+      "end": 1898.74,
+      "text": "au dossier"
+    },
+    {
+      "id": 695,
+      "start": 1898.74,
+      "end": 1901.77,
+      "text": "on tape la commande cloud"
+    },
+    {
+      "id": 696,
+      "start": 1901.77,
+      "end": 1902.83,
+      "text": "pour activer cloud code"
+    },
+    {
+      "id": 697,
+      "start": 1902.83,
+      "end": 1905.37,
+      "text": "et ensuite"
+    },
+    {
+      "id": 698,
+      "start": 1905.37,
+      "end": 1906.37,
+      "text": "il y a deux solutions"
+    },
+    {
+      "id": 699,
+      "start": 1906.37,
+      "end": 1907.37,
+      "text": "soit je lui dis"
+    },
+    {
+      "id": 700,
+      "start": 1907.37,
+      "end": 1913.39,
+      "text": "je peux très bien"
+    },
+    {
+      "id": 701,
+      "start": 1913.39,
+      "end": 1918.1,
+      "text": "faire ça"
+    },
+    {
+      "id": 702,
+      "start": 1918.1,
+      "end": 1919.1,
+      "text": "le fichier"
+    },
+    {
+      "id": 703,
+      "start": 1919.1,
+      "end": 1925.67,
+      "text": "il va le lire automatiquement"
+    },
+    {
+      "id": 704,
+      "start": 1925.67,
+      "end": 1926.67,
+      "text": "le redmi d'un site"
+    },
+    {
+      "id": 705,
+      "start": 1926.67,
+      "end": 1927.67,
+      "text": "vitine finance"
+    },
+    {
+      "id": 706,
+      "start": 1927.67,
+      "end": 1928.67,
+      "text": "pour Baptistefort"
+    },
+    {
+      "id": 707,
+      "start": 1928.67,
+      "end": 1929.67,
+      "text": "donc moi"
+    },
+    {
+      "id": 708,
+      "start": 1929.67,
+      "end": 1930.67,
+      "text": "spécialise en automatisation"
+    },
+    {
+      "id": 709,
+      "start": 1930.67,
+      "end": 1931.67,
+      "text": "il y a"
+    },
+    {
+      "id": 710,
+      "start": 1931.67,
+      "end": 1932.67,
+      "text": "projet"
+    },
+    {
+      "id": 711,
+      "start": 1932.67,
+      "end": 1933.67,
+      "text": "site statique"
+    },
+    {
+      "id": 712,
+      "start": 1933.67,
+      "end": 1934.67,
+      "text": "html"
+    },
+    {
+      "id": 713,
+      "start": 1934.67,
+      "end": 1935.67,
+      "text": "donc il a bien compris"
+    },
+    {
+      "id": 714,
+      "start": 1935.67,
+      "end": 1936.67,
+      "text": "le code qu'on avait"
+    },
+    {
+      "id": 715,
+      "start": 1936.67,
+      "end": 1938.54,
+      "text": "4 fichiers"
+    },
+    {
+      "id": 716,
+      "start": 1938.54,
+      "end": 1939.54,
+      "text": "7 sections"
+    },
+    {
+      "id": 717,
+      "start": 1939.54,
+      "end": 1941.27,
+      "text": "etc"
+    },
+    {
+      "id": 718,
+      "start": 1941.27,
+      "end": 1942.27,
+      "text": "chose à finaliser"
+    },
+    {
+      "id": 719,
+      "start": 1942.27,
+      "end": 1943.27,
+      "text": "selon le redmi"
+    },
+    {
+      "id": 720,
+      "start": 1943.27,
+      "end": 1944.27,
+      "text": "remplacer l'email"
+    },
+    {
+      "id": 721,
+      "start": 1944.27,
+      "end": 1945.27,
+      "text": "donc là"
+    },
+    {
+      "id": 722,
+      "start": 1945.27,
+      "end": 1946.27,
+      "text": "c'est superbe"
+    },
+    {
+      "id": 723,
+      "start": 1946.27,
+      "end": 1947.98,
+      "text": "il a bien compris"
+    },
+    {
+      "id": 724,
+      "start": 1947.98,
+      "end": 1948.98,
+      "text": "le lien twitter"
+    },
+    {
+      "id": 725,
+      "start": 1948.98,
+      "end": 1949.98,
+      "text": "remplacer les témoignages"
+    },
+    {
+      "id": 726,
+      "start": 1949.98,
+      "end": 1950.98,
+      "text": "par des vrais avis"
+    },
+    {
+      "id": 727,
+      "start": 1950.98,
+      "end": 1951.98,
+      "text": "connecter le formulaire"
+    },
+    {
+      "id": 728,
+      "start": 1951.98,
+      "end": 1952.98,
+      "text": "de contact"
+    },
+    {
+      "id": 729,
+      "start": 1952.98,
+      "end": 1953.98,
+      "text": "France prix"
+    },
+    {
+      "id": 730,
+      "start": 1953.98,
+      "end": 1954.98,
+      "text": "aux autres"
+    },
+    {
+      "id": 731,
+      "start": 1954.98,
+      "end": 1957.19,
+      "text": "on pourrait très bien"
+    },
+    {
+      "id": 732,
+      "start": 1957.19,
+      "end": 1958.19,
+      "text": "lui dire"
+    },
+    {
+      "id": 733,
+      "start": 1958.19,
+      "end": 1959.19,
+      "text": "remplace"
+    },
+    {
+      "id": 734,
+      "start": 1959.19,
+      "end": 1960.19,
+      "text": "l'adresse"
+    },
+    {
+      "id": 735,
+      "start": 1960.19,
+      "end": 1961.58,
+      "text": "email"
+    },
+    {
+      "id": 736,
+      "start": 1961.58,
+      "end": 1962.58,
+      "text": "par"
+    },
+    {
+      "id": 737,
+      "start": 1962.58,
+      "end": 1965.59,
+      "text": "arrobase"
+    },
+    {
+      "id": 738,
+      "start": 1965.59,
+      "end": 1984.35,
+      "text": "là on a terminé aussi"
+    },
+    {
+      "id": 739,
+      "start": 1984.35,
+      "end": 1986.35,
+      "text": "notre étude de marché"
+    },
+    {
+      "id": 740,
+      "start": 1986.35,
+      "end": 1988.35,
+      "text": "avec 13 fichiers csv"
+    },
+    {
+      "id": 741,
+      "start": 1988.35,
+      "end": 1989.35,
+      "text": "41"
+    },
+    {
+      "id": 742,
+      "start": 1989.35,
+      "end": 1990.35,
+      "text": "codes de données"
+    },
+    {
+      "id": 743,
+      "start": 1990.35,
+      "end": 1991.35,
+      "text": "structurés"
+    },
+    {
+      "id": 744,
+      "start": 1991.35,
+      "end": 1993.15,
+      "text": "donc là"
+    },
+    {
+      "id": 745,
+      "start": 1993.15,
+      "end": 1994.15,
+      "text": "ce qui va être relou"
+    },
+    {
+      "id": 746,
+      "start": 1994.15,
+      "end": 1995.15,
+      "text": "c'est que si on a 14"
+    },
+    {
+      "id": 747,
+      "start": 1995.15,
+      "end": 1996.15,
+      "text": "fichiers csv"
+    },
+    {
+      "id": 748,
+      "start": 1996.15,
+      "end": 1997.15,
+      "text": "ça va être compliqué"
+    },
+    {
+      "id": 749,
+      "start": 1997.15,
+      "end": 1998.15,
+      "text": "donc là"
+    },
+    {
+      "id": 750,
+      "start": 1998.15,
+      "end": 1999.15,
+      "text": "ce qu'on va lui dire"
+    },
+    {
+      "id": 751,
+      "start": 1999.15,
+      "end": 2000.57,
+      "text": "tout simplement"
+    },
+    {
+      "id": 752,
+      "start": 2000.57,
+      "end": 2006.95,
+      "text": "un seul csv"
+    },
+    {
+      "id": 753,
+      "start": 2006.95,
+      "end": 2008.91,
+      "text": "exporté"
+    },
+    {
+      "id": 754,
+      "start": 2008.91,
+      "end": 2010.14,
+      "text": "directement"
+    },
+    {
+      "id": 755,
+      "start": 2010.14,
+      "end": 2011.14,
+      "text": "donc les deux"
+    },
+    {
+      "id": 756,
+      "start": 2011.14,
+      "end": 2021.06,
+      "text": "occurrences"
+    },
+    {
+      "id": 757,
+      "start": 2021.06,
+      "end": 2022.06,
+      "text": "dans html"
+    },
+    {
+      "id": 758,
+      "start": 2022.06,
+      "end": 2023.06,
+      "text": "ont été mises à jour"
+    },
+    {
+      "id": 759,
+      "start": 2023.06,
+      "end": 2024.06,
+      "text": "donc là on peut voir"
+    },
+    {
+      "id": 760,
+      "start": 2024.06,
+      "end": 2025.06,
+      "text": "qu'il a fini aussi"
+    },
+    {
+      "id": 761,
+      "start": 2025.06,
+      "end": 2026.06,
+      "text": "l'autre tâche"
+    },
+    {
+      "id": 762,
+      "start": 2026.06,
+      "end": 2027.8,
+      "text": "qu'on lui a demandé"
+    },
+    {
+      "id": 763,
+      "start": 2027.8,
+      "end": 2029.25,
+      "text": "la tâche"
+    },
+    {
+      "id": 764,
+      "start": 2029.25,
+      "end": 2032.42,
+      "text": "j'ai l'adresse email"
+    },
+    {
+      "id": 765,
+      "start": 2032.42,
+      "end": 2035.89,
+      "text": "mon dossier"
+    },
+    {
+      "id": 766,
+      "start": 2035.89,
+      "end": 2037.18,
+      "text": "Claude"
+    },
+    {
+      "id": 767,
+      "start": 2037.18,
+      "end": 2038.18,
+      "text": "clique sur index"
+    },
+    {
+      "id": 768,
+      "start": 2038.18,
+      "end": 2039.18,
+      "text": ".html"
+    },
+    {
+      "id": 769,
+      "start": 2039.18,
+      "end": 2049.33,
+      "text": "email"
+    },
+    {
+      "id": 770,
+      "start": 2049.33,
+      "end": 2065.34,
+      "text": "donc là il a bien"
+    },
+    {
+      "id": 771,
+      "start": 2065.34,
+      "end": 2066.34,
+      "text": "mis à jour"
+    },
+    {
+      "id": 772,
+      "start": 2066.34,
+      "end": 2067.34,
+      "text": "baptiste"
+    },
+    {
+      "id": 773,
+      "start": 2067.34,
+      "end": 2068.34,
+      "text": "arrobasevisionia.io"
+    },
+    {
+      "id": 774,
+      "start": 2068.34,
+      "end": 2069.34,
+      "text": "vous pouvez vraiment"
+    },
+    {
+      "id": 775,
+      "start": 2069.34,
+      "end": 2070.34,
+      "text": "modifier tout ce que"
+    },
+    {
+      "id": 776,
+      "start": 2070.34,
+      "end": 2071.34,
+      "text": "vous souhaitez"
+    },
+    {
+      "id": 777,
+      "start": 2071.34,
+      "end": 2073.23,
+      "text": "on peut changer la couleur"
+    },
+    {
+      "id": 778,
+      "start": 2073.23,
+      "end": 2074.23,
+      "text": "comme on l'a vu tout à l'heure"
+    },
+    {
+      "id": 779,
+      "start": 2074.23,
+      "end": 2075.23,
+      "text": "on peut changer"
+    },
+    {
+      "id": 780,
+      "start": 2075.23,
+      "end": 2077.23,
+      "text": "la taille des boutons"
+    },
+    {
+      "id": 781,
+      "start": 2077.23,
+      "end": 2079.23,
+      "text": "on peut changer le texte"
+    },
+    {
+      "id": 782,
+      "start": 2079.23,
+      "end": 2080.9,
+      "text": "on peut lui demander"
+    },
+    {
+      "id": 783,
+      "start": 2080.9,
+      "end": 2081.9,
+      "text": "de créer une nouvelle page"
+    },
+    {
+      "id": 784,
+      "start": 2081.9,
+      "end": 2082.9,
+      "text": "donc là"
+    },
+    {
+      "id": 785,
+      "start": 2082.9,
+      "end": 2083.9,
+      "text": "ça va être vraiment"
+    },
+    {
+      "id": 786,
+      "start": 2083.9,
+      "end": 2084.9,
+      "text": "un site basique"
+    },
+    {
+      "id": 787,
+      "start": 2084.9,
+      "end": 2085.9,
+      "text": "pas très poussé"
+    },
+    {
+      "id": 788,
+      "start": 2085.9,
+      "end": 2087.64,
+      "text": "on n'a pas utilisé"
+    },
+    {
+      "id": 789,
+      "start": 2087.64,
+      "end": 2088.64,
+      "text": "un bon système de prompting"
+    },
+    {
+      "id": 790,
+      "start": 2088.64,
+      "end": 2089.64,
+      "text": "ça on verra un petit peu plus"
+    },
+    {
+      "id": 791,
+      "start": 2089.64,
+      "end": 2090.64,
+      "text": "par la suite"
+    },
+    {
+      "id": 792,
+      "start": 2090.64,
+      "end": 2092.86,
+      "text": "et puis"
+    },
+    {
+      "id": 793,
+      "start": 2092.86,
+      "end": 2095.26,
+      "text": "on peut voir déjà"
+    },
+    {
+      "id": 794,
+      "start": 2095.26,
+      "end": 2096.26,
+      "text": "un petit peu"
+    },
+    {
+      "id": 795,
+      "start": 2096.26,
+      "end": 2097.26,
+      "text": "juste en 30 minutes"
+    },
+    {
+      "id": 796,
+      "start": 2097.26,
+      "end": 2098.26,
+      "text": "la puissance de cloud code"
+    },
+    {
+      "id": 797,
+      "start": 2098.26,
+      "end": 2099.26,
+      "text": "sur ce que vous pouvez faire"
+    },
+    {
+      "id": 798,
+      "start": 2099.26,
+      "end": 2100.26,
+      "text": "assez rapidement"
+    },
+    {
+      "id": 799,
+      "start": 2100.26,
+      "end": 2103.54,
+      "text": "on peut vous apporter"
+    },
+    {
+      "id": 800,
+      "start": 2103.54,
+      "end": 2104.54,
+      "text": "de la plus-value"
+    },
+    {
+      "id": 801,
+      "start": 2104.54,
+      "end": 2107.62,
+      "text": "donc CSV"
+    },
+    {
+      "id": 802,
+      "start": 2107.62,
+      "end": 2110.52,
+      "text": "déjà on a"
+    },
+    {
+      "id": 803,
+      "start": 2110.52,
+      "end": 2111.52,
+      "text": "un site web"
+    },
+    {
+      "id": 804,
+      "start": 2111.52,
+      "end": 2112.81,
+      "text": "plutôt qualitatif"
+    },
+    {
+      "id": 805,
+      "start": 2112.81,
+      "end": 2114.81,
+      "text": "ça reste quand même simple"
+    },
+    {
+      "id": 806,
+      "start": 2114.81,
+      "end": 2116.9,
+      "text": "avec des liens cliquables"
+    },
+    {
+      "id": 807,
+      "start": 2116.9,
+      "end": 2117.9,
+      "text": "on a une partie"
+    },
+    {
+      "id": 808,
+      "start": 2117.9,
+      "end": 2118.9,
+      "text": "étude de marché"
+    },
+    {
+      "id": 809,
+      "start": 2118.9,
+      "end": 2120.9,
+      "text": "qui a été terminée"
+    },
+    {
+      "id": 810,
+      "start": 2120.9,
+      "end": 2121.96,
+      "text": "on pourrait très bien"
+    },
+    {
+      "id": 811,
+      "start": 2121.96,
+      "end": 2122.96,
+      "text": "ensuite"
+    },
+    {
+      "id": 812,
+      "start": 2122.96,
+      "end": 2124.73,
+      "text": "créer une nouvelle session"
+    },
+    {
+      "id": 813,
+      "start": 2124.73,
+      "end": 2126.62,
+      "text": "et lui dire"
+    },
+    {
+      "id": 814,
+      "start": 2126.62,
+      "end": 2130.66,
+      "text": "travailler maintenant"
+    },
+    {
+      "id": 815,
+      "start": 2130.66,
+      "end": 2131.66,
+      "text": "sur"
+    },
+    {
+      "id": 816,
+      "start": 2131.66,
+      "end": 2133.7,
+      "text": "une stratégie de prospection"
+    },
+    {
+      "id": 817,
+      "start": 2133.7,
+      "end": 2134.82,
+      "text": "ou une stratégie"
+    },
+    {
+      "id": 818,
+      "start": 2134.82,
+      "end": 2138.74,
+      "text": "de récupération"
+    },
+    {
+      "id": 819,
+      "start": 2138.74,
+      "end": 2139.74,
+      "text": "de leads"
+    },
+    {
+      "id": 820,
+      "start": 2139.74,
+      "end": 2140.74,
+      "text": "automatique"
+    },
+    {
+      "id": 821,
+      "start": 2140.74,
+      "end": 2143.7,
+      "text": "on va pas aller trop"
+    },
+    {
+      "id": 822,
+      "start": 2143.7,
+      "end": 2145.08,
+      "text": "dans le complexe"
+    },
+    {
+      "id": 823,
+      "start": 2145.08,
+      "end": 2146.08,
+      "text": "sur cette première séance"
+    },
+    {
+      "id": 824,
+      "start": 2146.08,
+      "end": 2147.08,
+      "text": "là"
+    },
+    {
+      "id": 825,
+      "start": 2147.08,
+      "end": 2148.08,
+      "text": "j'ai pas envie"
+    },
+    {
+      "id": 826,
+      "start": 2148.08,
+      "end": 2149.08,
+      "text": "de vous perdre"
+    },
+    {
+      "id": 827,
+      "start": 2149.08,
+      "end": 2150.08,
+      "text": "mais le but"
+    },
+    {
+      "id": 828,
+      "start": 2150.08,
+      "end": 2152.04,
+      "text": "c'est vraiment voilà"
+    },
+    {
+      "id": 829,
+      "start": 2152.04,
+      "end": 2153.04,
+      "text": "de s'entraîner un petit peu"
+    },
+    {
+      "id": 830,
+      "start": 2153.04,
+      "end": 2154.04,
+      "text": "aussi de votre côté"
+    },
+    {
+      "id": 831,
+      "start": 2154.04,
+      "end": 2155.04,
+      "text": "donc créer votre propre"
+    },
+    {
+      "id": 832,
+      "start": 2155.04,
+      "end": 2156.04,
+      "text": "site internet"
+    },
+    {
+      "id": 833,
+      "start": 2156.04,
+      "end": 2157.04,
+      "text": "même si vous allez pas"
+    },
+    {
+      "id": 834,
+      "start": 2157.04,
+      "end": 2158.04,
+      "text": "forcément l'utiliser"
+    },
+    {
+      "id": 835,
+      "start": 2158.04,
+      "end": 2160.04,
+      "text": "aussi créer votre étude"
+    },
+    {
+      "id": 836,
+      "start": 2160.04,
+      "end": 2161.04,
+      "text": "de marché"
+    },
+    {
+      "id": 837,
+      "start": 2161.04,
+      "end": 2162.04,
+      "text": "de faire des petits tests"
+    },
+    {
+      "id": 838,
+      "start": 2162.04,
+      "end": 2163.04,
+      "text": "si vous avez une idée"
+    },
+    {
+      "id": 839,
+      "start": 2163.04,
+      "end": 2164.07,
+      "text": "en tête"
+    },
+    {
+      "id": 840,
+      "start": 2164.07,
+      "end": 2165.07,
+      "text": "que ce soit"
+    },
+    {
+      "id": 841,
+      "start": 2165.07,
+      "end": 2166.07,
+      "text": "par exemple"
+    },
+    {
+      "id": 842,
+      "start": 2166.07,
+      "end": 2167.07,
+      "text": "un petit dashboard"
+    },
+    {
+      "id": 843,
+      "start": 2167.07,
+      "end": 2169.1,
+      "text": "pour suivre vos leads"
+    },
+    {
+      "id": 844,
+      "start": 2169.1,
+      "end": 2170.1,
+      "text": "vous pouvez le faire"
+    },
+    {
+      "id": 845,
+      "start": 2170.1,
+      "end": 2171.1,
+      "text": "vraiment prendre du temps"
+    },
+    {
+      "id": 846,
+      "start": 2171.1,
+      "end": 2172.1,
+      "text": "à comprendre"
+    },
+    {
+      "id": 847,
+      "start": 2172.1,
+      "end": 2175.8,
+      "text": "cloud code"
+    },
+    {
+      "id": 848,
+      "start": 2175.8,
+      "end": 2176.8,
+      "text": "comprendre comment l'utiliser"
+    },
+    {
+      "id": 849,
+      "start": 2176.8,
+      "end": 2178.8,
+      "text": "à tester aussi"
+    },
+    {
+      "id": 850,
+      "start": 2178.8,
+      "end": 2179.8,
+      "text": "les commandes"
+    },
+    {
+      "id": 851,
+      "start": 2179.8,
+      "end": 2181.22,
+      "text": "ça sera que bénéfique"
+    },
+    {
+      "id": 852,
+      "start": 2181.22,
+      "end": 2182.22,
+      "text": "par la suite"
+    },
+    {
+      "id": 853,
+      "start": 2182.22,
+      "end": 2183.66,
+      "text": "quand on va rentrer"
+    },
+    {
+      "id": 854,
+      "start": 2183.66,
+      "end": 2185.3,
+      "text": "plus dans le dur"
+    },
+    {
+      "id": 855,
+      "start": 2185.3,
+      "end": 2186.3,
+      "text": "pour vous parler un petit peu"
+    },
+    {
+      "id": 856,
+      "start": 2186.3,
+      "end": 2187.3,
+      "text": "commandes"
+    },
+    {
+      "id": 857,
+      "start": 2187.3,
+      "end": 2188.3,
+      "text": "c'est pour ça que moi"
+    },
+    {
+      "id": 858,
+      "start": 2188.3,
+      "end": 2190.23,
+      "text": "je préfère du codex"
+    },
+    {
+      "id": 859,
+      "start": 2190.23,
+      "end": 2191.23,
+      "text": "c'est qu'on a des fonctionnalités"
+    },
+    {
+      "id": 860,
+      "start": 2191.23,
+      "end": 2193.23,
+      "text": "qui sont extrêmement puissantes"
+    },
+    {
+      "id": 861,
+      "start": 2193.23,
+      "end": 2194.23,
+      "text": "quand je vous dis puissantes"
+    },
+    {
+      "id": 862,
+      "start": 2194.23,
+      "end": 2195.23,
+      "text": "c'est que derrière"
+    },
+    {
+      "id": 863,
+      "start": 2195.23,
+      "end": 2196.68,
+      "text": "vous allez pouvoir"
+    },
+    {
+      "id": 864,
+      "start": 2196.68,
+      "end": 2197.68,
+      "text": "faire des choses"
+    },
+    {
+      "id": 865,
+      "start": 2197.68,
+      "end": 2200.06,
+      "text": "qui sont stratosphériques"
+    },
+    {
+      "id": 866,
+      "start": 2200.06,
+      "end": 2204.36,
+      "text": "business du long terme"
+    },
+    {
+      "id": 867,
+      "start": 2204.36,
+      "end": 2205.62,
+      "text": "par exemple"
+    },
+    {
+      "id": 868,
+      "start": 2205.62,
+      "end": 2207.62,
+      "text": "la commande chrome"
+    },
+    {
+      "id": 869,
+      "start": 2207.62,
+      "end": 2208.62,
+      "text": "qui est en bêta actuellement"
+    },
+    {
+      "id": 870,
+      "start": 2208.62,
+      "end": 2209.62,
+      "text": "qui vient de sortir"
+    },
+    {
+      "id": 871,
+      "start": 2209.62,
+      "end": 2210.65,
+      "text": "vous allez avoir"
+    },
+    {
+      "id": 872,
+      "start": 2210.65,
+      "end": 2211.65,
+      "text": "cloud code"
+    },
+    {
+      "id": 873,
+      "start": 2211.65,
+      "end": 2212.65,
+      "text": "qui va contrôler"
+    },
+    {
+      "id": 874,
+      "start": 2212.65,
+      "end": 2213.65,
+      "text": "votre ordinateur"
+    },
+    {
+      "id": 875,
+      "start": 2213.65,
+      "end": 2216.86,
+      "text": "donc que dire de faire"
+    },
+    {
+      "id": 876,
+      "start": 2216.86,
+      "end": 2218.14,
+      "text": "vraiment tout"
+    },
+    {
+      "id": 877,
+      "start": 2218.14,
+      "end": 2219.34,
+      "text": "ça c'est assez intéressant"
+    },
+    {
+      "id": 878,
+      "start": 2219.34,
+      "end": 2220.34,
+      "text": "on a aussi"
+    },
+    {
+      "id": 879,
+      "start": 2220.34,
+      "end": 2221.34,
+      "text": "la partie"
+    },
+    {
+      "id": 880,
+      "start": 2221.34,
+      "end": 2222.82,
+      "text": "slash"
+    },
+    {
+      "id": 881,
+      "start": 2222.82,
+      "end": 2223.82,
+      "text": "remote control"
+    },
+    {
+      "id": 882,
+      "start": 2223.82,
+      "end": 2227.47,
+      "text": "donc si vous avez un lien ici"
+    },
+    {
+      "id": 883,
+      "start": 2227.47,
+      "end": 2228.47,
+      "text": "vous allez vous l'envoyer"
+    },
+    {
+      "id": 884,
+      "start": 2228.47,
+      "end": 2229.47,
+      "text": "directement"
+    },
+    {
+      "id": 885,
+      "start": 2229.47,
+      "end": 2231.72,
+      "text": "au téléphone"
+    },
+    {
+      "id": 886,
+      "start": 2231.72,
+      "end": 2232.72,
+      "text": "et vous allez ouvrir"
+    },
+    {
+      "id": 887,
+      "start": 2232.72,
+      "end": 2234.74,
+      "text": "ce lien"
+    },
+    {
+      "id": 888,
+      "start": 2234.74,
+      "end": 2236.74,
+      "text": "en question"
+    },
+    {
+      "id": 889,
+      "start": 2236.74,
+      "end": 2237.74,
+      "text": "sur votre téléphone"
+    },
+    {
+      "id": 890,
+      "start": 2237.74,
+      "end": 2238.74,
+      "text": "et vous allez écrire"
+    },
+    {
+      "id": 891,
+      "start": 2238.74,
+      "end": 2239.74,
+      "text": "un message"
+    },
+    {
+      "id": 892,
+      "start": 2239.74,
+      "end": 2241.63,
+      "text": "et pouvoir travailler"
+    },
+    {
+      "id": 893,
+      "start": 2241.63,
+      "end": 2242.63,
+      "text": "sur votre téléphone"
+    },
+    {
+      "id": 894,
+      "start": 2242.63,
+      "end": 2243.63,
+      "text": "directement"
+    },
+    {
+      "id": 895,
+      "start": 2244.4,
+      "end": 2245.4,
+      "text": "en full remote"
+    },
+    {
+      "id": 896,
+      "start": 2245.4,
+      "end": 2252.26,
+      "text": "ça peut vous faire gagner"
+    },
+    {
+      "id": 897,
+      "start": 2252.26,
+      "end": 2253.26,
+      "text": "beaucoup de temps"
+    },
+    {
+      "id": 898,
+      "start": 2253.26,
+      "end": 2254.26,
+      "text": "si vous êtes en déplacement"
+    },
+    {
+      "id": 899,
+      "start": 2254.26,
+      "end": 2256.35,
+      "text": "ça peut être intéressant"
+    },
+    {
+      "id": 900,
+      "start": 2256.35,
+      "end": 2257.35,
+      "text": "on a aussi"
+    },
+    {
+      "id": 901,
+      "start": 2257.35,
+      "end": 2258.35,
+      "text": "une commande"
+    },
+    {
+      "id": 902,
+      "start": 2258.35,
+      "end": 2259.35,
+      "text": "qu'on va beaucoup utiliser"
+    },
+    {
+      "id": 903,
+      "start": 2259.35,
+      "end": 2260.35,
+      "text": "c'est la partie MCP"
+    },
+    {
+      "id": 904,
+      "start": 2260.35,
+      "end": 2262.35,
+      "text": "ou derrière"
+    },
+    {
+      "id": 905,
+      "start": 2262.35,
+      "end": 2264.61,
+      "text": "faire des tests utilisateurs"
+    },
+    {
+      "id": 906,
+      "start": 2264.61,
+      "end": 2267.18,
+      "text": "c'est incroyable"
+    },
+    {
+      "id": 907,
+      "start": 2267.18,
+      "end": 2268.18,
+      "text": "cette commande aussi"
+    },
+    {
+      "id": 908,
+      "start": 2268.18,
+      "end": 2269.18,
+      "text": "vient de sortir"
+    },
+    {
+      "id": 909,
+      "start": 2269.18,
+      "end": 2270.18,
+      "text": "il n'y a pas si longtemps"
+    },
+    {
+      "id": 910,
+      "start": 2270.18,
+      "end": 2272.54,
+      "text": "pour vous donner un ordre d'idée"
+    },
+    {
+      "id": 911,
+      "start": 2272.54,
+      "end": 2273.54,
+      "text": "il y a 3-4 mois"
+    },
+    {
+      "id": 912,
+      "start": 2275.11,
+      "end": 2277.11,
+      "text": "je faisais mes tests utilisateurs"
+    },
+    {
+      "id": 913,
+      "start": 2277.11,
+      "end": 2278.11,
+      "text": "moi-même"
+    },
+    {
+      "id": 914,
+      "start": 2278.11,
+      "end": 2279.11,
+      "text": "donc je perdais beaucoup de temps"
+    },
+    {
+      "id": 915,
+      "start": 2279.11,
+      "end": 2280.11,
+      "text": "dans le sens où"
+    },
+    {
+      "id": 916,
+      "start": 2280.11,
+      "end": 2281.11,
+      "text": "si je faisais un chatbot"
+    },
+    {
+      "id": 917,
+      "start": 2281.11,
+      "end": 2283.11,
+      "text": "SAV pour un client"
+    },
+    {
+      "id": 918,
+      "start": 2283.11,
+      "end": 2284.11,
+      "text": "je vais moi-même"
+    },
+    {
+      "id": 919,
+      "start": 2284.11,
+      "end": 2285.11,
+      "text": "créer des conversations"
+    },
+    {
+      "id": 920,
+      "start": 2285.11,
+      "end": 2286.4,
+      "text": "du coup"
+    },
+    {
+      "id": 921,
+      "start": 2286.4,
+      "end": 2287.4,
+      "text": "pour une conversation"
+    },
+    {
+      "id": 922,
+      "start": 2287.4,
+      "end": 2290.03,
+      "text": "pour un IA"
+    },
+    {
+      "id": 923,
+      "start": 2290.03,
+      "end": 2292.95,
+      "text": "complète 5 minutes"
+    },
+    {
+      "id": 924,
+      "start": 2292.95,
+      "end": 2294.4,
+      "text": "là"
+    },
+    {
+      "id": 925,
+      "start": 2294.4,
+      "end": 2295.4,
+      "text": "avec cette commande là"
+    },
+    {
+      "id": 926,
+      "start": 2295.4,
+      "end": 2296.4,
+      "text": "je vais pouvoir"
+    },
+    {
+      "id": 927,
+      "start": 2296.4,
+      "end": 2297.4,
+      "text": "lui demander"
+    },
+    {
+      "id": 928,
+      "start": 2297.4,
+      "end": 2298.4,
+      "text": "de contrôler mon ordinateur"
+    },
+    {
+      "id": 929,
+      "start": 2298.4,
+      "end": 2299.4,
+      "text": "de me créer"
+    },
+    {
+      "id": 930,
+      "start": 2299.4,
+      "end": 2300.4,
+      "text": "à peu près"
+    },
+    {
+      "id": 931,
+      "start": 2300.4,
+      "end": 2302.4,
+      "text": "20 ou 30 pages"
+    },
+    {
+      "id": 932,
+      "start": 2302.4,
+      "end": 2303.53,
+      "text": "Chrome"
+    },
+    {
+      "id": 933,
+      "start": 2303.53,
+      "end": 2304.53,
+      "text": "pour faire des tests"
+    },
+    {
+      "id": 934,
+      "start": 2304.53,
+      "end": 2307.22,
+      "text": "faire ces tests là"
+    },
+    {
+      "id": 935,
+      "start": 2307.22,
+      "end": 2308.22,
+      "text": "et du coup"
+    },
+    {
+      "id": 936,
+      "start": 2308.22,
+      "end": 2309.32,
+      "text": "à la fin"
+    },
+    {
+      "id": 937,
+      "start": 2309.32,
+      "end": 2310.32,
+      "text": "on va lui demander"
+    },
+    {
+      "id": 938,
+      "start": 2310.32,
+      "end": 2311.54,
+      "text": "de créer un rapport"
+    },
+    {
+      "id": 939,
+      "start": 2311.54,
+      "end": 2312.54,
+      "text": "on va voir les résultats"
+    },
+    {
+      "id": 940,
+      "start": 2312.54,
+      "end": 2313.58,
+      "text": "et on va lui demander"
+    },
+    {
+      "id": 941,
+      "start": 2313.58,
+      "end": 2314.58,
+      "text": "d'ajuster du coup"
+    },
+    {
+      "id": 942,
+      "start": 2314.58,
+      "end": 2317.4,
+      "text": "et ça"
+    },
+    {
+      "id": 943,
+      "start": 2317.4,
+      "end": 2318.4,
+      "text": "c'est un gamme temps"
+    },
+    {
+      "id": 944,
+      "start": 2318.4,
+      "end": 2319.4,
+      "text": "assez incroyable"
+    },
+    {
+      "id": 945,
+      "start": 2319.4,
+      "end": 2320.94,
+      "text": "encore une fois"
+    },
+    {
+      "id": 946,
+      "start": 2320.94,
+      "end": 2321.94,
+      "text": "mon objectif personnel"
+    },
+    {
+      "id": 947,
+      "start": 2321.94,
+      "end": 2322.94,
+      "text": "tout au long"
+    },
+    {
+      "id": 948,
+      "start": 2322.94,
+      "end": 2323.94,
+      "text": "de cette formation"
+    },
+    {
+      "id": 949,
+      "start": 2323.94,
+      "end": 2325.94,
+      "text": "c'est d'une part"
+    },
+    {
+      "id": 950,
+      "start": 2325.94,
+      "end": 2326.94,
+      "text": "vous donner accès"
+    },
+    {
+      "id": 951,
+      "start": 2326.94,
+      "end": 2328.39,
+      "text": "à des workflows"
+    },
+    {
+      "id": 952,
+      "start": 2328.39,
+      "end": 2329.74,
+      "text": "très intéressants"
+    },
+    {
+      "id": 953,
+      "start": 2329.74,
+      "end": 2330.74,
+      "text": "pour la revendre"
+    },
+    {
+      "id": 954,
+      "start": 2330.74,
+      "end": 2331.74,
+      "text": "par exemple"
+    },
+    {
+      "id": 955,
+      "start": 2331.74,
+      "end": 2332.74,
+      "text": "des blogs automatiques"
+    },
+    {
+      "id": 956,
+      "start": 2332.74,
+      "end": 2334.19,
+      "text": "pour facturer"
+    },
+    {
+      "id": 957,
+      "start": 2334.19,
+      "end": 2335.19,
+      "text": "à 3500 euros"
+    },
+    {
+      "id": 958,
+      "start": 2335.19,
+      "end": 2336.32,
+      "text": "peu importe"
+    },
+    {
+      "id": 959,
+      "start": 2336.32,
+      "end": 2337.32,
+      "text": "ça dépend"
+    },
+    {
+      "id": 960,
+      "start": 2337.32,
+      "end": 2338.32,
+      "text": "le client"
+    },
+    {
+      "id": 961,
+      "start": 2338.32,
+      "end": 2339.32,
+      "text": "que vous avez"
+    },
+    {
+      "id": 962,
+      "start": 2339.32,
+      "end": 2340.32,
+      "text": "mais aussi"
+    },
+    {
+      "id": 963,
+      "start": 2340.32,
+      "end": 2341.32,
+      "text": "avoir"
+    },
+    {
+      "id": 964,
+      "start": 2341.32,
+      "end": 2342.32,
+      "text": "à la fin"
+    },
+    {
+      "id": 965,
+      "start": 2342.32,
+      "end": 2343.32,
+      "text": "une compréhension globale"
+    },
+    {
+      "id": 966,
+      "start": 2343.32,
+      "end": 2344.32,
+      "text": "de tous ces outils là"
+    },
+    {
+      "id": 967,
+      "start": 2344.32,
+      "end": 2345.32,
+      "text": "qui sont en train"
+    },
+    {
+      "id": 968,
+      "start": 2345.32,
+      "end": 2346.32,
+      "text": "de révolutionner le monde"
+    },
+    {
+      "id": 969,
+      "start": 2346.32,
+      "end": 2347.58,
+      "text": "donc vous allez pouvoir"
+    },
+    {
+      "id": 970,
+      "start": 2347.58,
+      "end": 2348.58,
+      "text": "très bien vous adapter"
+    },
+    {
+      "id": 971,
+      "start": 2348.58,
+      "end": 2349.58,
+      "text": "aux demandes clients"
+    },
+    {
+      "id": 972,
+      "start": 2349.58,
+      "end": 2350.58,
+      "text": "c'est ça"
+    },
+    {
+      "id": 973,
+      "start": 2350.58,
+      "end": 2351.58,
+      "text": "qui est le plus important"
+    },
+    {
+      "id": 974,
+      "start": 2351.58,
+      "end": 2357.89,
+      "text": "dans le marché"
+    },
+    {
+      "id": 975,
+      "start": 2357.89,
+      "end": 2358.89,
+      "text": "par exemple"
+    },
+    {
+      "id": 976,
+      "start": 2358.89,
+      "end": 2364.18,
+      "text": "B2P d'entreprise"
+    },
+    {
+      "id": 977,
+      "start": 2364.18,
+      "end": 2365.18,
+      "text": "et bien vous allez pouvoir"
+    },
+    {
+      "id": 978,
+      "start": 2365.18,
+      "end": 2366.18,
+      "text": "avoir aussi des solutions"
+    },
+    {
+      "id": 979,
+      "start": 2366.18,
+      "end": 2367.18,
+      "text": "qui vous sont demandées"
+    },
+    {
+      "id": 980,
+      "start": 2367.18,
+      "end": 2369.18,
+      "text": "sur mesure"
+    },
+    {
+      "id": 981,
+      "start": 2369.18,
+      "end": 2370.18,
+      "text": "et c'est à vous"
+    },
+    {
+      "id": 982,
+      "start": 2370.18,
+      "end": 2371.18,
+      "text": "après"
+    },
+    {
+      "id": 983,
+      "start": 2371.18,
+      "end": 2372.18,
+      "text": "de mettre ça en place"
+    },
+    {
+      "id": 984,
+      "start": 2372.18,
+      "end": 2373.3,
+      "text": "donc"
+    },
+    {
+      "id": 985,
+      "start": 2373.3,
+      "end": 2374.3,
+      "text": "à la fin de la formation"
+    },
+    {
+      "id": 986,
+      "start": 2374.3,
+      "end": 2375.3,
+      "text": "si vous me suivez bien tout"
+    },
+    {
+      "id": 987,
+      "start": 2375.3,
+      "end": 2376.3,
+      "text": "vous allez avoir les capacités"
+    },
+    {
+      "id": 988,
+      "start": 2376.3,
+      "end": 2377.3,
+      "text": "ça j'ai pas de doute"
+    },
+    {
+      "id": 989,
+      "start": 2377.3,
+      "end": 2378.3,
+      "text": "et puis"
+    },
+    {
+      "id": 990,
+      "start": 2378.3,
+      "end": 2379.75,
+      "text": "faut pas oublier"
+    },
+    {
+      "id": 991,
+      "start": 2379.75,
+      "end": 2381.39,
+      "text": "que voilà"
+    },
+    {
+      "id": 992,
+      "start": 2381.39,
+      "end": 2382.39,
+      "text": "je suis disponible sur Slack"
+    },
+    {
+      "id": 993,
+      "start": 2382.39,
+      "end": 2383.74,
+      "text": "vous pouvez me des demandes"
+    },
+    {
+      "id": 994,
+      "start": 2383.74,
+      "end": 2384.74,
+      "text": "des messages"
+    },
+    {
+      "id": 995,
+      "start": 2384.74,
+      "end": 2385.74,
+      "text": "pour que derrière"
+    },
+    {
+      "id": 996,
+      "start": 2385.74,
+      "end": 2386.74,
+      "text": "si vous vous bloquez"
+    },
+    {
+      "id": 997,
+      "start": 2386.74,
+      "end": 2388.74,
+      "text": "je puisse vous aider"
+    },
+    {
+      "id": 998,
+      "start": 2388.74,
+      "end": 2389.74,
+      "text": "il n'y a pas de problème"
+    },
+    {
+      "id": 999,
+      "start": 2389.74,
+      "end": 2393.08,
+      "text": "donc là on voit"
+    },
+    {
+      "id": 1000,
+      "start": 2393.08,
+      "end": 2394.69,
+      "text": "qu'il est travaillé"
+    },
+    {
+      "id": 1001,
+      "start": 2394.69,
+      "end": 2395.78,
+      "text": "ça fait quand même assez longtemps"
+    },
+    {
+      "id": 1002,
+      "start": 2395.78,
+      "end": 2398.38,
+      "text": "donc là il est en train de vérifier"
+    },
+    {
+      "id": 1003,
+      "start": 2398.38,
+      "end": 2403.13,
+      "text": "il est terminé"
+    },
+    {
+      "id": 1004,
+      "start": 2403.13,
+      "end": 2406.61,
+      "text": "on voit qu'il a 387 lignes"
+    },
+    {
+      "id": 1005,
+      "start": 2406.61,
+      "end": 2409.7,
+      "text": "il y a 16 sections dans le fichier"
+    },
+    {
+      "id": 1006,
+      "start": 2409.7,
+      "end": 2410.86,
+      "text": "donc c'est top"
+    },
+    {
+      "id": 1007,
+      "start": 2410.86,
+      "end": 2411.86,
+      "text": "l'étude de marché"
+    },
+    {
+      "id": 1008,
+      "start": 2411.86,
+      "end": 2412.86,
+      "text": "quand même assez détaillée"
+    },
+    {
+      "id": 1009,
+      "start": 2412.86,
+      "end": 2415.3,
+      "text": "maintenant on va aller sur"
+    },
+    {
+      "id": 1010,
+      "start": 2415.3,
+      "end": 2438.22,
+      "text": "le vierge"
+    },
+    {
+      "id": 1011,
+      "start": 2438.22,
+      "end": 2441.02,
+      "text": "portée"
+    },
+    {
+      "id": 1012,
+      "start": 2441.02,
+      "end": 2446.98,
+      "text": "le marché"
+    },
+    {
+      "id": 1013,
+      "start": 2446.98,
+      "end": 2462.89,
+      "text": "est assez longue"
+    },
+    {
+      "id": 1014,
+      "start": 2462.89,
+      "end": 2463.89,
+      "text": "assez longue"
+    },
+    {
+      "id": 1015,
+      "start": 2463.89,
+      "end": 2465.46,
+      "text": "pardon"
+    },
+    {
+      "id": 1016,
+      "start": 2465.46,
+      "end": 2468.19,
+      "text": "pratiquement"
+    },
+    {
+      "id": 1017,
+      "start": 2468.19,
+      "end": 2470.44,
+      "text": "illisible"
+    },
+    {
+      "id": 1018,
+      "start": 2470.44,
+      "end": 2471.44,
+      "text": "on voit qu'il y a le TGM moyen"
+    },
+    {
+      "id": 1019,
+      "start": 2471.44,
+      "end": 2472.44,
+      "text": "il a fait des recherches sur internet"
+    },
+    {
+      "id": 1020,
+      "start": 2472.44,
+      "end": 2473.44,
+      "text": "c'est top"
+    },
+    {
+      "id": 1021,
+      "start": 2473.44,
+      "end": 2474.44,
+      "text": "on pourrait lui demander"
+    },
+    {
+      "id": 1022,
+      "start": 2474.44,
+      "end": 2475.44,
+      "text": "de rajouter les sources"
+    },
+    {
+      "id": 1023,
+      "start": 2475.44,
+      "end": 2479.0,
+      "text": "mais les sources"
+    },
+    {
+      "id": 1024,
+      "start": 2479.0,
+      "end": 2480.0,
+      "text": "donc c'est top"
+    },
+    {
+      "id": 1025,
+      "start": 2480.0,
+      "end": 2483.05,
+      "text": "pour l'eau à lire"
+    },
+    {
+      "id": 1026,
+      "start": 2483.05,
+      "end": 2484.27,
+      "text": "donc nous on se demandait"
+    },
+    {
+      "id": 1027,
+      "start": 2484.27,
+      "end": 2487.67,
+      "text": "faire"
+    },
+    {
+      "id": 1028,
+      "start": 2487.67,
+      "end": 2489.41,
+      "text": "améliore"
+    },
+    {
+      "id": 1029,
+      "start": 2489.41,
+      "end": 2507.78,
+      "text": "un CSV"
+    },
+    {
+      "id": 1030,
+      "start": 2507.78,
+      "end": 2509.1,
+      "text": "on va travailler"
+    },
+    {
+      "id": 1031,
+      "start": 2509.1,
+      "end": 2510.1,
+      "text": "un fichier Excel directement"
+    },
+    {
+      "id": 1032,
+      "start": 2510.1,
+      "end": 2512.7,
+      "text": "puisse avoir quand même"
+    },
+    {
+      "id": 1033,
+      "start": 2512.7,
+      "end": 2513.7,
+      "text": "une étude de marché"
+    },
+    {
+      "id": 1034,
+      "start": 2513.7,
+      "end": 2518.51,
+      "text": "l'étude de marché"
+    },
+    {
+      "id": 1035,
+      "start": 2518.51,
+      "end": 2522.49,
+      "text": "on peut plus"
+    },
+    {
+      "id": 1036,
+      "start": 2522.49,
+      "end": 2528.06,
+      "text": "le travail"
+    },
+    {
+      "id": 1037,
+      "start": 2528.06,
+      "end": 2529.06,
+      "text": "d'internet"
+    },
+    {
+      "id": 1038,
+      "start": 2529.06,
+      "end": 2530.06,
+      "text": "là l'objectif c'est vraiment"
+    },
+    {
+      "id": 1039,
+      "start": 2530.06,
+      "end": 2531.06,
+      "text": "de vous montrer"
+    },
+    {
+      "id": 1040,
+      "start": 2531.06,
+      "end": 2532.06,
+      "text": "qu'on peut travailler"
+    },
+    {
+      "id": 1041,
+      "start": 2532.06,
+      "end": 2534.77,
+      "text": "sur le même projet"
+    },
+    {
+      "id": 1042,
+      "start": 2534.77,
+      "end": 2535.77,
+      "text": "mais sur une problématique"
+    },
+    {
+      "id": 1043,
+      "start": 2535.77,
+      "end": 2536.77,
+      "text": "qui est différente"
+    },
+    {
+      "id": 1044,
+      "start": 2536.77,
+      "end": 2538.77,
+      "text": "pour gagner du temps"
+    },
+    {
+      "id": 1045,
+      "start": 2538.77,
+      "end": 2539.77,
+      "text": "si derrière"
+    },
+    {
+      "id": 1046,
+      "start": 2539.77,
+      "end": 2540.77,
+      "text": "j'aurais attendu"
+    },
+    {
+      "id": 1047,
+      "start": 2540.77,
+      "end": 2541.96,
+      "text": "de finir mon site internet"
+    },
+    {
+      "id": 1048,
+      "start": 2541.96,
+      "end": 2543.96,
+      "text": "j'aurais perdu du temps"
+    },
+    {
+      "id": 1049,
+      "start": 2543.96,
+      "end": 2544.96,
+      "text": "le but c'est pas ça"
+    },
+    {
+      "id": 1050,
+      "start": 2544.96,
+      "end": 2545.96,
+      "text": "en fait le marché"
+    },
+    {
+      "id": 1051,
+      "start": 2545.96,
+      "end": 2546.96,
+      "text": "est tellement grand"
+    },
+    {
+      "id": 1052,
+      "start": 2546.96,
+      "end": 2553.7,
+      "text": "il y a plusieurs contrats"
+    },
+    {
+      "id": 1053,
+      "start": 2553.7,
+      "end": 2558.06,
+      "text": "le but c'est"
+    },
+    {
+      "id": 1054,
+      "start": 2558.06,
+      "end": 2561.62,
+      "text": "de ne pas la qualité"
+    },
+    {
+      "id": 1055,
+      "start": 2561.62,
+      "end": 2562.62,
+      "text": "l'organisation"
+    },
+    {
+      "id": 1056,
+      "start": 2562.62,
+      "end": 2563.62,
+      "text": "là"
+    },
+    {
+      "id": 1057,
+      "start": 2563.62,
+      "end": 2564.62,
+      "text": "sur un projet"
+    },
+    {
+      "id": 1058,
+      "start": 2564.62,
+      "end": 2566.22,
+      "text": "j'ai deux terminal"
+    },
+    {
+      "id": 1059,
+      "start": 2566.22,
+      "end": 2569.06,
+      "text": "des terminal différents"
+    },
+    {
+      "id": 1060,
+      "start": 2569.06,
+      "end": 2570.38,
+      "text": "par projet"
+    },
+    {
+      "id": 1061,
+      "start": 2570.38,
+      "end": 2571.5,
+      "text": "mais"
+    },
+    {
+      "id": 1062,
+      "start": 2571.5,
+      "end": 2572.5,
+      "text": "si j'avais"
+    },
+    {
+      "id": 1063,
+      "start": 2572.5,
+      "end": 2574.85,
+      "text": "un client"
+    },
+    {
+      "id": 1064,
+      "start": 2574.85,
+      "end": 2575.85,
+      "text": "par exemple"
+    },
+    {
+      "id": 1065,
+      "start": 2575.85,
+      "end": 2582.03,
+      "text": "qui demande une automatisation"
+    },
+    {
+      "id": 1066,
+      "start": 2582.03,
+      "end": 2583.03,
+      "text": "SAV"
+    },
+    {
+      "id": 1067,
+      "start": 2583.03,
+      "end": 2585.02,
+      "text": "donc ce que j'aurais fait"
+    },
+    {
+      "id": 1068,
+      "start": 2585.02,
+      "end": 2586.02,
+      "text": "c'est que j'aurais ouvert"
+    },
+    {
+      "id": 1069,
+      "start": 2586.02,
+      "end": 2587.02,
+      "text": "un terminal"
+    },
+    {
+      "id": 1070,
+      "start": 2587.02,
+      "end": 2588.02,
+      "text": "juste ici"
+    },
+    {
+      "id": 1071,
+      "start": 2588.02,
+      "end": 2594.11,
+      "text": "directement"
+    },
+    {
+      "id": 1072,
+      "start": 2594.11,
+      "end": 2596.26,
+      "text": "du coup"
+    },
+    {
+      "id": 1073,
+      "start": 2596.26,
+      "end": 2600.82,
+      "text": "au dossier client 1"
+    },
+    {
+      "id": 1074,
+      "start": 2600.82,
+      "end": 2601.82,
+      "text": "je leur ai dit"
+    },
+    {
+      "id": 1075,
+      "start": 2601.82,
+      "end": 2605.31,
+      "text": "travail"
+    },
+    {
+      "id": 1076,
+      "start": 2605.31,
+      "end": 2606.31,
+      "text": "travail sur"
+    },
+    {
+      "id": 1077,
+      "start": 2606.31,
+      "end": 2613.23,
+      "text": "une base de données"
+    },
+    {
+      "id": 1078,
+      "start": 2613.23,
+      "end": 2616.64,
+      "text": "une base de données"
+    },
+    {
+      "id": 1079,
+      "start": 2616.64,
+      "end": 2617.64,
+      "text": "Supabase"
+    },
+    {
+      "id": 1080,
+      "start": 2617.64,
+      "end": 2620.21,
+      "text": "voilà"
+    },
+    {
+      "id": 1081,
+      "start": 2620.21,
+      "end": 2621.21,
+      "text": "je leur ai donné une première mission"
+    },
+    {
+      "id": 1082,
+      "start": 2621.21,
+      "end": 2622.21,
+      "text": "pour aller plus vite"
+    },
+    {
+      "id": 1083,
+      "start": 2622.21,
+      "end": 2624.07,
+      "text": "ensuite"
+    },
+    {
+      "id": 1084,
+      "start": 2624.07,
+      "end": 2625.07,
+      "text": "j'aurais ouvert"
+    },
+    {
+      "id": 1085,
+      "start": 2625.07,
+      "end": 2626.55,
+      "text": "le terminal"
+    },
+    {
+      "id": 1086,
+      "start": 2626.55,
+      "end": 2638.73,
+      "text": "j'aurais très bien pu lui dire"
+    },
+    {
+      "id": 1087,
+      "start": 2638.73,
+      "end": 2639.73,
+      "text": "en HTML"
+    },
+    {
+      "id": 1088,
+      "start": 2639.73,
+      "end": 2644.44,
+      "text": "et après voilà"
+    },
+    {
+      "id": 1089,
+      "start": 2644.44,
+      "end": 2645.44,
+      "text": "au fur et à mesure"
+    },
+    {
+      "id": 1090,
+      "start": 2645.44,
+      "end": 2646.44,
+      "text": "avoir plusieurs onglets"
+    },
+    {
+      "id": 1091,
+      "start": 2646.44,
+      "end": 2648.44,
+      "text": "qui travaillent en même temps"
+    },
+    {
+      "id": 1092,
+      "start": 2648.44,
+      "end": 2649.89,
+      "text": "pour ne pas perdre du temps"
+    },
+    {
+      "id": 1093,
+      "start": 2649.89,
+      "end": 2650.89,
+      "text": "donc là hop"
+    },
+    {
+      "id": 1094,
+      "start": 2650.89,
+      "end": 2651.89,
+      "text": "premier projet"
+    },
+    {
+      "id": 1095,
+      "start": 2651.89,
+      "end": 2652.89,
+      "text": "deuxième projet"
+    },
+    {
+      "id": 1096,
+      "start": 2652.89,
+      "end": 2653.89,
+      "text": "etc"
+    },
+    {
+      "id": 1097,
+      "start": 2653.89,
+      "end": 2654.89,
+      "text": "jusqu'à temps que"
+    },
+    {
+      "id": 1098,
+      "start": 2654.89,
+      "end": 2655.89,
+      "text": "malheureusement"
+    },
+    {
+      "id": 1099,
+      "start": 2655.89,
+      "end": 2658.81,
+      "text": "on va avoir d'autres onglets"
+    },
+    {
+      "id": 1100,
+      "start": 2658.81,
+      "end": 2659.81,
+      "text": "parce que sinon"
+    },
+    {
+      "id": 1101,
+      "start": 2659.81,
+      "end": 2660.81,
+      "text": "vous allez vite vous perdre"
+    },
+    {
+      "id": 1102,
+      "start": 2660.81,
+      "end": 2661.81,
+      "text": "mais c'est vraiment"
+    },
+    {
+      "id": 1103,
+      "start": 2661.81,
+      "end": 2662.81,
+      "text": "essayer d'optimiser"
+    },
+    {
+      "id": 1104,
+      "start": 2662.81,
+      "end": 2663.81,
+      "text": "un maximum son temps"
+    },
+    {
+      "id": 1105,
+      "start": 2663.81,
+      "end": 2664.84,
+      "text": "pour"
+    },
+    {
+      "id": 1106,
+      "start": 2664.84,
+      "end": 2666.22,
+      "text": "simplement"
+    },
+    {
+      "id": 1107,
+      "start": 2666.22,
+      "end": 2667.22,
+      "text": "délivrer le plus vite"
+    },
+    {
+      "id": 1108,
+      "start": 2667.22,
+      "end": 2668.54,
+      "text": "et passer"
+    },
+    {
+      "id": 1109,
+      "start": 2668.54,
+      "end": 2669.67,
+      "text": "rapidement"
+    },
+    {
+      "id": 1110,
+      "start": 2669.67,
+      "end": 2670.67,
+      "text": "autre chose"
+    },
+    {
+      "id": 1111,
+      "start": 2670.67,
+      "end": 2671.86,
+      "text": "donc ça on le verra aussi"
+    },
+    {
+      "id": 1112,
+      "start": 2671.86,
+      "end": 2672.86,
+      "text": "par la suite"
+    },
+    {
+      "id": 1113,
+      "start": 2672.86,
+      "end": 2680.17,
+      "text": "du fichier Excel"
+    },
+    {
+      "id": 1114,
+      "start": 2680.17,
+      "end": 2689.17,
+      "text": "vraiment"
+    },
+    {
+      "id": 1115,
+      "start": 2689.17,
+      "end": 2690.17,
+      "text": "amusez-vous"
+    },
+    {
+      "id": 1116,
+      "start": 2690.17,
+      "end": 2692.17,
+      "text": "à créer n'importe quoi"
+    },
+    {
+      "id": 1117,
+      "start": 2692.17,
+      "end": 2694.52,
+      "text": "prenez du temps"
+    },
+    {
+      "id": 1118,
+      "start": 2694.52,
+      "end": 2695.52,
+      "text": "ça va être important"
+    },
+    {
+      "id": 1119,
+      "start": 2695.52,
+      "end": 2696.52,
+      "text": "ne vous précipitez pas"
+    },
+    {
+      "id": 1120,
+      "start": 2696.52,
+      "end": 2697.52,
+      "text": "à passer directement"
+    },
+    {
+      "id": 1121,
+      "start": 2697.52,
+      "end": 2699.52,
+      "text": "sur la séance 2"
+    },
+    {
+      "id": 1122,
+      "start": 2699.52,
+      "end": 2700.52,
+      "text": "faites vous plaisir"
+    },
+    {
+      "id": 1123,
+      "start": 2700.52,
+      "end": 2701.52,
+      "text": "découvrez l'outil"
+    },
+    {
+      "id": 1124,
+      "start": 2701.52,
+      "end": 2702.52,
+      "text": "si vous ne l'avez jamais"
+    },
+    {
+      "id": 1125,
+      "start": 2702.52,
+      "end": 2703.52,
+      "text": "découvert"
+    },
+    {
+      "id": 1126,
+      "start": 2703.52,
+      "end": 2707.16,
+      "text": "créez tout et n'importe quoi"
+    },
+    {
+      "id": 1127,
+      "start": 2707.16,
+      "end": 2709.12,
+      "text": "comprenez la puissance"
+    },
+    {
+      "id": 1128,
+      "start": 2709.12,
+      "end": 2711.25,
+      "text": "qui peut vous apporter"
+    },
+    {
+      "id": 1129,
+      "start": 2711.25,
+      "end": 2713.25,
+      "text": "faites des petits jeux"
+    },
+    {
+      "id": 1130,
+      "start": 2713.25,
+      "end": 2714.34,
+      "text": "demandez de créer"
+    },
+    {
+      "id": 1131,
+      "start": 2714.34,
+      "end": 2718.14,
+      "text": "snake.io"
+    },
+    {
+      "id": 1132,
+      "start": 2718.14,
+      "end": 2719.87,
+      "text": "vraiment"
+    },
+    {
+      "id": 1133,
+      "start": 2719.87,
+      "end": 2720.87,
+      "text": "prenez votre temps"
+    },
+    {
+      "id": 1134,
+      "start": 2720.87,
+      "end": 2721.87,
+      "text": "ça va être très important"
+    },
+    {
+      "id": 1135,
+      "start": 2721.87,
+      "end": 2723.87,
+      "text": "si vous n'avez jamais baigné"
+    },
+    {
+      "id": 1136,
+      "start": 2723.87,
+      "end": 2726.03,
+      "text": "si vous n'avez jamais travaillé"
+    },
+    {
+      "id": 1137,
+      "start": 2726.03,
+      "end": 2727.03,
+      "text": "avec Cloud Code"
+    },
+    {
+      "id": 1138,
+      "start": 2727.03,
+      "end": 2728.16,
+      "text": "pour que par la suite"
+    },
+    {
+      "id": 1139,
+      "start": 2728.16,
+      "end": 2730.16,
+      "text": "tout au long de la formation"
+    },
+    {
+      "id": 1140,
+      "start": 2730.16,
+      "end": 2731.16,
+      "text": "ça paraît bien plus simple"
+    },
+    {
+      "id": 1141,
+      "start": 2731.16,
+      "end": 2732.16,
+      "text": "que ce soit Codex"
+    },
+    {
+      "id": 1142,
+      "start": 2732.16,
+      "end": 2733.16,
+      "text": "que ce soit Cowork"
+    },
+    {
+      "id": 1143,
+      "start": 2733.16,
+      "end": 2734.45,
+      "text": "que ce soit N8N"
+    },
+    {
+      "id": 1144,
+      "start": 2734.45,
+      "end": 2736.45,
+      "text": "parce que les projets"
+    },
+    {
+      "id": 1145,
+      "start": 2736.45,
+      "end": 2738.9,
+      "text": "vont être de plus en plus durs"
+    },
+    {
+      "id": 1146,
+      "start": 2738.9,
+      "end": 2739.9,
+      "text": "et le but"
+    },
+    {
+      "id": 1147,
+      "start": 2739.9,
+      "end": 2740.9,
+      "text": "c'est pas que vous vous retrouviez"
+    },
+    {
+      "id": 1148,
+      "start": 2740.9,
+      "end": 2741.9,
+      "text": "bloqué"
+    },
+    {
+      "id": 1149,
+      "start": 2741.9,
+      "end": 2742.9,
+      "text": "parce que vous n'avez pas compris"
+    },
+    {
+      "id": 1150,
+      "start": 2742.9,
+      "end": 2744.12,
+      "text": "quelque chose"
+    },
+    {
+      "id": 1151,
+      "start": 2744.12,
+      "end": 2745.12,
+      "text": "vraiment"
+    },
+    {
+      "id": 1152,
+      "start": 2745.12,
+      "end": 2746.12,
+      "text": "testez tout"
+    },
+    {
+      "id": 1153,
+      "start": 2746.12,
+      "end": 2747.12,
+      "text": "tout"
+    },
+    {
+      "id": 1154,
+      "start": 2747.12,
+      "end": 2748.18,
+      "text": "tout"
+    },
+    {
+      "id": 1155,
+      "start": 2748.18,
+      "end": 2749.18,
+      "text": "créez un bel projet"
+    },
+    {
+      "id": 1156,
+      "start": 2749.18,
+      "end": 2750.54,
+      "text": "encore une fois"
+    },
+    {
+      "id": 1157,
+      "start": 2750.54,
+      "end": 2763.19,
+      "text": "je vais vous donner un petit conseil aussi"
+    },
+    {
+      "id": 1158,
+      "start": 2763.19,
+      "end": 2765.48,
+      "text": "n'ayez pas le syndrome"
+    },
+    {
+      "id": 1159,
+      "start": 2765.48,
+      "end": 2766.48,
+      "text": "de l'imposteur"
+    },
+    {
+      "id": 1160,
+      "start": 2766.48,
+      "end": 2767.48,
+      "text": "je sais que c'est pas simple"
+    },
+    {
+      "id": 1161,
+      "start": 2767.48,
+      "end": 2769.15,
+      "text": "souvent quand on se lance"
+    },
+    {
+      "id": 1162,
+      "start": 2769.15,
+      "end": 2771.15,
+      "text": "dans un nouveau domaine"
+    },
+    {
+      "id": 1163,
+      "start": 2771.15,
+      "end": 2772.15,
+      "text": "on peut se dire"
+    },
+    {
+      "id": 1164,
+      "start": 2772.15,
+      "end": 2773.15,
+      "text": "ouais mais j'ai pas les compétences"
+    },
+    {
+      "id": 1165,
+      "start": 2773.15,
+      "end": 2774.15,
+      "text": "aptes"
+    },
+    {
+      "id": 1166,
+      "start": 2774.15,
+      "end": 2775.15,
+      "text": "pour travailler"
+    },
+    {
+      "id": 1167,
+      "start": 2775.15,
+      "end": 2776.15,
+      "text": "à l'intérieur"
+    },
+    {
+      "id": 1168,
+      "start": 2776.15,
+      "end": 2778.15,
+      "text": "de ce domaine là"
+    },
+    {
+      "id": 1169,
+      "start": 2778.15,
+      "end": 2779.15,
+      "text": "j'étais comme vous au départ"
+    },
+    {
+      "id": 1170,
+      "start": 2779.15,
+      "end": 2780.31,
+      "text": "et au fur et à mesure"
+    },
+    {
+      "id": 1171,
+      "start": 2780.31,
+      "end": 2781.31,
+      "text": "quand vous allez avoir"
+    },
+    {
+      "id": 1172,
+      "start": 2781.31,
+      "end": 2783.14,
+      "text": "vous promets que vos clients"
+    },
+    {
+      "id": 1173,
+      "start": 2783.14,
+      "end": 2784.14,
+      "text": "vont être satisfait"
+    },
+    {
+      "id": 1174,
+      "start": 2784.14,
+      "end": 2785.14,
+      "text": "eh bien"
+    },
+    {
+      "id": 1175,
+      "start": 2785.14,
+      "end": 2786.78,
+      "text": "là"
+    },
+    {
+      "id": 1176,
+      "start": 2786.78,
+      "end": 2787.98,
+      "text": "va disparaître"
+    },
+    {
+      "id": 1177,
+      "start": 2787.98,
+      "end": 2788.98,
+      "text": "croyez vraiment en vous"
+    },
+    {
+      "id": 1178,
+      "start": 2788.98,
+      "end": 2790.52,
+      "text": "je suis certain"
+    },
+    {
+      "id": 1179,
+      "start": 2790.52,
+      "end": 2791.52,
+      "text": "que derrière"
+    },
+    {
+      "id": 1180,
+      "start": 2791.52,
+      "end": 2792.81,
+      "text": "si vous suivez bien"
+    },
+    {
+      "id": 1181,
+      "start": 2792.81,
+      "end": 2793.81,
+      "text": "la formation"
+    },
+    {
+      "id": 1182,
+      "start": 2793.81,
+      "end": 2794.81,
+      "text": "vous allez avoir"
+    },
+    {
+      "id": 1183,
+      "start": 2794.81,
+      "end": 2795.81,
+      "text": "toutes les compétences adéquates"
+    },
+    {
+      "id": 1184,
+      "start": 2795.81,
+      "end": 2797.97,
+      "text": "pour proposer quelque chose"
+    },
+    {
+      "id": 1185,
+      "start": 2797.97,
+      "end": 2800.32,
+      "text": "de qualitatif"
+    },
+    {
+      "id": 1186,
+      "start": 2800.32,
+      "end": 2801.32,
+      "text": "à n'importe quel client"
+    },
+    {
+      "id": 1187,
+      "start": 2801.32,
+      "end": 2803.38,
+      "text": "c'est juste qu'il faut bien suivre"
+    },
+    {
+      "id": 1188,
+      "start": 2803.38,
+      "end": 2804.38,
+      "text": "beaucoup travailler"
+    },
+    {
+      "id": 1189,
+      "start": 2804.38,
+      "end": 2807.18,
+      "text": "et prendre son temps aussi"
+    },
+    {
+      "id": 1190,
+      "start": 2807.18,
+      "end": 2809.18,
+      "text": "c'est pas grave si"
+    },
+    {
+      "id": 1191,
+      "start": 2809.18,
+      "end": 2811.18,
+      "text": "derrière vous bloquez sur une module"
+    },
+    {
+      "id": 1192,
+      "start": 2811.18,
+      "end": 2813.31,
+      "text": "encore une fois vous me contactez"
+    },
+    {
+      "id": 1193,
+      "start": 2813.31,
+      "end": 2815.31,
+      "text": "et puis derrière j'essaierai"
+    },
+    {
+      "id": 1194,
+      "start": 2815.31,
+      "end": 2820.54,
+      "text": "sur la partie en question"
+    },
+    {
+      "id": 1195,
+      "start": 2820.54,
+      "end": 2822.77,
+      "text": "donc là comme on peut voir"
+    },
+    {
+      "id": 1196,
+      "start": 2822.77,
+      "end": 2826.22,
+      "text": "il a terminé notre étude de marché"
+    },
+    {
+      "id": 1197,
+      "start": 2826.22,
+      "end": 2828.22,
+      "text": "on va pouvoir l'importer"
+    },
+    {
+      "id": 1198,
+      "start": 2828.22,
+      "end": 2829.22,
+      "text": "pour voir la différence"
+    },
+    {
+      "id": 1199,
+      "start": 2829.22,
+      "end": 2835.22,
+      "text": "entre la v1 et la v2"
+    },
+    {
+      "id": 1200,
+      "start": 2835.22,
+      "end": 2836.95,
+      "text": "il y a le cheat"
+    },
+    {
+      "id": 1201,
+      "start": 2836.95,
+      "end": 2840.61,
+      "text": "importer"
+    },
+    {
+      "id": 1202,
+      "start": 2840.61,
+      "end": 2842.28,
+      "text": "tout à l'heure"
+    },
+    {
+      "id": 1203,
+      "start": 2842.28,
+      "end": 2843.28,
+      "text": "étude de marché"
+    },
+    {
+      "id": 1204,
+      "start": 2843.28,
+      "end": 2844.28,
+      "text": "on récupère"
+    },
+    {
+      "id": 1205,
+      "start": 2844.28,
+      "end": 2854.08,
+      "text": "le feuille de calcul"
+    },
+    {
+      "id": 1206,
+      "start": 2854.08,
+      "end": 2858.47,
+      "text": "et là on peut voir"
+    },
+    {
+      "id": 1207,
+      "start": 2858.47,
+      "end": 2859.47,
+      "text": "que c'est bien différent"
+    },
+    {
+      "id": 1208,
+      "start": 2859.47,
+      "end": 2861.47,
+      "text": "la qualité est assez"
+    },
+    {
+      "id": 1209,
+      "start": 2861.47,
+      "end": 2864.14,
+      "text": "plutôt pas mal"
+    },
+    {
+      "id": 1210,
+      "start": 2864.14,
+      "end": 2866.74,
+      "text": "petite synthèse"
+    },
+    {
+      "id": 1211,
+      "start": 2866.74,
+      "end": 2868.47,
+      "text": "on a une partie globale"
+    },
+    {
+      "id": 1212,
+      "start": 2868.47,
+      "end": 2874.98,
+      "text": "en France"
+    },
+    {
+      "id": 1213,
+      "start": 2874.98,
+      "end": 2879.05,
+      "text": "c'est"
+    },
+    {
+      "id": 1214,
+      "start": 2879.05,
+      "end": 2882.2,
+      "text": "2,6 milliards"
+    },
+    {
+      "id": 1215,
+      "start": 2882.2,
+      "end": 2883.58,
+      "text": "on peut voir qu'il y a une projection"
+    },
+    {
+      "id": 1216,
+      "start": 2883.58,
+      "end": 2884.58,
+      "text": "du coût de 2026"
+    },
+    {
+      "id": 1217,
+      "start": 2884.58,
+      "end": 2885.78,
+      "text": "nous on en 2026"
+    },
+    {
+      "id": 1218,
+      "start": 2885.78,
+      "end": 2886.87,
+      "text": "4,6 milliards"
+    },
+    {
+      "id": 1219,
+      "start": 2886.87,
+      "end": 2887.9,
+      "text": "donc ça fait"
+    },
+    {
+      "id": 1220,
+      "start": 2887.9,
+      "end": 2890.26,
+      "text": "une belle hausse"
+    },
+    {
+      "id": 1221,
+      "start": 2890.26,
+      "end": 2892.64,
+      "text": "on a les sources juste ici"
+    },
+    {
+      "id": 1222,
+      "start": 2892.64,
+      "end": 2894.64,
+      "text": "les segments technologiques"
+    },
+    {
+      "id": 1223,
+      "start": 2894.64,
+      "end": 2895.64,
+      "text": "et taille croissante"
+    },
+    {
+      "id": 1224,
+      "start": 2895.64,
+      "end": 2897.64,
+      "text": "donc là vraiment"
+    },
+    {
+      "id": 1225,
+      "start": 2897.64,
+      "end": 2898.64,
+      "text": "on a de quoi faire"
+    },
+    {
+      "id": 1226,
+      "start": 2898.64,
+      "end": 2900.47,
+      "text": "pour bien comprendre"
+    },
+    {
+      "id": 1227,
+      "start": 2900.47,
+      "end": 2902.47,
+      "text": "le marché en question"
+    },
+    {
+      "id": 1228,
+      "start": 2902.47,
+      "end": 2903.47,
+      "text": "donc ça a pas pris beaucoup de temps"
+    },
+    {
+      "id": 1229,
+      "start": 2903.47,
+      "end": 2904.47,
+      "text": "comme vous voyez"
+    },
+    {
+      "id": 1230,
+      "start": 2904.47,
+      "end": 2906.7,
+      "text": "c'est ça qui est vraiment intéressant"
+    },
+    {
+      "id": 1231,
+      "start": 2906.7,
+      "end": 2908.78,
+      "text": "avoir un système"
+    },
+    {
+      "id": 1232,
+      "start": 2908.78,
+      "end": 2909.78,
+      "text": "qui est capable"
+    },
+    {
+      "id": 1233,
+      "start": 2909.78,
+      "end": 2910.78,
+      "text": "de nous proposer quelque chose"
+    },
+    {
+      "id": 1234,
+      "start": 2910.78,
+      "end": 2911.78,
+      "text": "de qualitatif"
+    },
+    {
+      "id": 1235,
+      "start": 2911.78,
+      "end": 2912.78,
+      "text": "en peu de temps"
+    },
+    {
+      "id": 1236,
+      "start": 2912.78,
+      "end": 2915.2,
+      "text": "c'est assez incroyable"
+    },
+    {
+      "id": 1237,
+      "start": 2915.2,
+      "end": 2918.7,
+      "text": "et ça peut être très important"
+    },
+    {
+      "id": 1238,
+      "start": 2918.7,
+      "end": 2919.7,
+      "text": "très intéressant"
+    },
+    {
+      "id": 1239,
+      "start": 2919.7,
+      "end": 2921.95,
+      "text": "sur tous les projets"
+    },
+    {
+      "id": 1240,
+      "start": 2921.95,
+      "end": 2922.95,
+      "text": "qu'on va voir ensemble"
+    },
+    {
+      "id": 1241,
+      "start": 2922.95,
+      "end": 2923.95,
+      "text": "et sur les projets aussi que vous avez"
+    },
+    {
+      "id": 1242,
+      "start": 2923.95,
+      "end": 2926.3,
+      "text": "vous allez délivrer"
+    },
+    {
+      "id": 1243,
+      "start": 2926.3,
+      "end": 2927.3,
+      "text": "liste détaillé par secteur"
+    },
+    {
+      "id": 1244,
+      "start": 2927.3,
+      "end": 2929.81,
+      "text": "donc la finance assurance"
+    },
+    {
+      "id": 1245,
+      "start": 2929.81,
+      "end": 2930.81,
+      "text": "maturité"
+    },
+    {
+      "id": 1246,
+      "start": 2930.81,
+      "end": 2931.81,
+      "text": "il y a 8 sur 10"
+    },
+    {
+      "id": 1247,
+      "start": 2931.81,
+      "end": 2933.03,
+      "text": "collectivité locale"
+    },
+    {
+      "id": 1248,
+      "start": 2933.03,
+      "end": 2934.8,
+      "text": "voilà"
+    },
+    {
+      "id": 1249,
+      "start": 2934.8,
+      "end": 2939.06,
+      "text": "ça peut être tout ça"
+    },
+    {
+      "id": 1250,
+      "start": 2939.06,
+      "end": 2940.06,
+      "text": "par la suite"
+    },
+    {
+      "id": 1251,
+      "start": 2940.06,
+      "end": 2945.58,
+      "text": "quand vous avez créé votre propre"
+    },
+    {
+      "id": 1252,
+      "start": 2945.58,
+      "end": 2946.58,
+      "text": "de marché"
+    },
+    {
+      "id": 1253,
+      "start": 2946.58,
+      "end": 2947.58,
+      "text": "et comprendre sur quoi"
+    },
+    {
+      "id": 1254,
+      "start": 2947.58,
+      "end": 2948.58,
+      "text": "vous voulez vous positionner"
+    },
+    {
+      "id": 1255,
+      "start": 2948.58,
+      "end": 2952.43,
+      "text": "on peut faire"
+    },
+    {
+      "id": 1256,
+      "start": 2952.43,
+      "end": 2953.43,
+      "text": "et à quoi ça sert"
+    },
+    {
+      "id": 1257,
+      "start": 2953.43,
+      "end": 2954.43,
+      "text": "d'itérer constamment"
+    },
+    {
+      "id": 1258,
+      "start": 2954.43,
+      "end": 2955.43,
+      "text": "d'autres demandes"
+    },
+    {
+      "id": 1259,
+      "start": 2955.43,
+      "end": 2956.43,
+      "text": "pour avoir quelque chose"
+    },
+    {
+      "id": 1260,
+      "start": 2956.43,
+      "end": 2958.59,
+      "text": "qui est de plus en plus"
+    },
+    {
+      "id": 1261,
+      "start": 2958.59,
+      "end": 2966.79,
+      "text": "pour revenir du coup"
+    },
+    {
+      "id": 1262,
+      "start": 2966.79,
+      "end": 2967.79,
+      "text": "un petit peu"
+    },
+    {
+      "id": 1263,
+      "start": 2967.79,
+      "end": 2968.79,
+      "text": "sur le support technique"
+    },
+    {
+      "id": 1264,
+      "start": 2968.79,
+      "end": 2970.69,
+      "text": "on peut voir"
+    },
+    {
+      "id": 1265,
+      "start": 2970.69,
+      "end": 2971.69,
+      "text": "qu'on a aussi"
+    },
+    {
+      "id": 1266,
+      "start": 2971.69,
+      "end": 2972.69,
+      "text": "des commandes"
+    },
+    {
+      "id": 1267,
+      "start": 2972.69,
+      "end": 2973.69,
+      "text": "essentiel"
+    },
+    {
+      "id": 1268,
+      "start": 2973.69,
+      "end": 2974.69,
+      "text": "donc il y en a pas 50"
+    },
+    {
+      "id": 1269,
+      "start": 2974.69,
+      "end": 2976.07,
+      "text": "mais voilà"
+    },
+    {
+      "id": 1270,
+      "start": 2976.07,
+      "end": 2979.29,
+      "text": "que tu vas utiliser du coup"
+    },
+    {
+      "id": 1271,
+      "start": 2979.29,
+      "end": 2980.29,
+      "text": "tous les jours"
+    },
+    {
+      "id": 1272,
+      "start": 2980.29,
+      "end": 2981.29,
+      "text": "la partie help"
+    },
+    {
+      "id": 1273,
+      "start": 2981.29,
+      "end": 2982.29,
+      "text": "clear"
+    },
+    {
+      "id": 1274,
+      "start": 2982.29,
+      "end": 2983.29,
+      "text": "cost"
+    },
+    {
+      "id": 1275,
+      "start": 2983.29,
+      "end": 2986.98,
+      "text": "compact"
+    },
+    {
+      "id": 1276,
+      "start": 2986.98,
+      "end": 2987.98,
+      "text": "compressé quand la conversation"
+    },
+    {
+      "id": 1277,
+      "start": 2987.98,
+      "end": 2988.98,
+      "text": "est trop longue"
+    },
+    {
+      "id": 1278,
+      "start": 2988.98,
+      "end": 2989.98,
+      "text": "si là je retourne ici"
+    },
+    {
+      "id": 1279,
+      "start": 2989.98,
+      "end": 3004.46,
+      "text": "je fais générer un cloud md"
+    },
+    {
+      "id": 1280,
+      "start": 3004.46,
+      "end": 3005.46,
+      "text": "ça on l'a vu"
+    },
+    {
+      "id": 1281,
+      "start": 3005.46,
+      "end": 3008.86,
+      "text": "on peut voir qu'il peut gérer les fichiers"
+    },
+    {
+      "id": 1282,
+      "start": 3008.86,
+      "end": 3010.96,
+      "text": "donc tu parles français"
+    },
+    {
+      "id": 1283,
+      "start": 3010.96,
+      "end": 3011.96,
+      "text": "lire le fichier index.html"
+    },
+    {
+      "id": 1284,
+      "start": 3011.96,
+      "end": 3012.96,
+      "text": "modifier le titre"
+    },
+    {
+      "id": 1285,
+      "start": 3012.96,
+      "end": 3013.96,
+      "text": "il va le faire"
+    },
+    {
+      "id": 1286,
+      "start": 3013.96,
+      "end": 3015.96,
+      "text": "on peut lancer des commandes du coup"
+    },
+    {
+      "id": 1287,
+      "start": 3015.96,
+      "end": 3017.06,
+      "text": "qu'on a vu"
+    },
+    {
+      "id": 1288,
+      "start": 3017.06,
+      "end": 3019.78,
+      "text": "on peut voir aussi"
+    },
+    {
+      "id": 1289,
+      "start": 3019.78,
+      "end": 3020.78,
+      "text": "qu'il y a des limites"
+    },
+    {
+      "id": 1290,
+      "start": 3020.78,
+      "end": 3021.78,
+      "text": "parfois il peut se tromper"
+    },
+    {
+      "id": 1291,
+      "start": 3021.78,
+      "end": 3022.78,
+      "text": "c'est pour ça qu'il faut bien"
+    },
+    {
+      "id": 1292,
+      "start": 3022.78,
+      "end": 3023.78,
+      "text": "analyser"
+    },
+    {
+      "id": 1293,
+      "start": 3023.78,
+      "end": 3026.38,
+      "text": "fait"
+    },
+    {
+      "id": 1294,
+      "start": 3026.38,
+      "end": 3028.86,
+      "text": "qu'il voit aussi"
+    },
+    {
+      "id": 1295,
+      "start": 3028.86,
+      "end": 3033.73,
+      "text": "la meilleure astuce"
+    },
+    {
+      "id": 1296,
+      "start": 3033.73,
+      "end": 3034.73,
+      "text": "c'est"
+    },
+    {
+      "id": 1297,
+      "start": 3034.73,
+      "end": 3036.94,
+      "text": "des petites étapes"
+    },
+    {
+      "id": 1298,
+      "start": 3036.94,
+      "end": 3037.94,
+      "text": "pour avoir vraiment"
+    },
+    {
+      "id": 1299,
+      "start": 3037.94,
+      "end": 3039.94,
+      "text": "un résultat qui est parfait"
+    },
+    {
+      "id": 1300,
+      "start": 3039.94,
+      "end": 3041.81,
+      "text": "donc là je vous ai mis"
+    },
+    {
+      "id": 1301,
+      "start": 3041.81,
+      "end": 3042.81,
+      "text": "une petite liste d'exemples"
+    },
+    {
+      "id": 1302,
+      "start": 3042.81,
+      "end": 3051.78,
+      "text": "que vous pouvez"
+    },
+    {
+      "id": 1303,
+      "start": 3051.78,
+      "end": 3052.78,
+      "text": "on se retrouve tout de suite"
+    },
+    {
+      "id": 1304,
+      "start": 3052.78,
+      "end": 3053.78,
+      "text": "pour l'étape 2 du coup"
+    },
+    {
+      "id": 1305,
+      "start": 3053.78,
+      "end": 3056.26,
+      "text": "qui va parler de codex"
+    },
+    {
+      "id": 1306,
+      "start": 3056.26,
+      "end": 3058.26,
+      "text": "qui est un outil similaire"
+    },
+    {
+      "id": 1307,
+      "start": 3058.26,
+      "end": 3059.54,
+      "text": "du coup à code code"
+    },
+    {
+      "id": 1308,
+      "start": 3059.54,
+      "end": 3060.54,
+      "text": "et on va voir comment"
+    },
+    {
+      "id": 1309,
+      "start": 3060.54,
+      "end": 3061.54,
+      "text": "utiliser les deux"
+    },
+    {
+      "id": 1310,
+      "start": 3061.54,
+      "end": 3063.54,
+      "text": "pour gagner en efficacité"
+    }
+  ]
+}
