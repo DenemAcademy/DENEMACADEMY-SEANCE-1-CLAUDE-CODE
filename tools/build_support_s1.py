@@ -688,6 +688,7 @@ def render_section(item: dict[str, str], n: int) -> str:
 
 def nav() -> str:
     links = [
+        ("C’est quoi", "#intro-claude-code"),
         ("Départ", "#section-01"),
         ("Installer", "#section-19"),
         ("Exercice", "#section-33"),
@@ -699,6 +700,110 @@ def nav() -> str:
         f'<a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="{href}">{label}</a>'
         for label, href in links
     )
+
+
+def intro_block() -> str:
+    cards = [
+        (
+            "01",
+            "Un assistant dans ton projet",
+            "Claude Code est un outil d’Anthropic qui se lance dans un dossier de travail. Il ne regarde pas juste une question isolée : il peut comprendre les fichiers autour, proposer une modification et t’aider à avancer sur un vrai projet.",
+            "bg-blue-50",
+        ),
+        (
+            "02",
+            "Pas seulement un chatbot",
+            "Un chatbot répond surtout dans une conversation. Claude Code peut aussi agir : créer un fichier, modifier du code, lancer une commande, expliquer une erreur ou préparer une checklist. C’est utile, mais ça demande plus de contrôle.",
+            "bg-violet-50",
+        ),
+        (
+            "03",
+            "Tu restes le pilote",
+            "Claude Code propose et exécute, mais toi tu décides. Tu lis ce qu’il veut faire, tu regardes les fichiers modifiés, tu ouvres le résultat, puis tu acceptes ou tu demandes une correction. L’outil ne valide pas à ta place.",
+            "bg-cyan-50",
+        ),
+        (
+            "04",
+            "Le dossier compte beaucoup",
+            "La règle simple : Claude Code travaille là où tu le lances. Si tu l’ouvres dans le bon dossier, il a le bon contexte. Si tu l’ouvres au mauvais endroit, il peut regarder ou modifier des éléments qui ne concernent pas l’exercice.",
+            "bg-white",
+        ),
+    ]
+    card_html = ""
+    for number, title, text, tone in cards:
+        card_html += f"""
+          <article class="border-2 border-slate-950 {tone} p-5 shadow-[6px_6px_0_#111827]">
+            <p class="font-mono text-[11px] font-black uppercase tracking-[.16em] text-slate-500">{number}</p>
+            <h3 class="mt-3 text-xl font-black leading-7 text-slate-950">{e(title)}</h3>
+            <p class="mt-3 text-[15px] leading-7 text-slate-700">{e(text)}</p>
+          </article>
+        """
+    decision_rows = [
+        ["Tu veux comprendre une idée", "Un chatbot suffit souvent. Tu poses une question, tu lis la réponse, tu réfléchis."],
+        ["Tu veux créer ou modifier des fichiers", "Claude Code est plus adapté. Il travaille dans ton dossier et peut produire un résultat concret."],
+        ["Tu veux corriger une erreur", "Claude Code peut lire les fichiers, proposer une piste, lancer une commande et expliquer le problème."],
+        ["Tu veux livrer proprement", "Tu lui demandes une checklist, puis tu vérifies toi-même le rendu, les liens, le mobile et les fichiers modifiés."],
+    ]
+    decision_html = ""
+    for situation, tool in decision_rows:
+        decision_html += f"""
+          <div class="grid sm:grid-cols-[220px_1fr]">
+            <div class="border-b-2 border-slate-950 bg-blue-100 px-5 py-4 sm:border-b-0 sm:border-r-2">
+              <p class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-600">Situation</p>
+              <p class="mt-2 font-black leading-6 text-slate-950">{e(situation)}</p>
+            </div>
+            <div class="bg-white px-5 py-4">
+              <p class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Outil à privilégier</p>
+              <p class="mt-2 text-[15px] leading-7 text-slate-700">{e(tool)}</p>
+            </div>
+          </div>
+        """
+    return f"""
+  <section id="intro-claude-code" class="mx-auto max-w-7xl bg-white px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
+      <div class="border-2 border-slate-950 bg-white p-7 shadow-[8px_8px_0_#111827]">
+        <div class="mb-5 inline-flex border-2 border-slate-950 bg-violet-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Avant la pratique</div>
+        <h2 class="font-display text-4xl font-black leading-tight text-slate-950 sm:text-6xl">C’est quoi Claude Code ?</h2>
+        <p class="mt-5 text-lg leading-8 text-slate-700">Imagine que tu ouvres un dossier sur ton ordinateur et que tu demandes à un assistant de t’aider dedans. Pas juste de parler du projet. De le lire, de proposer une action, de créer un fichier, de corriger une erreur, puis de t’expliquer ce qui a changé.</p>
+        <p class="mt-4 text-lg leading-8 text-slate-700">Claude Code sert à ça. C’est un agent de code. Il peut travailler dans le terminal ou dans l’interface Desktop. Il est pratique pour apprendre, créer un site, corriger un script, organiser un projet ou comprendre une erreur. Mais il faut garder une règle simple : tu demandes, il propose, tu vérifies.</p>
+        <div class="mt-6 border-l-4 border-blue-600 bg-blue-50 px-5 py-4">
+          <p class="font-black text-slate-950">Question simple</p>
+          <p class="mt-2 leading-7 text-slate-700">Est-ce que je veux seulement une explication, ou est-ce que je veux obtenir un vrai fichier dans un vrai dossier ? Cette question t’aide à savoir quand utiliser Claude Code.</p>
+        </div>
+      </div>
+      <figure class="overflow-hidden border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
+        <img class="aspect-[16/10] w-full bg-white object-contain" src="assets/claude-code-interface/desktop-files-preview.png" alt="Interface Claude Code avec fichiers et aperçu" loading="lazy">
+        <figcaption class="border-t-2 border-slate-950 bg-white px-4 py-3 text-sm font-semibold text-slate-700">Claude Code aide à passer d’une demande à des fichiers vérifiables.</figcaption>
+      </figure>
+    </div>
+
+    <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {card_html}
+    </div>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
+      <div class="border-2 border-slate-950 bg-slate-950 p-6 text-white shadow-[8px_8px_0_#111827]">
+        <p class="font-mono text-xs font-black uppercase tracking-[.16em] text-cyan-200">La boucle à retenir</p>
+        <ol class="mt-5 space-y-4 text-base leading-7">
+          <li><b>1. Tu ouvres le bon dossier.</b><br><span class="text-slate-300">Claude Code doit partir du bon contexte.</span></li>
+          <li><b>2. Tu formules une demande claire.</b><br><span class="text-slate-300">Tu dis le résultat attendu, le public et les contraintes.</span></li>
+          <li><b>3. Claude propose ou modifie.</b><br><span class="text-slate-300">Il peut écrire, corriger, lancer une commande ou expliquer.</span></li>
+          <li><b>4. Tu vérifies.</b><br><span class="text-slate-300">Tu ouvres le fichier, tu lis le diff, tu testes le rendu.</span></li>
+        </ol>
+      </div>
+      <div>
+        <div class="overflow-hidden border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
+          <div class="border-b-2 border-slate-950 bg-blue-600 px-5 py-3">
+            <p class="font-mono text-xs font-black uppercase tracking-[.16em] text-white">Quand utiliser quoi ?</p>
+          </div>
+          <div class="divide-y-2 divide-slate-950">
+            {decision_html}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    """
 
 
 def source_table() -> str:
@@ -746,7 +851,7 @@ def render() -> str:
 <body class="bg-white">
   <div class="fixed left-0 top-0 z-[90] h-1 w-full bg-slate-200"><div id="progress" class="progress-line h-full bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-400"></div></div>
 
-  <nav class="z-50 border-b-2 border-slate-950 bg-white lg:sticky lg:top-0">
+  <nav class="z-50 border-b-2 border-slate-950 bg-white">
     <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
       <a href="#top" class="flex items-center gap-3 text-slate-950 no-underline">
         <img src="logo-denem.jpeg" alt="Logo DENEM" class="h-11 w-11 border-2 border-slate-950 object-cover shadow-[4px_4px_0_#111827]">
@@ -781,6 +886,8 @@ def render() -> str:
       </div>
     </div>
   </header>
+
+  {intro_block()}
 
   <section class="mx-auto max-w-7xl bg-white px-4 py-8 sm:px-6 lg:px-8">
     <div class="grid gap-4 md:grid-cols-5">
