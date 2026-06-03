@@ -106,7 +106,7 @@ def desktop_shell(draw: ImageDraw.ImageDraw, xy: tuple[int, int, int, int], mode
         text(draw, (x1 + 48, y + 9), label, F_SMALL, INK)
     draw.rectangle((x1 + 255, y1 + 80, x2 - 330, y2 - 20), fill="#ffffff", outline=INK, width=3)
     text(draw, (x1 + 280, y1 + 104), mode, F_BODY_BOLD, INK)
-    wrapped(draw, (x1 + 280, y1 + 152), "Tu écris ta demande ici. Claude lit le projet, propose un plan, puis tu valides les étapes importantes.", 580, F_BODY, "#334155", 10)
+    wrapped(draw, (x1 + 280, y1 + 152), "Vous écrivez votre demande ici. Claude lit le projet, propose un plan, puis vous validez les étapes importantes.", 580, F_BODY, "#334155", 10)
     draw.rectangle((x2 - 305, y1 + 80, x2 - 20, y2 - 20), fill="#111827", outline=INK, width=3)
     text(draw, (x2 - 282, y1 + 104), "Terminal", F_SMALL_BOLD, "#ffffff")
     for i, line in enumerate(["$ npm -v", "$ claude", "$ git status", "$ npm test"]):
@@ -154,7 +154,7 @@ SCENES = [
     (
         "terminal-start.png",
         "Le terminal Claude Code",
-        "Voici l’idée à montrer aux élèves : Claude Code démarre dans un dossier précis. Le chemin du dossier compte autant que le prompt.",
+        "Voici l’idée à montrer aux participants : Claude Code démarre dans un dossier précis. Le chemin du dossier compte autant que le prompt.",
         "interface",
         lambda d: terminal(
             d,
@@ -171,7 +171,7 @@ SCENES = [
     (
         "install-node-npm.png",
         "Pourquoi Node.js ?",
-        "Node.js installe npm. npm installe Claude Code. Si npm ne répond pas, tu ne peux pas continuer proprement.",
+        "Node.js et npm restent utiles pour certains projets et anciennes installations. Ils aident aussi à diagnostiquer un environnement.",
         "installation",
         lambda d: terminal(
             d,
@@ -181,22 +181,22 @@ SCENES = [
                 ("$", "node -v"),
                 ("→", "v20.x ou plus récent"),
                 ("$", "npm -v"),
-                ("→", "npm répond. Tu peux installer Claude Code."),
+                ("→", "npm répond. Votre environnement projet est plus facile à diagnostiquer."),
             ],
         ),
     ),
     (
         "install-claude-command.png",
         "Installer Claude Code",
-        "La commande npm reste une route simple. La documentation officielle rappelle aussi de ne pas utiliser sudo avec npm.",
+        "La documentation récente recommande l’installation native. Copiez toujours la commande officielle adaptée à votre système.",
         "installation",
         lambda d: terminal(
             d,
             (54, 360, 1380, 820),
-            "Installation npm",
+            "Installation officielle",
             [
-                ("$", "npm install -g @anthropic-ai/claude-code"),
-                ("→", "Claude Code est installé comme commande globale."),
+                ("$", "curl -fsSL https://claude.ai/install.sh | bash"),
+                ("PS", "irm https://claude.ai/install.ps1 | iex"),
                 ("$", "claude --version"),
                 ("→", "2.1.112 (Claude Code)"),
             ],
@@ -210,12 +210,12 @@ SCENES = [
         lambda d: terminal(
             d,
             (54, 360, 1380, 820),
-            "Exercice élève",
+            "Exercice guidé",
             [
                 ("$", "claude"),
                 ("›", "Crée une page HTML simple pour un freelance IA."),
                 ("›", "À la fin, liste les fichiers créés et explique comment ouvrir la page."),
-                ("→", "Tu obtiens un fichier, une consigne d’ouverture et une base à corriger."),
+                ("→", "Vous obtenez un fichier, une consigne d’ouverture et une base à corriger."),
             ],
         ),
     ),
@@ -240,7 +240,7 @@ SCENES = [
     (
         "permissions-modes.png",
         "Modes de permission",
-        "La question à poser aux élèves : est-ce que je veux qu’il demande avant d’agir, ou est-ce que je lui fais déjà confiance ?",
+        "La question à se poser : est-ce que je veux qu’il demande avant d’agir, ou est-ce que je lui fais déjà confiance ?",
         "sécurité",
         lambda d: cards(
             d,
@@ -270,15 +270,15 @@ SCENES = [
     (
         "usage-limits.png",
         "Limites d’usage",
-        "Pro et Max partagent les limites entre Claude et Claude Code. Si tu utilises beaucoup les deux, tout compte.",
+        "Pro et Max partagent les limites entre Claude et Claude Code. Si vous utilisez beaucoup les deux, tout compte.",
         "prix",
         lambda d: terminal(
             d,
             (54, 360, 1380, 820),
-            "Quand tu touches la limite",
+            "Quand vous touchez la limite",
             [
                 ("?", "Pourquoi ça bloque ?"),
-                ("→", "Ton activité Claude + Claude Code compte dans la même capacité."),
+                ("→", "Votre activité Claude + Claude Code compte dans la même capacité."),
                 ("→", "Options : attendre, ajouter des crédits, passer à Max, ou réduire la demande."),
             ],
         ),
@@ -300,7 +300,7 @@ SCENES = [
     (
         "memory-claude-md.png",
         "CLAUDE.md",
-        "Le fichier CLAUDE.md donne une mémoire de projet. Pour un support élève, il fixe le ton, les limites et les règles.",
+        "Le fichier CLAUDE.md donne une mémoire de projet. Pour ce support, il fixe la voix, les limites et les règles.",
         "mémoire",
         lambda d: terminal(
             d,
@@ -309,7 +309,7 @@ SCENES = [
             [
                 ("#", "Règles du projet"),
                 ("-", "Répondre en français simple."),
-                ("-", "Toujours expliquer l’action à l’élève."),
+                ("-", "Toujours expliquer l’action clairement."),
                 ("-", "Ne jamais modifier les vidéos."),
                 ("-", "Vérifier la version mobile avant livraison."),
             ],
@@ -318,17 +318,17 @@ SCENES = [
     (
         "troubleshooting.png",
         "Dépannage simple",
-        "Quand ça bloque, ne panique pas. Tu vérifies le chemin, Node, npm, puis l’erreur exacte.",
+        "Quand ça bloque, pas de panique. Vous vérifiez le chemin, Node, npm, puis l’erreur exacte.",
         "dépannage",
         lambda d: terminal(
             d,
             (54, 360, 1380, 820),
-            "Diagnostic élève",
+            "Diagnostic guidé",
             [
                 ("$", "pwd"),
                 ("$", "node -v && npm -v"),
                 ("$", "claude --version"),
-                ("?", "Copie l’erreur exacte. Ne la reformule pas trop tôt."),
+                ("?", "Copiez l’erreur exacte. Ne la reformulez pas trop tôt."),
             ],
         ),
     ),
@@ -353,7 +353,7 @@ SCENES = [
     (
         "auth-login.png",
         "Connexion du compte",
-        "Au premier lancement, tu te connectes avec le même compte que Claude. C’est ce lien qui donne accès au plan Pro ou Max.",
+        "Au premier lancement, vous vous connectez avec le même compte que Claude. C’est ce lien qui donne accès au plan Pro ou Max.",
         "connexion",
         lambda d: terminal(
             d,
@@ -362,7 +362,7 @@ SCENES = [
             [
                 ("$", "claude"),
                 ("→", "Ouvre le lien de connexion dans le navigateur."),
-                ("→", "Connecte-toi avec le compte Claude utilisé pour Pro ou Max."),
+                ("→", "Connectez-vous avec le compte Claude utilisé pour Pro ou Max."),
                 ("✓", "La session terminal est authentifiée."),
             ],
         ),
@@ -379,15 +379,15 @@ SCENES = [
             [
                 ("⇧", "Shift + Tab : passer en Plan mode"),
                 ("›", "Propose un plan avant de modifier le support."),
-                ("→", "Claude explique les étapes et attend ta validation."),
-                ("?", "Est-ce que ce plan sert vraiment l’élève ?"),
+                ("→", "Claude explique les étapes et attend votre validation."),
+                ("?", "Est-ce que ce plan sert vraiment votre objectif ?"),
             ],
         ),
     ),
     (
         "diff-approval.png",
         "Relire un diff",
-        "Quand Claude modifie un fichier, tu dois regarder ce qui change. Le diff rend la validation plus concrète.",
+        "Quand Claude modifie un fichier, vous devez regarder ce qui change. Le diff rend la validation plus concrète.",
         "validation",
         lambda d: diff_panel(
             d,
@@ -396,7 +396,7 @@ SCENES = [
             [
                 ("-", "Titre générique"),
                 ("+", "Installer Claude Code sans se perdre"),
-                (" ", "Explication courte pour les élèves"),
+                (" ", "Explication courte pour vous"),
                 ("+", "Vérification : ouvrir le fichier dans le navigateur"),
                 ("?", "Accepter seulement si le résultat est clair"),
             ],
@@ -405,7 +405,7 @@ SCENES = [
     (
         "file-created.png",
         "Fichier créé",
-        "Une demande réussie laisse une preuve simple : le fichier existe, son nom est clair, et tu sais l’ouvrir.",
+        "Une demande réussie laisse une preuve simple : le fichier existe, son nom est clair, et vous savez l’ouvrir.",
         "résultat",
         lambda d: folder_panel(
             d,
@@ -423,7 +423,7 @@ SCENES = [
     (
         "git-status.png",
         "Vérifier Git",
-        "Git status montre les fichiers modifiés. Même débutant, tu dois savoir regarder ce résumé avant de publier.",
+        "Git status montre les fichiers modifiés. Même au début, vous devez savoir regarder ce résumé avant de publier.",
         "git",
         lambda d: terminal(
             d,
@@ -440,7 +440,7 @@ SCENES = [
     (
         "npm-test.png",
         "Tester une commande",
-        "Quand un projet contient des tests ou un build, Claude Code peut les lancer. Toi, tu lis le résultat.",
+        "Quand un projet contient des tests ou un build, Claude Code peut les lancer. Vous lisez le résultat.",
         "test",
         lambda d: terminal(
             d,
@@ -457,7 +457,7 @@ SCENES = [
     (
         "update-doctor.png",
         "Doctor et update",
-        "Quand l’installation semble étrange, tu diagnostiques avant de changer dix choses à la fois.",
+        "Quand l’installation semble étrange, vous diagnostiquez avant de changer dix choses à la fois.",
         "diagnostic",
         lambda d: terminal(
             d,
@@ -474,21 +474,21 @@ SCENES = [
     (
         "desktop-files-preview.png",
         "Fichiers et aperçu",
-        "Desktop aide les élèves à visualiser le projet : fichiers à gauche, demande au centre, aperçu ou terminal à droite.",
+        "Desktop vous aide à visualiser le projet : fichiers à gauche, demande au centre, aperçu ou terminal à droite.",
         "desktop",
         lambda d: desktop_shell(d, (54, 330, 1380, 820), "Aperçu : support-technique-seance-01.html"),
     ),
     (
         "desktop-permissions.png",
         "Permissions Desktop",
-        "Un élève doit voir les actions avant de les accepter. Les permissions rendent ce contrôle visible.",
+        "Vous devez voir les actions avant de les accepter. Les permissions rendent ce contrôle visible.",
         "desktop",
         lambda d: cards(
             d,
             [
                 (BLUE, "Voir l’action", "Claude explique la commande ou le fichier concerné."),
-                (VIOLET, "Accepter", "Tu valides si le changement est logique."),
-                (ORANGE, "Refuser", "Tu refuses si tu ne comprends pas encore."),
+                (VIOLET, "Accepter", "Vous validez si le changement est logique."),
+                (ORANGE, "Refuser", "Vous refusez si vous ne comprenez pas encore."),
             ],
             400,
         ),
@@ -511,7 +511,7 @@ SCENES = [
     (
         "windows-terminal.png",
         "Windows et terminal",
-        "Sur Windows, garde le même terminal pendant la séance. Changer de terminal peut changer le chemin et les commandes.",
+        "Sur Windows, gardez le même terminal pendant la séance. Changer de terminal peut changer le chemin et les commandes.",
         "windows",
         lambda d: terminal(
             d,
@@ -533,7 +533,7 @@ SCENES = [
         lambda d: cards(
             d,
             [
-                (BLUE, "Abonnement", "Toi, tu utilises Claude et Claude Code."),
+                (BLUE, "Abonnement", "Vous utilisez Claude et Claude Code."),
                 (VIOLET, "API", "Une application ou une automatisation appelle Claude."),
                 (ORANGE, "À retenir", "L’API se paie séparément de Pro ou Max."),
             ],
@@ -550,16 +550,16 @@ SCENES = [
             (54, 360, 1380, 820),
             "Secret à protéger",
             [
-                ("!", "Ne colle jamais une clé API dans le support."),
-                ("!", "Ne publie jamais une clé dans GitHub."),
-                ("→", "Si elle a été montrée : révoque-la et recrée-la."),
+                ("!", "Ne collez jamais une clé API dans le support."),
+                ("!", "Ne publiez jamais une clé dans GitHub."),
+                ("→", "Si elle a été montrée : révoquez-la et recréez-la."),
             ],
         ),
     ),
     (
         "source-docs.png",
         "Sources officielles",
-        "Quand tu doutes d’une commande ou d’un prix, tu vérifies la documentation officielle avant de continuer.",
+        "Quand vous doutez d’une commande ou d’un prix, vous vérifiez la documentation officielle avant de continuer.",
         "source",
         lambda d: cards(
             d,
@@ -574,14 +574,14 @@ SCENES = [
     (
         "prompt-constraints.png",
         "Prompt avec contraintes",
-        "Un prompt clair donne le contexte, le format attendu et les limites. L’élève garde ainsi le contrôle.",
+        "Un prompt clair donne le contexte, le format attendu et les limites. Vous gardez ainsi le contrôle.",
         "prompt",
         lambda d: terminal(
             d,
             (54, 360, 1380, 820),
             "Demande structurée",
             [
-                ("›", "Je crée un support pour élèves débutants."),
+                ("›", "Je crée un support pour débuter proprement."),
                 ("›", "Sortie attendue : une page HTML responsive."),
                 ("›", "Contraintes : fond blanc, violet/bleu, phrases simples."),
                 ("›", "À la fin, liste les fichiers modifiés."),
@@ -596,7 +596,7 @@ SCENES = [
         lambda d: diff_panel(
             d,
             (54, 335, 1380, 820),
-            "Checklist élève",
+            "Checklist de vérification",
             [
                 ("+", "La page s’ouvre sans erreur."),
                 ("+", "Les liens externes sont cliquables."),
@@ -609,7 +609,7 @@ SCENES = [
     (
         "clear-compact.png",
         "Nettoyer la session",
-        "Quand la conversation devient trop longue, tu peux clarifier le contexte au lieu de continuer dans le flou.",
+        "Quand la conversation devient trop longue, vous pouvez clarifier le contexte au lieu de continuer dans le flou.",
         "session",
         lambda d: terminal(
             d,
@@ -632,16 +632,16 @@ SCENES = [
             (54, 360, 1380, 820),
             "Erreur à transmettre",
             [
-                ("$", "npm install -g @anthropic-ai/claude-code"),
-                ("×", "permission denied: /usr/local/lib/node_modules"),
-                ("→", "Copie l’erreur complète avant de demander de l’aide."),
+                ("$", "claude doctor"),
+                ("×", "PATH error: claude command not found"),
+                ("→", "Copiez l’erreur complète avant de demander de l’aide."),
             ],
         ),
     ),
     (
         "delivery-summary.png",
         "Résumé de livraison",
-        "À la fin, un élève doit pouvoir expliquer ce qui a été produit et comment le vérifier.",
+        "À la fin, vous devez pouvoir expliquer ce qui a été produit et comment le vérifier.",
         "livraison",
         lambda d: terminal(
             d,

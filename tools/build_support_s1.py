@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from html import escape
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,13 +11,14 @@ INDEX_OUT = ROOT / "index.html"
 
 DOCS = {
     "overview": "https://code.claude.com/docs/en/overview",
-    "setup": "https://code.claude.com/docs/en/getting-started",
+    "setup": "https://code.claude.com/docs/en/quickstart",
     "cli": "https://code.claude.com/docs/en/cli-usage",
     "memory": "https://code.claude.com/docs/en/memory",
     "settings": "https://code.claude.com/docs/en/settings",
     "security": "https://code.claude.com/docs/en/security",
     "workflows": "https://code.claude.com/docs/en/common-workflows",
     "troubleshooting": "https://code.claude.com/docs/en/troubleshooting",
+    "desktop": "https://code.claude.com/docs/en/desktop-quickstart",
     "ide": "https://code.claude.com/docs/en/ide-integrations",
     "mcp": "https://code.claude.com/docs/en/mcp",
     "github": "https://code.claude.com/docs/en/github-actions",
@@ -127,201 +129,147 @@ INTERFACE_META = {
 
 CHAPTERS = [
     (
-        "Avant de lancer",
-        "Tu prépares le terrain avant d’écrire la première commande.",
+        "Acte 1 - Comprendre l’outil",
+        "Vous posez les bases avant de lancer une commande.",
         "Théorie",
         "blue",
         [
-            ("Tu pars d’un dossier propre", "Un dossier propre évite les erreurs dès le début. Claude Code travaille dans le dossier où tu le lances. Si ce dossier est mélangé avec d’autres projets, il peut lire ou modifier des éléments qui n’ont rien à faire là.", "Crée un dossier nommé `formation-s1-claude-code`. Mets-le sur le bureau pour le retrouver facilement.", "Le dossier est vide, visible, et tu sais l’ouvrir sans chercher."),
-            ("Tu comprends le rôle de Claude Code", "Claude Code n’est pas seulement une fenêtre de discussion. C’est un assistant qui peut lire ton projet, créer des fichiers, lancer des commandes et corriger un résultat. C’est pour ça qu’il doit être utilisé avec méthode.", "Explique à voix haute la différence entre “répondre à une question” et “agir dans un dossier”.", "Tu sais pourquoi cet outil sert dans une formation orientée projet."),
-            ("Tu gardes le contrôle", "L’élève ne doit jamais se dire que Claude Code décide à sa place. Tu choisis le résultat attendu. Claude Code propose, produit, corrige. Toi, tu relis et tu valides.", "Avant chaque exercice, écris une phrase : `À la fin, je veux obtenir...`", "Tu sais ce que tu vas vérifier avant de lancer l’outil."),
-            ("Tu acceptes de commencer petit", "Le premier objectif n’est pas de livrer un gros site. Le premier objectif est de réussir une boucle simple : demander, obtenir, ouvrir, vérifier, corriger.", "Choisis un mini-test : une page HTML, un fichier README, ou une checklist.", "Tu as un exercice court, pas un projet flou."),
-            ("Tu lis le support comme une marche guidée", "Ce support n’est pas une retranscription. C’est une méthode pour refaire la séance et comprendre quoi faire à chaque étape.", "Garde le support ouvert à côté de ton terminal.", "Tu peux suivre sans retourner dans la vidéo toutes les deux minutes."),
-            ("Tu sais ce que tu vas apprendre", "À la fin, tu dois savoir installer Claude Code, le lancer dans un dossier, lui donner une demande claire et vérifier le résultat.", "Note ces quatre verbes : installer, lancer, demander, vérifier.", "Tu as une grille mentale simple pour toute la suite."),
+            ("Vous partez du bon problème", "Claude Code sert quand vous voulez avancer dans un vrai dossier. Il ne remplace pas votre jugement. Il donne surtout une manière plus directe de passer d’une idée à un fichier vérifiable.", "Formulez le besoin en une phrase : `Je veux obtenir...` puis ajoutez le fichier attendu.", "Vous savez pourquoi vous ouvrez Claude Code avant de commencer."),
+            ("Vous voyez Claude Code comme un assistant de projet", "Claude Code peut lire des fichiers, proposer des modifications, lancer certaines commandes et expliquer le résultat. Cette capacité est utile parce qu’elle rapproche la discussion du travail réel.", "Dites à voix haute la différence entre `répondre` et `agir dans un dossier`.", "Vous ne le traitez pas comme une simple zone de chat."),
+            ("Vous gardez la décision finale", "Même si l’outil écrit vite, la validation reste humaine. Vous choisissez l’objectif, vous acceptez ou refusez les actions, puis vous ouvrez le résultat pour le vérifier.", "Avant chaque demande, écrivez : `Je vérifierai le résultat en ouvrant...`.", "Vous savez ce qui doit être contrôlé avant de continuer."),
+            ("Vous choisissez un résultat visible", "Un bon début ne cherche pas à tout faire. Il cherche une sortie simple : un fichier, une page, une checklist, un résumé ou une correction claire.", "Choisissez une sortie que vous pouvez ouvrir ou relire en moins de deux minutes.", "La première étape reste courte et concrète."),
+            ("Vous retenez la boucle de travail", "La méthode de base est simple : dossier, demande, proposition, vérification, correction. Si une étape manque, la session devient vite confuse.", "Gardez cette phrase près du terminal : `Je demande, Claude propose, je vérifie.`", "Vous pouvez reprendre la séance sans regarder la vidéo en boucle."),
+            ("Vous comprenez le dossier actif", "Claude Code travaille depuis le dossier où il est lancé. Si ce dossier est mauvais, le contexte sera mauvais aussi. C’est souvent la première cause d’erreur.", "Créez un dossier `formation-s1-claude-code` et ouvrez le terminal dedans.", "Le chemin du terminal correspond au projet prévu."),
+            ("Vous savez ce que Claude peut lire", "Claude Code peut utiliser les fichiers du projet pour comprendre le contexte. Cette lecture aide pour corriger ou améliorer, mais elle demande un dossier propre.", "Placez uniquement les fichiers utiles dans le dossier de travail.", "Aucun fichier personnel ou hors sujet ne se trouve dans le projet."),
+            ("Vous savez ce que Claude peut modifier", "L’outil peut créer ou modifier des fichiers quand vous l’autorisez. Ce n’est pas dangereux si vous regardez les changements. Ça devient risqué si vous acceptez sans relire.", "Demandez toujours un résumé des fichiers touchés après une action.", "Vous savez exactement ce qui a changé."),
+            ("Vous commencez petit", "Une première session doit prouver que le flux fonctionne. Un petit fichier réussi vaut mieux qu’un grand projet commencé dans le flou.", "Demandez une page HTML simple, puis une seule amélioration.", "Vous voyez une progression réelle sans perdre le fil."),
+            ("Vous posez la règle d’or", "La règle d’or de la séance est directe : Claude Code accélère l’exécution, pas la réflexion. Vous devez donc cadrer, vérifier et décider.", "Notez cette règle dans votre fichier de notes.", "Vous savez expliquer l’outil avec des mots simples."),
         ],
     ),
     (
-        "ChatGPT ou Claude Code",
-        "Tu sais quand utiliser un chatbot et quand utiliser un agent dans ton dossier.",
-        "Comparaison",
-        "violet",
-        [
-            ("ChatGPT aide à réfléchir", "ChatGPT est pratique pour expliquer une idée, reformuler un texte ou préparer un plan. Mais il ne travaille pas directement dans ton dossier local.", "Utilise ChatGPT pour préparer une idée si tu en as besoin.", "Tu ne confonds pas réflexion et exécution."),
-            ("Claude Code aide à produire", "Claude Code devient utile quand tu veux créer ou modifier de vrais fichiers. Il peut lire le contexte du projet et agir dedans.", "Demande une page simple à Claude Code dans ton dossier test.", "Tu vois un fichier apparaître dans le dossier."),
-            ("Tu ne copies-colles pas tout à la main", "Avec un chatbot classique, tu récupères souvent du code puis tu dois créer les fichiers toi-même. Claude Code réduit ce travail manuel.", "Compare mentalement les étapes : copier, créer, coller, enregistrer, ouvrir.", "Tu comprends le gain de temps concret."),
-            ("Tu dois plus vérifier", "Plus l’outil peut agir, plus ta vérification compte. Il faut regarder ce qui a été créé, pas seulement lire la réponse dans le terminal.", "Demande toujours un résumé des fichiers modifiés.", "Tu sais ce qui a changé."),
-            ("Tu choisis selon la tâche", "Si tu veux juste comprendre une notion, un chatbot suffit. Si tu veux produire une page, un script, une arborescence ou un audit, Claude Code est plus adapté.", "Classe tes demandes en deux colonnes : réfléchir ou produire.", "Tu sais quel outil ouvrir."),
-            ("Tu construis un réflexe professionnel", "Un professionnel ne lance pas l’outil au hasard. Il choisit l’outil selon le résultat attendu.", "Avant de lancer Claude Code, demande-toi : `Quel fichier doit exister à la fin ?`", "Ta demande devient plus claire."),
-        ],
-    ),
-    (
-        "Budget et accès",
-        "Tu comprends la différence entre abonnement, quota et API.",
-        "Théorie",
-        "blue",
-        [
-            ("Quel plan choisir ?", "Question simple : est-ce que tu vas juste tester, ou est-ce que tu vas travailler plusieurs heures sur de vrais projets ? Le Help Center Claude indique Pro à 20 $/mois aux États-Unis, information vérifiée le 3 juin 2026. Le prix peut varier selon la région et les taxes.", "Compare ton besoin réel avant de payer : test, formation complète, ou projets clients. Avant achat, ouvre toujours la page officielle.", "Tu sais pourquoi Pro peut suffire au début, mais pas toujours pendant une grosse session."),
-            ("Pourquoi Max 5x existe ?", "Le Help Center liste Max 5x à 100 $/mois. L’idée est d’avoir plus de capacité par session que Pro. Pour un élève qui suit toute la formation et travaille souvent, c’est le plan à regarder si les limites deviennent un blocage.", "Note dans quel cas tu bloques : une fois de temps en temps, ou souvent au milieu d’un projet.", "Tu ne changes pas de plan par peur, tu changes parce que ton usage le justifie."),
-            ("Pourquoi Max 20x existe ?", "Le Help Center liste Max 20x à 200 $/mois. Il vise un usage plus intensif. Si tu fais beaucoup de Claude Code, plusieurs projets, des longues sessions et du travail client, il peut éviter des coupures.", "Demande-toi : est-ce que je perds du temps à cause des limites, ou est-ce que je n’utilise pas encore assez l’outil ?", "Tu relies le prix au temps gagné, pas à une envie vague."),
-            ("Que se passe-t-il si tu touches la limite ?", "Les limites Pro et Max sont partagées entre Claude et Claude Code. Donc si tu utilises beaucoup Claude dans le chat et Claude Code dans le terminal, tout compte dans la même capacité.", "Si tu touches la limite : attends le reset, réduis les demandes, active des crédits si besoin, ou passe à un plan plus adapté.", "Tu comprends que ce n’est pas un bug : c’est une limite d’usage."),
-            ("L’API, c’est encore autre chose", "L’API sert quand un système client appelle Claude automatiquement. Exemple : un assistant email, un chatbot ou une automatisation. Ce n’est pas ton abonnement personnel.", "Garde cette phrase : abonnement = toi qui travailles ; API = un système qui appelle Claude.", "Tu peux expliquer la différence à un client sans jargon."),
-            ("Une clé API reste privée", "Une clé API peut coûter de l’argent si quelqu’un l’utilise. Tu ne la mets jamais dans un support, une capture ou GitHub.", "Si une clé a été montrée, tu la révoques et tu en recrées une.", "Tu sais protéger tes accès avant de faire un projet client."),
-        ],
-    ),
-    (
+        "Acte 2 - Accès, prix et installation",
+        "Vous préparez l’accès Claude Code sans confondre abonnement, API et terminal.",
         "Installation",
-        "Tu installes Claude Code proprement sur ta machine.",
+        "cyan",
+        [
+            ("Vous choisissez le bon accès", "Claude Code demande un accès Claude compatible. La documentation indique qu’il peut être utilisé avec Pro, Max, Team, Enterprise ou d’autres accès pris en charge.", "Ouvrez la page officielle avant achat et vérifiez le plan disponible dans votre région.", "Vous ne payez pas avant d’avoir compris votre besoin réel."),
+            ("Vous comprenez le plan Pro", "Le Help Center indique Pro à 20 $/mois aux États-Unis. Pro peut suffire pour tester, apprendre et faire des sessions raisonnables.", "Classez votre usage : découverte, formation régulière ou production fréquente.", "Vous savez pourquoi Pro peut être un bon départ."),
+            ("Vous comprenez Max 5x", "Le plan Max 5x est listé à 100 $/mois. Il vise les usages plus fréquents et donne plus de capacité par session que Pro.", "Passez à Max seulement si les limites vous interrompent souvent dans un vrai travail.", "Le choix du plan repose sur votre usage, pas sur une peur de manquer."),
+            ("Vous comprenez Max 20x", "Le plan Max 20x est listé à 200 $/mois. Il vise les usages intensifs, les longues sessions et les personnes qui travaillent souvent avec Claude.", "Demandez-vous si le prix vous fait gagner du temps mesurable pendant vos projets.", "Vous reliez le budget au temps gagné."),
+            ("Vous distinguez abonnement et API", "L’abonnement sert à utiliser Claude et Claude Code avec votre compte. L’API sert à faire appeler Claude par un système automatisé, par exemple une application client.", "Retenez : abonnement = usage direct ; API = usage par un logiciel.", "Vous pouvez expliquer la différence sans jargon."),
+            ("Vous protégez les clés API", "Une clé API est privée. Si elle est exposée dans une capture, un dépôt GitHub ou un support, quelqu’un peut l’utiliser et créer des coûts.", "Ne mettez jamais une clé dans une page, un README public ou une image.", "Vos accès restent protégés."),
+            ("Vous choisissez la méthode officielle d’installation", "La documentation récente recommande l’installation native de Claude Code. Selon votre machine, la route peut être macOS, Linux, WSL, PowerShell, CMD, Homebrew ou WinGet.", "Copiez la commande depuis la page officielle, pas depuis un ancien message.", "Vous installez avec une source à jour."),
+            ("Vous gardez Node et npm comme repères", "Certaines séances ou anciennes installations parlent de npm. C’est utile à connaître, surtout pour comprendre les erreurs ou nettoyer une ancienne installation.", "Vérifiez `node -v` et `npm -v` si votre environnement dépend encore de npm.", "Vous savez si Node et npm répondent correctement."),
+            ("Vous lancez l’installation proprement", "L’installation doit se faire dans un terminal clair, sans commande copiée au hasard. Si une erreur de permission apparaît, il faut comprendre avant de forcer.", "Installez Claude Code avec la méthode officielle adaptée à votre système.", "La commande `claude --version` répond."),
+            ("Vous connectez votre compte", "Au premier lancement, Claude Code peut demander une connexion au compte Claude. C’est normal : l’outil doit savoir avec quel accès il travaille.", "Lancez `claude`, suivez la connexion, puis revenez au terminal.", "La session démarre avec le bon compte."),
+        ],
+    ),
+    (
+        "Acte 3 - Premier dossier, première session",
+        "Vous créez votre premier espace de travail et vous faites produire un petit résultat.",
         "Pratique",
         "cyan",
         [
-            ("Tu installes Node.js", "Claude Code s’installe avec npm. npm arrive avec Node.js. Si Node.js n’est pas installé, la commande d’installation ne pourra pas fonctionner.", "Installe Node.js depuis le site officiel, de préférence en version LTS.", "La commande `node -v` affiche une version."),
-            ("Tu vérifies npm", "npm est l’outil qui va installer Claude Code. Avant d’aller plus loin, tu vérifies qu’il répond.", "Lance `npm -v` dans le terminal.", "Une version s’affiche sans erreur."),
-            ("Tu installes Claude Code", "La commande d’installation ajoute Claude Code à ton environnement. Tu dois la lancer dans un terminal propre.", "Lance `npm install -g @anthropic-ai/claude-code`.", "L’installation se termine sans erreur bloquante."),
-            ("Tu n’utilises pas sudo sans comprendre", "Sur beaucoup de machines, utiliser sudo avec npm peut créer des problèmes de droits. La documentation officielle prévient ce point.", "Si tu vois une erreur de permission, lis la doc avant de forcer.", "Tu corriges proprement au lieu de bricoler."),
-            ("Tu lances Claude Code dans le dossier", "Le dossier courant est important. Tu dois lancer `claude` depuis le dossier du projet.", "Va dans `formation-s1-claude-code` puis lance `claude`.", "Claude Code démarre dans le bon contexte."),
-            ("Tu connectes ton compte", "Au premier lancement, Claude Code te demande de t’authentifier. C’est normal.", "Suis le lien de connexion puis reviens au terminal.", "La session est connectée."),
-            ("Tu vérifies l’installation", "Un diagnostic évite de chercher longtemps si quelque chose semble étrange.", "Lance `claude doctor` si l’outil ne se comporte pas comme prévu.", "Tu sais si ton installation est correcte."),
-            ("Tu notes les commandes", "Un élève oublie vite une commande vue une seule fois. Le support doit donc te faire garder une trace.", "Crée une note `commandes-s1.md` avec les commandes utiles.", "Tu peux refaire l’installation plus tard."),
+            ("Vous créez un dossier propre", "Le dossier est le décor de votre histoire. S’il est propre, Claude Code comprend mieux. S’il contient dix projets mélangés, il risque de lire trop large.", "Créez `formation-s1-claude-code` sur le bureau ou dans un endroit facile à retrouver.", "Le dossier est visible, vide et nommé clairement."),
+            ("Vous ouvrez le terminal au bon endroit", "Le terminal doit pointer vers le dossier de travail. Avant de lancer Claude Code, il faut savoir où vous êtes.", "Utilisez `cd` pour entrer dans le dossier, puis affichez le chemin avec `pwd` ou la commande adaptée à votre système.", "Le chemin affiché contient `formation-s1-claude-code`."),
+            ("Vous lancez Claude Code", "La commande `claude` ouvre une session interactive. À partir de là, vos demandes concernent le dossier actif.", "Lancez `claude` depuis le dossier prévu.", "Claude Code démarre sans erreur bloquante."),
+            ("Vous vérifiez le contexte de départ", "Avant de demander une création, vérifiez que Claude Code a compris le dossier et l’objectif. Une minute de cadrage évite dix minutes de correction.", "Demandez : `Résume le dossier actif et dis ce que vous voyez, sans modifier de fichier.`", "Vous obtenez une réponse de lecture, pas une modification."),
+            ("Vous demandez un premier fichier", "Le premier fichier sert à tester la boucle. Il doit être simple, lisible et facile à ouvrir.", "Demandez : `Crée une page HTML simple qui présente un service de création de site.`", "Un fichier HTML apparaît dans le dossier."),
+            ("Vous demandez la liste des fichiers", "Après une création, vous devez savoir où chercher. Claude Code doit vous donner les chemins, pas seulement dire que c’est fini.", "Ajoutez : `À la fin, liste les fichiers créés ou modifiés.`", "Vous retrouvez le bon fichier sans fouiller."),
+            ("Vous ouvrez le résultat", "Le résultat doit être vu dans son contexte final. Lire le code ne suffit pas si le livrable est une page.", "Ouvrez le fichier dans le navigateur ou l’aperçu Desktop.", "La page s’affiche et vous pouvez la juger."),
+            ("Vous corrigez une seule chose", "Une correction ciblée garde la session propre. Si vous demandez tout à la fois, il devient plus dur de voir ce qui a aidé.", "Demandez une amélioration unique : titre, couleur, section ou phrase.", "La modification est visible et facile à comparer."),
+            ("Vous demandez une mini checklist", "Claude Code peut aider à vérifier le résultat, mais la vérification reste à faire par vous. La checklist rend ce contrôle plus simple.", "Demandez : `Donne-moi 8 points à vérifier avant de dire que la page est prête.`", "Vous avez une liste concrète de contrôle."),
+            ("Vous terminez la session proprement", "Une session propre finit avec une trace. Vous devez savoir ce qui a été créé, ce qui marche et ce qui reste à faire.", "Demandez un résumé final avec fichiers, commandes et prochaines actions.", "Vous pouvez fermer le terminal sans perdre le fil."),
         ],
     ),
     (
-        "Windows",
-        "Tu sais quoi faire si tu n’es pas sur Mac.",
-        "Pratique",
-        "cyan",
-        [
-            ("Tu ne copies pas les gestes Mac", "Windows peut demander WSL ou Git Bash selon la configuration. Tu dois suivre la route adaptée à ta machine.", "Lis la partie Windows de la documentation officielle.", "Tu évites les commandes qui ne correspondent pas à ton terminal."),
-            ("Tu choisis un terminal principal", "Une erreur fréquente consiste à installer dans un terminal puis lancer dans un autre. Ça rend le diagnostic plus dur.", "Choisis WSL ou Git Bash, puis garde ce choix pendant la séance.", "Tes commandes restent cohérentes."),
-            ("Tu vérifies le chemin du dossier", "Sur Windows aussi, Claude Code agit dans le dossier courant.", "Affiche le chemin du terminal avant de lancer `claude`.", "Tu sais où les fichiers seront créés."),
-            ("Tu notes ton cas", "Chaque machine peut avoir une petite différence. Ce n’est pas grave si tu gardes une trace.", "Écris : système, terminal utilisé, commandes qui marchent.", "Tu peux reprendre sans repartir à zéro."),
-            ("Tu demandes de l’aide avec l’erreur exacte", "Une erreur copiée exactement est plus utile qu’une explication approximative.", "Copie l’erreur complète avant de demander une solution.", "La correction est plus rapide."),
-            ("Tu gardes le même objectif", "Mac ou Windows, le but reste identique : lancer Claude Code dans un dossier propre et vérifier le résultat.", "Refais le même mini-exercice que les élèves Mac.", "Tout le monde arrive au même niveau."),
-        ],
-    ),
-    (
-        "Claude Code Desktop",
-        "Tu comprends la différence entre l’interface terminal et l’interface Desktop.",
-        "Interface",
-        "violet",
-        [
-            ("C’est quoi le Code tab ?", "Claude Desktop possède un onglet Code. Il permet d’utiliser Claude Code dans une interface graphique au lieu de tout faire dans le terminal.", "Regarde l’interface Desktop comme un espace de travail : sessions, chat, fichiers, terminal, aperçu.", "Tu sais que Desktop n’est pas un autre outil magique, c’est une autre surface pour Claude Code."),
-            ("Pourquoi Desktop peut aider un élève ?", "Si le terminal te stresse, Desktop peut rendre le flux plus visuel. Tu vois les sessions, les fichiers, les panneaux et parfois l’aperçu de l’app.", "Utilise Desktop si tu veux mieux voir ce qui se passe.", "Tu comprends que le principe reste le même : dossier, demande, vérification."),
-            ("Le terminal intégré", "Dans Desktop, le terminal peut être intégré à la session. Il travaille dans le même dossier que Claude.", "Ouvre le terminal intégré quand tu dois lancer `npm test`, `git status` ou une commande simple.", "Tu ne changes pas d’outil sans comprendre le dossier actif."),
-            ("Les modes de permission", "Desktop met en avant les modes comme Ask permissions, Plan mode ou Auto accept edits. Pour un débutant, Ask permissions ou Plan mode sont plus rassurants.", "Commence avec un mode où Claude explique ou demande avant d’agir.", "Tu vois les actions avant de les accepter."),
-            ("L’aperçu de l’app", "Desktop peut ouvrir un aperçu de page ou d’application. Pour les supports HTML et les sites, c’est très utile.", "Quand Claude crée une page, ouvre l’aperçu avant de dire que c’est terminé.", "Tu vérifies comme un utilisateur, pas seulement comme un technicien."),
-            ("Terminal ou Desktop ?", "Question à te poser : est-ce que je veux aller vite dans le terminal, ou mieux visualiser le projet dans Desktop ? Les deux peuvent être utiles.", "Choisis la surface qui t’aide à mieux contrôler le travail.", "Tu sais expliquer pourquoi tu utilises l’un ou l’autre."),
-        ],
-    ),
-    (
-        "Premier exercice",
-        "Tu fais une petite production pour comprendre la boucle de travail.",
-        "Pratique",
-        "cyan",
-        [
-            ("Tu demandes une page simple", "Le premier exercice doit être court. Tu veux voir le cycle complet, pas construire un grand projet.", "Demande : `Crée une page HTML simple pour un freelance IA.`", "Un fichier HTML est créé."),
-            ("Tu demandes où est le fichier", "Un élève doit toujours savoir où se trouve le résultat.", "Ajoute : `À la fin, liste les fichiers créés.`", "Tu sais ouvrir le bon fichier."),
-            ("Tu ouvres la page", "Le résultat doit être visible. Ne valide pas seulement parce que Claude Code dit que c’est terminé.", "Ouvre le fichier dans le navigateur.", "Tu vois la page."),
-            ("Tu corriges une chose à la fois", "Si tu demandes dix corrections à la fois, tu ne sais plus ce qui a changé.", "Demande une seule correction : titre, couleur, section, texte.", "La page progresse sans devenir confuse."),
-            ("Tu demandes une checklist", "Claude Code peut t’aider à tester. C’est utile pour apprendre à livrer proprement.", "Demande une checklist de vérification en 8 points.", "Tu sais quoi regarder."),
-            ("Tu fais un résumé final", "À la fin, tu dois pouvoir expliquer ce qui a été fait.", "Demande : `Résume les fichiers créés et les prochaines actions.`", "Tu peux fermer la session proprement."),
-        ],
-    ),
-    (
-        "Bien écrire à Claude Code",
-        "Tu apprends à donner une demande claire sans parler comme un robot.",
+        "Acte 4 - Écrire de bonnes demandes",
+        "Vous apprenez à guider Claude Code avec des phrases simples et utiles.",
         "Méthode",
         "violet",
         [
-            ("Tu donnes le contexte", "Claude Code doit savoir pour qui il travaille. Un support élève, une page client et un script interne ne se rédigent pas pareil.", "Commence par : `Je crée un support pour des élèves débutants.`", "Le ton devient plus adapté."),
-            ("Tu donnes la sortie attendue", "Un bon prompt dit ce qui doit exister à la fin. Sinon, l’outil invente une forme.", "Précise : fichier HTML, README, tableau, checklist, script.", "Le résultat est plus simple à vérifier."),
-            ("Tu donnes les contraintes", "Les contraintes protègent la qualité. Elles évitent les pages trop génériques.", "Indique le ton, les couleurs, les fichiers à ne pas toucher.", "Le rendu respecte mieux le cadre."),
-            ("Tu demandes un plan avant le gros travail", "Pour un gros support, l’élève doit voir la structure avant la production.", "Demande : `Propose le plan avant de créer le fichier.`", "Tu peux corriger la direction."),
-            ("Tu demandes une correction précise", "Une correction précise donne un meilleur résultat qu’une phrase vague.", "Dis : `Rends les phrases plus courtes dans la section installation.`", "La modification est ciblée."),
-            ("Tu demandes une vérification", "Claude Code peut relire son travail avec une consigne précise.", "Demande : `Vérifie les liens, les titres et la version mobile.`", "Tu réduis les oublis."),
+            ("Vous donnez le contexte", "Claude Code écrit mieux quand il sait pour qui il travaille, quel est le niveau attendu et quel est le type de rendu. Le contexte évite les réponses génériques.", "Commencez par : `Je prépare un support de formation simple et clair.`", "La réponse suit mieux votre situation."),
+            ("Vous donnez la sortie attendue", "Une demande claire dit ce qui doit exister à la fin. Sans sortie attendue, Claude Code peut choisir un format qui ne vous aide pas.", "Précisez : page HTML, README, tableau, checklist, script ou correction.", "Le résultat devient facile à vérifier."),
+            ("Vous donnez les contraintes", "Les contraintes protègent la qualité. Elles peuvent porter sur le style, les couleurs, la longueur, les fichiers à ne pas toucher ou le niveau de détail.", "Ajoutez trois contraintes maximum au début, puis complétez si besoin.", "Claude Code sait où aller et où ne pas aller."),
+            ("Vous demandez un plan avant le gros travail", "Pour une longue page ou un projet important, le plan doit venir avant la production. C’est le moment où vous pouvez corriger la direction.", "Demandez : `Propose le plan avant de créer les fichiers.`", "Vous validez l’ordre avant l’écriture."),
+            ("Vous découpez la demande", "Une grosse demande devient plus fiable quand elle est découpée. Claude Code peut d’abord structurer, puis écrire, puis vérifier.", "Découpez en trois étapes : structure, contenu, contrôle.", "La session avance sans partir dans tous les sens."),
+            ("Vous donnez des exemples", "Un exemple court aide souvent plus qu’un long discours. Il montre le niveau de phrase, la forme et le type de résultat attendu.", "Collez un exemple de section ou de phrase que vous aimez.", "Claude Code imite mieux la forme demandée."),
+            ("Vous posez une question rhétorique", "Une question rhétorique guide la réflexion du lecteur. Elle rend le support plus humain sans l’alourdir.", "Ajoutez parfois : `Pourquoi cette étape compte ?` ou `Qu’est-ce qui peut mal se passer ?`", "Le texte explique le sens avant l’action."),
+            ("Vous évitez les demandes vagues", "Une phrase comme `améliore le site` ne suffit pas. Elle laisse trop de décisions ouvertes et donne souvent un rendu moyen.", "Remplacez le vague par : `améliore la lisibilité mobile de la section installation`.", "La correction devient mesurable."),
+            ("Vous demandez une vérification ciblée", "Claude Code peut relire son travail, mais il faut lui dire quoi regarder. Sinon il peut donner un avis trop général.", "Demandez : `Vérifie les liens, les titres, les accents et le responsive.`", "La vérification couvre les vrais risques."),
+            ("Vous gardez une voix naturelle", "Le support doit parler simplement. Il doit accompagner sans donner l’impression d’un manuel froid.", "Demandez des phrases courtes, des mots simples et des transitions claires.", "La lecture reste fluide."),
         ],
     ),
     (
-        "Fichiers et sécurité",
-        "Tu apprends à garder ton projet lisible et sûr.",
+        "Acte 5 - Contrôle, sécurité et permissions",
+        "Vous laissez l’outil agir, mais vous gardez la main sur les décisions importantes.",
         "Vigilance",
         "orange",
         [
-            ("Tu sépares les projets", "Ne mélange pas formation, client et tests. Un agent qui lit trop de choses peut se tromper de contexte.", "Un dossier par projet, avec un nom clair.", "Tu réduis les erreurs."),
-            ("Tu nommes les fichiers clairement", "Un fichier doit expliquer son rôle par son nom.", "Utilise `support-technique-seance-01.html` plutôt que `new-final-ok.html`.", "Tu retrouves vite le bon fichier."),
-            ("Tu ne mets pas les secrets dans GitHub", "Un mot de passe, une clé API ou un token ne doit jamais être publié.", "Utilise des fichiers privés et vérifie avant de commit.", "Tes accès restent protégés."),
-            ("Tu demandes avant de supprimer", "Si Claude Code propose de nettoyer, il doit expliquer ce qu’il veut enlever.", "Demande : `Liste ce que tu veux supprimer avant action.`", "Tu évites une perte de fichiers."),
-            ("Tu gardes une note projet", "Une note simple aide les élèves à reprendre après une pause.", "Crée un `README.md` ou une note de livraison.", "Le projet devient compréhensible."),
-            ("Tu vérifies les fichiers touchés", "Après une action, il faut savoir ce qui a changé.", "Demande un résumé des fichiers modifiés.", "Tu ne travailles pas à l’aveugle."),
+            ("Vous choisissez un mode de permission", "Les permissions définissent ce que Claude Code peut faire sans vous interrompre. Au début, un mode qui demande confirmation aide à comprendre les actions.", "Commencez avec un mode prudent, puis assouplissez seulement quand le projet est clair.", "Vous voyez les actions avant de les accepter."),
+            ("Vous lisez les diffs", "Un diff montre ce qui a été ajouté, supprimé ou modifié. C’est l’un des meilleurs endroits pour reprendre le contrôle.", "Avant d’accepter, regardez les lignes modifiées et le fichier concerné.", "Vous savez ce qui entre dans le projet."),
+            ("Vous demandez avant les commandes sensibles", "Une commande peut installer, supprimer, déplacer ou publier. Il faut savoir ce qu’elle fait avant exécution.", "Demandez : `Explique la commande avant de la lancer.`", "Vous ne validez pas une commande opaque."),
+            ("Vous refusez les suppressions floues", "Le nettoyage peut être utile, mais une suppression mal comprise peut faire perdre du travail.", "Demandez une liste précise des fichiers à supprimer avant action.", "Aucun fichier important ne disparaît par surprise."),
+            ("Vous protégez les secrets", "Les secrets incluent mots de passe, tokens, clés API et fichiers d’environnement. Ils ne doivent jamais se retrouver dans une page publique.", "Avant publication, cherchez `.env`, `api_key`, `token` et `secret`.", "Le projet peut être partagé plus sereinement."),
+            ("Vous vérifiez avec Git", "Git montre les fichiers modifiés. Même sans être expert, `git status` donne une vision rapide de ce qui a bougé.", "Lancez `git status` avant de commit ou de pousser.", "Vous connaissez la liste des changements."),
+            ("Vous lancez les tests utiles", "Un test n’a pas besoin d’être compliqué. Pour une page, ouvrir le site et vérifier le mobile est déjà un vrai test.", "Demandez à Claude Code les commandes de vérification adaptées au projet.", "Vous validez avec des faits."),
+            ("Vous utilisez l’aperçu Desktop", "Dans Claude Code Desktop, l’aperçu permet de voir le rendu sans quitter l’interface. C’est pratique pour contrôler vite une page.", "Ouvrez l’aperçu dès qu’un fichier visuel est généré.", "Vous jugez le résultat comme un utilisateur."),
+            ("Vous savez arrêter une mauvaise direction", "Si Claude Code produit quelque chose qui ne respecte pas le plan, il faut le dire tôt. Attendre rend la correction plus coûteuse.", "Écrivez : `Stop. Reviens au plan validé et corrige seulement cette partie.`", "La session revient dans le cadre."),
+            ("Vous notez la décision finale", "Après une correction importante, il faut garder une trace du choix. Cela aide à expliquer pourquoi le projet est fait ainsi.", "Ajoutez une note courte dans le résumé de session.", "La décision reste compréhensible plus tard."),
         ],
     ),
     (
-        "Commandes utiles",
-        "Tu gardes les commandes courtes à portée de main.",
-        "Pratique",
-        "cyan",
+        "Acte 6 - Construire un vrai support",
+        "Vous passez de l’exercice simple à une page longue, utile et structurée.",
+        "Production",
+        "green",
         [
-            ("Tu lances l’outil", "La commande `claude` lance une session interactive dans le dossier courant.", "Lance `claude` dans ton dossier test.", "Claude Code démarre."),
-            ("Tu diagnostiques", "La commande `claude doctor` aide à vérifier l’installation.", "Lance-la si quelque chose ne répond pas normalement.", "Tu as un diagnostic."),
-            ("Tu mets à jour", "Claude Code évolue. Une mise à jour peut corriger un problème.", "Utilise `claude update` quand tu n’es pas en livraison urgente.", "L’outil est à jour."),
-            ("Tu utilises l’aide", "Tu n’as pas besoin de tout retenir. Tu dois savoir retrouver.", "Utilise `/help` dans la session.", "Tu vois les commandes disponibles."),
-            ("Tu repars proprement", "Quand une conversation devient confuse, mieux vaut parfois repartir avec un contexte propre.", "Utilise `/clear` si la session est trop polluée.", "Tu retrouves une discussion lisible."),
-            ("Tu compacts si c’est long", "Sur un projet long, le contexte peut devenir lourd. `/compact` aide à garder l’essentiel.", "Utilise-le après une grosse étape.", "La session reste exploitable."),
+            ("Vous validez la structure avant le build", "Un long support doit avoir un plan. Sans plan, les sections se ressemblent et le lecteur ne comprend plus le chemin.", "Demandez d’abord les actes, les objectifs et l’ordre des sections.", "La page raconte une progression claire."),
+            ("Vous construisez section par section", "Un support long se travaille comme un parcours. Chaque section doit apporter une étape, pas répéter la précédente.", "Demandez à Claude Code de traiter les sections par blocs de 10.", "Le contenu avance dans le bon ordre."),
+            ("Vous variez les formats", "Une page sérieuse peut alterner explication, tableau, checklist, bloc à copier, capture et résumé. La variété aide la lecture.", "Associez un format à chaque type de besoin : théorie, action, vigilance, validation.", "Le lecteur ne voit pas 80 blocs identiques."),
+            ("Vous reliez les images au sujet", "Une image doit expliquer la section. Une capture de terminal sert à l’installation, un diff sert à la validation, une checklist sert au test.", "Choisissez l’image selon le thème de la section, pas au hasard.", "L’image renforce le texte."),
+            ("Vous écrivez pour l’action", "Un bon support ne se contente pas de raconter. Il donne une action faisable maintenant et un critère de réussite.", "Pour chaque section, gardez `ce que vous faites` et `comment vous vérifiez`.", "La section devient utilisable."),
+            ("Vous gardez un fond blanc", "Le fond blanc rend le support plus sérieux et plus lisible. Le bleu et le violet servent à hiérarchiser, pas à couvrir toute la page.", "Gardez les couleurs pour les badges, les bandeaux et les zones importantes.", "Le design reste propre."),
+            ("Vous soignez le responsive", "Une page utile doit marcher sur ordinateur et mobile. Les cartes, tableaux et blocs de code ne doivent pas déborder.", "Vérifiez largeur, texte long, bouton copier et images sur plusieurs tailles.", "Le support reste lisible partout."),
+            ("Vous ajoutez des micro-interactions utiles", "Les petites interactions doivent aider : progression, copie de bloc, apparition douce, hover léger. Elles ne doivent pas gêner la lecture.", "Gardez les animations courtes et désactivables si la personne réduit les mouvements.", "Le site paraît vivant sans devenir lourd."),
+            ("Vous relisez les accents et le vocabulaire", "Une bonne page perd vite en crédibilité si les accents manquent ou si le texte change de voix. Le français doit rester propre.", "Cherchez les mots interdits, les tutoiements et les fautes visibles.", "La voix du support reste cohérente."),
+            ("Vous faites un audit final", "Avant de publier, Claude Code peut relire avec une grille précise. Cela évite les oublis de dernière minute.", "Demandez : `Audite structure, responsive, liens, images, voix et sécurité.`", "Vous corrigez avant de livrer."),
         ],
     ),
     (
-        "CLAUDE.md",
-        "Tu donnes une mémoire claire au projet.",
-        "Méthode",
-        "violet",
-        [
-            ("Tu crées un briefing permanent", "CLAUDE.md explique à Claude Code les règles du projet. C’est utile quand le travail dure plus d’une session.", "Crée un fichier `CLAUDE.md` dans les projets sérieux.", "Claude Code retrouve le cadre."),
-            ("Tu écris des règles concrètes", "Une règle vague n’aide pas. Une règle précise guide vraiment.", "Écris : `Phrases courtes. Français simple. Ne pas modifier les vidéos.`", "Les sorties sont plus stables."),
-            ("Tu notes les commandes du projet", "Si un projet a des commandes de test ou de génération, mets-les dans CLAUDE.md.", "Ajoute les commandes utiles avec une courte explication.", "L’agent peut les retrouver."),
-            ("Tu sépares personnel et projet", "Tes préférences globales ne sont pas toujours les règles du projet.", "Mets les règles du projet dans le dossier projet.", "Le cadre reste propre."),
-            ("Tu relis la mémoire", "Une mémoire ancienne peut créer des erreurs. Elle doit suivre le projet.", "Relis CLAUDE.md avant une nouvelle phase.", "Tu évites les consignes dépassées."),
-            ("Tu l’utilises comme un professeur", "Pour les élèves, CLAUDE.md peut servir de consigne permanente : ton simple, étapes claires, vérification finale.", "Ajoute une section `Règles pédagogiques`.", "Le support reste orienté apprenant."),
-        ],
-    ),
-    (
-        "Résoudre les problèmes",
-        "Tu sais quoi faire quand une commande ne marche pas.",
-        "Vigilance",
+        "Acte 7 - Mémoire, limites et dépannage",
+        "Vous apprenez à garder une session stable et à corriger les blocages fréquents.",
+        "Dépannage",
         "orange",
         [
-            ("Tu copies l’erreur exacte", "Une erreur exacte est plus utile qu’un résumé approximatif.", "Copie le message complet dans une note.", "Tu peux demander une aide précise."),
-            ("Tu regardes le dossier courant", "Beaucoup de problèmes viennent du mauvais dossier.", "Vérifie le chemin avant de relancer.", "Tu sais où tu travailles."),
-            ("Tu vérifies Node et npm", "Si l’installation bloque, commence par les bases.", "Lance `node -v` puis `npm -v`.", "Tu sais si l’environnement répond."),
-            ("Tu ne forces pas au hasard", "Lancer des commandes au hasard peut créer plus de problèmes.", "Demande une explication avant une commande sensible.", "Tu gardes une machine propre."),
-            ("Tu réduis la demande", "Si Claude Code part dans tous les sens, réduis le problème.", "Demande une seule correction.", "Tu reprends le contrôle."),
-            ("Tu utilises la documentation", "La documentation Claude Code est la source de référence. Le support t’aide, mais la doc confirme.", "Ouvre la page de dépannage si besoin.", "Tu vérifies avec la source officielle."),
+            ("Vous créez CLAUDE.md", "CLAUDE.md donne des règles de projet que Claude Code peut relire. C’est utile quand le travail dure plus d’une session.", "Créez `CLAUDE.md` dans les projets sérieux.", "Claude Code retrouve le cadre du projet."),
+            ("Vous écrivez des règles concrètes", "Une règle vague aide peu. Une règle concrète dit quoi faire ou quoi éviter.", "Ajoutez : `Phrases courtes. Fond blanc. Bleu et violet pour les repères. Ne pas modifier les vidéos.`", "Les sorties deviennent plus stables."),
+            ("Vous notez les commandes du projet", "Si un projet a des commandes de build, de test ou de publication, Claude Code doit pouvoir les retrouver.", "Ajoutez les commandes utiles dans CLAUDE.md avec une phrase d’explication.", "La prochaine session redémarre plus vite."),
+            ("Vous utilisez la mémoire avec prudence", "La mémoire aide, mais une mauvaise consigne peut rester trop longtemps. Il faut relire et nettoyer si le projet change.", "Relisez les règles avant une nouvelle phase.", "Aucune ancienne consigne ne tire le projet dans la mauvaise direction."),
+            ("Vous nettoyez une session confuse", "Une session longue peut accumuler trop de contexte. Quand les réponses deviennent moins précises, il faut réduire ou repartir proprement.", "Utilisez `/clear` pour repartir ou `/compact` pour garder l’essentiel.", "La conversation redevient lisible."),
+            ("Vous comprenez les limites d’usage", "Les limites ne sont pas toujours un bug. Elles peuvent venir du plan, de l’usage cumulé ou d’une session trop longue.", "Si une limite apparaît, notez le message exact et attendez le reset ou réduisez la demande.", "Vous savez quoi faire au lieu de paniquer."),
+            ("Vous corrigez `command not found`", "Si `claude` n’est pas reconnu, le terminal ne trouve pas l’installation. Le problème vient souvent du PATH ou d’une installation incomplète.", "Lancez `claude doctor` si possible, puis consultez la page officielle de dépannage.", "Vous identifiez si le souci vient de l’installation."),
+            ("Vous évitez les installations en conflit", "Plusieurs installations de Claude Code peuvent créer des versions mélangées. La documentation explique comment repérer et nettoyer ce cas.", "Cherchez les installations multiples avant de réinstaller au hasard.", "Vous gardez une seule route d’installation."),
+            ("Vous adaptez Windows", "Sur Windows, PowerShell, CMD, Git Bash et WSL ne se comportent pas toujours pareil. Une commande copiée pour le mauvais terminal peut échouer.", "Vérifiez le terminal utilisé avant de copier la commande.", "La commande correspond à votre environnement."),
+            ("Vous gardez les sources officielles", "Le support aide à apprendre, mais les pages officielles confirment les commandes, les prix, les limites et les changements récents.", "Gardez les liens Claude Code, Help Center et Node.js dans vos favoris.", "Vous pouvez vérifier une information à jour."),
         ],
     ),
     (
-        "Livrer proprement",
-        "Tu penses déjà comme quelqu’un qui va rendre un travail.",
+        "Acte 8 - Livraison et méthode durable",
+        "Vous terminez proprement et vous repartez avec une méthode réutilisable.",
         "Validation",
         "green",
         [
-            ("Tu expliques ce qui a été fait", "Un bon livrable n’est pas juste un fichier. C’est un fichier avec une explication simple.", "Ajoute une note : objectif, fichiers, lancement.", "La personne comprend le résultat."),
-            ("Tu listes les limites", "Dire les limites évite les malentendus.", "Ajoute : ce qui marche, ce qui reste à tester, ce qui est hors périmètre.", "La livraison est plus professionnelle."),
-            ("Tu donnes une checklist de test", "Une checklist aide l’élève ou le client à tester sans se perdre.", "Demande une checklist claire à Claude Code.", "Les retours sont plus précis."),
-            ("Tu gardes l’humain au centre", "L’IA aide à produire, mais la validation reste humaine.", "Relis les textes et ouvre les pages.", "Tu valides vraiment."),
-            ("Tu proposes la suite", "Une livraison propre peut ouvrir une amélioration sans forcer.", "Liste trois prochaines actions possibles.", "Le projet peut continuer."),
-            ("Tu ranges avant de finir", "Un dossier rangé est plus facile à reprendre.", "Demande une proposition de rangement avant fermeture.", "Tu termines proprement."),
-        ],
-    ),
-    (
-        "Récapitulatif",
-        "Tu repars avec une méthode utilisable dans les prochaines séances.",
-        "Validation",
-        "green",
-        [
-            ("Tu sais installer", "Tu sais que Node.js et npm sont nécessaires avant Claude Code.", "Refais les commandes de vérification.", "Tu peux contrôler l’environnement."),
-            ("Tu sais lancer", "Tu sais que Claude Code se lance dans un dossier précis.", "Lance `claude` depuis ton dossier test.", "La session est au bon endroit."),
-            ("Tu sais demander", "Tu sais écrire un prompt avec contexte, sortie et contraintes.", "Prépare une demande courte et claire.", "L’outil comprend mieux."),
-            ("Tu sais vérifier", "Tu sais ouvrir le résultat et demander une correction.", "Teste le fichier créé.", "Tu ne valides pas à l’aveugle."),
-            ("Tu sais sécuriser", "Tu sais ne pas publier de secrets et demander avant suppression.", "Vérifie les fichiers avant de partager.", "Le projet reste sûr."),
-            ("Tu es prêt pour Codex", "La séance suivante comparera Codex et Claude Code. Tu arrives avec les bases.", "Note ce que tu veux comparer.", "Tu suis la suite plus facilement."),
+            ("Vous relisez le résultat complet", "Avant de publier, parcourez la page comme une personne qui la découvre. Le but est de repérer les ruptures de logique, les doublons et les passages trop rapides.", "Lisez les titres dans l’ordre sans lire tout le texte.", "L’histoire reste compréhensible du début à la fin."),
+            ("Vous testez en local", "Un site doit être ouvert dans un navigateur avant publication. Le rendu réel peut révéler un débordement, une image mal cadrée ou un bouton mal placé.", "Lancez un serveur local et ouvrez la page sur desktop et mobile.", "Le site se consulte sans bug visible."),
+            ("Vous vérifiez les mots sensibles", "Certains mots peuvent donner une mauvaise impression ou casser la voix du support. Il faut les chercher explicitement.", "Cherchez les tutoiements, les mots interdits et les phrases qui parlent à la mauvaise personne.", "Le texte parle uniquement en `vous`."),
+            ("Vous contrôlez les liens", "Un lien mort casse la confiance. Les liens externes doivent pointer vers des sources utiles et cliquables.", "Cliquez les liens principaux : documentation, installation, prix, dépannage.", "Chaque lien ouvre la bonne ressource."),
+            ("Vous regardez `git status`", "Avant de commit, il faut voir les fichiers modifiés et les fichiers à ne pas publier. Un gros fichier vidéo ou un fichier système ne doit pas partir par erreur.", "Lancez `git status` et lisez la liste calmement.", "Vous savez ce qui va être versionné."),
+            ("Vous faites un commit lisible", "Un commit doit raconter le changement en une phrase courte. Cela aide à retrouver la version plus tard.", "Commitez avec un message comme `Structure support Claude Code séance 1`.", "L’historique reste propre."),
+            ("Vous poussez sur GitHub", "Le push envoie le site vers le dépôt public. C’est l’étape où le travail devient consultable ailleurs que sur votre machine.", "Poussez la branche vers le dépôt GitHub Pages prévu.", "La nouvelle version arrive sur GitHub."),
+            ("Vous vérifiez l’URL publique", "Après le push, la page peut mettre un peu de temps à se reconstruire. Il faut ouvrir l’URL finale, pas seulement supposer que tout est bon.", "Ouvrez l’URL publique et vérifiez une section du début, du milieu et de la fin.", "Le site publié correspond au site local."),
+            ("Vous gardez une méthode réutilisable", "La méthode de cette séance servira ensuite pour d’autres outils. Le plus important n’est pas une commande isolée, mais la façon de cadrer et vérifier.", "Gardez votre checklist : dossier, demande, action, vérification, livraison.", "Vous pouvez refaire le flux sur un autre projet."),
+            ("Vous préparez la suite", "La séance suivante pourra comparer Claude Code avec d’autres agents comme Codex. Vous aurez déjà les bases : installer, lancer, demander, vérifier, livrer.", "Notez ce que vous voulez comparer : vitesse, qualité, contrôle, publication.", "Vous arrivez à la suite avec une vraie grille de lecture."),
         ],
     ),
 ]
@@ -329,6 +277,226 @@ CHAPTERS = [
 
 def e(text: str) -> str:
     return escape(text, quote=True)
+
+
+def public_copy(html: str) -> str:
+    replacements = [
+        ("Support élèves", "Support formation"),
+        ("Support technique pour les élèves", "Support technique pour vous"),
+        ("Message élève", "Message pour vous"),
+        ("Action élève", "Action à faire"),
+        ("Ce que tu fais", "Ce que vous faites"),
+        ("Comment tu vérifies", "Comment vous vérifiez"),
+        ("Question à te poser", "Question à vous poser"),
+        ("Consigne simple pour toi", "Consigne simple pour vous"),
+        ("Ce support est fait pour toi", "Ce support est fait pour vous"),
+        ("pour les élèves", "pour vous"),
+        ("aux élèves", "à vous"),
+        ("des élèves", "des participants"),
+        ("les élèves", "vous"),
+        ("un élève", "une personne"),
+        ("Un élève", "Une personne"),
+        ("l’élève", "vous"),
+        ("L’élève", "Vous"),
+        ("élèves", "participants"),
+        ("élève", "participant"),
+        ("Tu installes", "Vous installez"),
+        ("tu installes", "vous installez"),
+        ("Tu pratiques", "Vous pratiquez"),
+        ("tu pratiques", "vous pratiquez"),
+        ("Tu prépares", "Vous préparez"),
+        ("tu prépares", "vous préparez"),
+        ("Tu pars", "Vous partez"),
+        ("tu pars", "vous partez"),
+        ("Tu comprends", "Vous comprenez"),
+        ("tu comprends", "vous comprenez"),
+        ("Tu vérifies", "Vous vérifiez"),
+        ("tu vérifies", "vous vérifiez"),
+        ("Tu gardes", "Vous gardez"),
+        ("tu gardes", "vous gardez"),
+        ("Tu évites", "Vous évitez"),
+        ("tu évites", "vous évitez"),
+        ("Tu acceptes", "Vous acceptez"),
+        ("tu acceptes", "vous acceptez"),
+        ("Tu lis", "Vous lisez"),
+        ("tu lis", "vous lisez"),
+        ("Tu sais", "Vous savez"),
+        ("tu sais", "vous savez"),
+        ("Tu ne confonds", "Vous ne confondez"),
+        ("tu ne confonds", "vous ne confondez"),
+        ("Tu vois", "Vous voyez"),
+        ("tu vois", "vous voyez"),
+        ("Tu construis", "Vous construisez"),
+        ("tu construis", "vous construisez"),
+        ("Tu dois", "Vous devez"),
+        ("tu dois", "vous devez"),
+        ("Tu ne copies", "Vous ne copiez"),
+        ("tu ne copies", "vous ne copiez"),
+        ("Tu choisis", "Vous choisissez"),
+        ("tu choisis", "vous choisissez"),
+        ("Tu demandes", "Vous demandez"),
+        ("tu demandes", "vous demandez"),
+        ("Tu lui demandes", "Vous lui demandez"),
+        ("tu lui demandes", "vous lui demandez"),
+        ("Tu ouvres", "Vous ouvrez"),
+        ("tu ouvres", "vous ouvrez"),
+        ("Tu corriges", "Vous corrigez"),
+        ("tu corriges", "vous corrigez"),
+        ("Tu fais", "Vous faites"),
+        ("tu fais", "vous faites"),
+        ("Tu donnes", "Vous donnez"),
+        ("tu donnes", "vous donnez"),
+        ("Tu sépares", "Vous séparez"),
+        ("tu sépares", "vous séparez"),
+        ("Tu nommes", "Vous nommez"),
+        ("tu nommes", "vous nommez"),
+        ("Tu ne mets", "Vous ne mettez"),
+        ("tu ne mets", "vous ne mettez"),
+        ("Tu diagnostiques", "Vous diagnostiquez"),
+        ("tu diagnostiques", "vous diagnostiquez"),
+        ("Tu mets", "Vous mettez"),
+        ("tu mets", "vous mettez"),
+        ("Tu utilises", "Vous utilisez"),
+        ("tu utilises", "vous utilisez"),
+        ("Tu repars", "Vous repartez"),
+        ("tu repars", "vous repartez"),
+        ("Tu compacts", "Vous compactez"),
+        ("tu compacts", "vous compactez"),
+        ("Tu crées", "Vous créez"),
+        ("tu crées", "vous créez"),
+        ("Tu écris", "Vous écrivez"),
+        ("tu écris", "vous écrivez"),
+        ("Tu relis", "Vous relisez"),
+        ("tu relis", "vous relisez"),
+        ("Tu relies", "Vous reliez"),
+        ("tu relies", "vous reliez"),
+        ("Tu copies", "Vous copiez"),
+        ("tu copies", "vous copiez"),
+        ("Tu regardes", "Vous regardez"),
+        ("tu regardes", "vous regardez"),
+        ("Tu ne forces", "Vous ne forcez"),
+        ("tu ne forces", "vous ne forcez"),
+        ("Tu réduis", "Vous réduisez"),
+        ("tu réduis", "vous réduisez"),
+        ("Tu expliques", "Vous expliquez"),
+        ("tu expliques", "vous expliquez"),
+        ("Tu listes", "Vous listez"),
+        ("tu listes", "vous listez"),
+        ("Tu formules", "Vous formulez"),
+        ("tu formules", "vous formulez"),
+        ("Tu dis", "Vous dites"),
+        ("tu dis", "vous dites"),
+        ("Tu poses", "Vous posez"),
+        ("tu poses", "vous posez"),
+        ("Tu réfléchis", "Vous réfléchissez"),
+        ("tu réfléchis", "vous réfléchissez"),
+        ("Tu récupères", "Vous récupérez"),
+        ("tu récupères", "vous récupérez"),
+        ("Tu bloques", "Vous bloquez"),
+        ("tu bloques", "vous bloquez"),
+        ("Tu changes", "Vous changez"),
+        ("tu changes", "vous changez"),
+        ("Tu penses", "Vous pensez"),
+        ("tu penses", "vous pensez"),
+        ("Tu termines", "Vous terminez"),
+        ("tu termines", "vous terminez"),
+        ("Tu avances", "Vous avancez"),
+        ("tu avances", "vous avancez"),
+        ("Tu testes", "Vous testez"),
+        ("tu testes", "vous testez"),
+        ("Tu restes", "Vous restez"),
+        ("tu restes", "vous restez"),
+        ("Tu décides", "Vous décidez"),
+        ("tu décides", "vous décidez"),
+        ("Tu proposes", "Vous proposez"),
+        ("tu proposes", "vous proposez"),
+        ("Tu ranges", "Vous rangez"),
+        ("tu ranges", "vous rangez"),
+        ("Tu es", "Vous êtes"),
+        ("tu es", "vous êtes"),
+        ("Tu arrives", "Vous arrivez"),
+        ("tu arrives", "vous arrivez"),
+        ("Tu suis", "Vous suivez"),
+        ("tu suis", "vous suivez"),
+        ("Tu peux", "Vous pouvez"),
+        ("tu peux", "vous pouvez"),
+        ("Tu veux", "Vous voulez"),
+        ("tu veux", "vous voulez"),
+        ("Tu vas", "Vous allez"),
+        ("tu vas", "vous allez"),
+        ("Tu touches", "Vous touchez"),
+        ("tu touches", "vous touchez"),
+        ("Tu paies", "Vous payez"),
+        ("tu paies", "vous payez"),
+        ("Tu travailles", "Vous travaillez"),
+        ("tu travailles", "vous travaillez"),
+        ("Tu lances", "Vous lancez"),
+        ("tu lances", "vous lancez"),
+        ("Tu connectes", "Vous connectez"),
+        ("tu connectes", "vous connectez"),
+        ("Tu notes", "Vous notez"),
+        ("tu notes", "vous notez"),
+        ("Tu retrouves", "Vous retrouvez"),
+        ("tu retrouves", "vous retrouvez"),
+        ("Tu valides", "Vous validez"),
+        ("tu valides", "vous validez"),
+        ("Tu ne valides", "Vous ne validez"),
+        ("tu ne valides", "vous ne validez"),
+        ("Tu ne changes", "Vous ne changez"),
+        ("tu ne changes", "vous ne changez"),
+        ("Tu ne travailles", "Vous ne travaillez"),
+        ("tu ne travailles", "vous ne travaillez"),
+        ("Tu n’as", "Vous n’avez"),
+        ("tu n’as", "vous n’avez"),
+        ("Tu n’es", "Vous n’êtes"),
+        ("tu n’es", "vous n’êtes"),
+        ("Demande-toi", "Demandez-vous"),
+        ("demande-toi", "demandez-vous"),
+        ("Connecte-toi", "Connectez-vous"),
+        ("connecte-toi", "connectez-vous"),
+        ("toi-même", "vous-même"),
+        ("Toi,", "Vous,"),
+        ("toi,", "vous,"),
+        ("t’aide", "vous aide"),
+        ("t’expliquer", "vous expliquer"),
+        ("t’authentifier", "vous authentifier"),
+        ("à ta place", "à votre place"),
+        ("ton ordinateur", "votre ordinateur"),
+        ("ton dossier", "votre dossier"),
+        ("ton projet", "votre projet"),
+        ("ton terminal", "votre terminal"),
+        ("ton installation", "votre installation"),
+        ("ton compte", "votre compte"),
+        ("ton environnement", "votre environnement"),
+        ("ton besoin", "votre besoin"),
+        ("ton cas", "votre cas"),
+        ("ton usage", "votre usage"),
+        ("ton abonnement", "votre abonnement"),
+        ("ta machine", "votre machine"),
+        ("ta demande", "votre demande"),
+        ("ta vérification", "votre vérification"),
+        ("Tes commandes", "Vos commandes"),
+        ("tes commandes", "vos commandes"),
+        ("Tes demandes", "Vos demandes"),
+        ("tes demandes", "vos demandes"),
+        ("Tes accès", "Vos accès"),
+        ("tes accès", "vos accès"),
+        ("Tes préférences", "Vos préférences"),
+        ("tes préférences", "vos préférences"),
+    ]
+    for old, new in sorted(replacements, key=lambda pair: len(pair[0]), reverse=True):
+        html = html.replace(old, new)
+    html = html.replace("vous vous décidez", "vous décidez")
+    html = html.replace("Vous vous décidez", "Vous décidez")
+    html = html.replace("vous qui travailles", "vous qui travaillez")
+    html = html.replace("Vous évites", "Vous évitez")
+    html = html.replace("vous évites", "vous évitez")
+    html = html.replace("ton simple", "style simple")
+    html = re.sub(r"\bTu\b", "Vous", html)
+    html = re.sub(r"\btu\b", "vous", html)
+    html = re.sub(r"\btoi\b", "vous", html)
+    html = re.sub(r"\bToi\b", "Vous", html)
+    return html
 
 
 def screen(index: int, alt: str, caption: str) -> str:
@@ -343,7 +511,7 @@ def screen(index: int, alt: str, caption: str) -> str:
 
 
 def visual_for(item: dict[str, str], index: int) -> str:
-    text = f"{item['chapter']} {item['title']} {item['story']} {item['action']} {item['check']} {item['tag']}".lower()
+    text = f"{item['title']} {item['story']} {item['action']} {item['check']} {item['tag']}".lower()
     if "clé api" in text or "secret" in text:
         name = "api-key-warning.png"
     elif "api" in text:
@@ -352,6 +520,12 @@ def visual_for(item: dict[str, str], index: int) -> str:
         name = "pricing-plans.png"
     elif "limite" in text or "quota" in text or "usage" in text or "reset" in text or "crédit" in text:
         name = "usage-limits.png"
+    elif "connect" in text or "authent" in text or "compte" in text or "/login" in text:
+        name = "auth-login.png"
+    elif "node" in text or "npm -v" in text:
+        name = "install-node-npm.png"
+    elif "install" in text or "installation" in text or "installer" in text or "claude --version" in text:
+        name = "install-claude-command.png"
     elif "windows" in text or "powershell" in text or "wsl" in text or "git bash" in text:
         name = "windows-terminal.png"
     elif "desktop" in text or "code tab" in text or "aperçu" in text:
@@ -363,12 +537,6 @@ def visual_for(item: dict[str, str], index: int) -> str:
             name = "desktop-terminal-pane.png"
         else:
             name = "desktop-files-preview.png"
-    elif "connect" in text or "authent" in text or "compte" in text or "/login" in text:
-        name = "auth-login.png"
-    elif "node" in text or "npm -v" in text:
-        name = "install-node-npm.png"
-    elif "install" in text or "npm install" in text:
-        name = "install-claude-command.png"
     elif "doctor" in text or "update" in text or "diagnostic" in text:
         name = "update-doctor.png"
     elif "git" in text:
@@ -414,15 +582,19 @@ def visual_for(item: dict[str, str], index: int) -> str:
 
 
 def question_for(item: dict[str, str]) -> str:
-    text = f"{item['chapter']} {item['title']} {item['story']} {item['tag']}".lower()
+    text = f"{item['title']} {item['story']} {item['action']} {item['check']} {item['tag']}".lower()
+    if "sécurité" in text or "clé" in text or "secret" in text:
+        return "Qu’est-ce que je dois protéger avant de publier ou partager ?"
+    if "api" in text or "abonnement" in text:
+        return "Est-ce que je parle d’un usage direct, ou d’un système qui appelle Claude automatiquement ?"
     if "prix" in text or "plan" in text or "quota" in text or "limite" in text:
         return "Est-ce que ce plan répond à mon usage réel, ou est-ce que je paie trop tôt ?"
+    if "connect" in text or "authent" in text or "compte" in text:
+        return "Est-ce que la session utilise le compte Claude prévu ?"
     if "installation" in text or "node" in text or "npm" in text:
         return "Quelle preuve simple me montre que l’installation marche vraiment ?"
     if "desktop" in text or "interface" in text:
         return "Qu’est-ce que cette interface me permet de mieux contrôler ?"
-    if "sécurité" in text or "clé" in text or "secret" in text:
-        return "Qu’est-ce que je dois protéger avant de publier ou partager ?"
     if "livrer" in text or "validation" in text or "récapitulatif" in text:
         return "Quelle preuve me permet de dire que cette étape est terminée ?"
     if "prompt" in text or "méthode" in text:
@@ -449,9 +621,11 @@ def badge(text: str, color: str) -> str:
 
 def code_block(lines: list[str]) -> str:
     return (
-        '<div class="relative border-2 border-slate-950 bg-slate-950 p-5 text-white shadow-[8px_8px_0_#111827]">'
-        '<button type="button" class="copy-btn absolute right-3 top-3 border-2 border-white bg-white px-3 py-1 text-xs font-black text-slate-950 transition hover:-translate-y-0.5">Copier</button>'
-        '<pre class="overflow-auto pr-20 text-sm leading-7"><code>'
+        '<div class="code-panel max-w-full overflow-hidden border-2 border-slate-950 bg-slate-950 text-white shadow-[8px_8px_0_#111827]">'
+        '<div class="flex justify-end border-b-2 border-white/20 bg-slate-900 px-3 py-2">'
+        '<button type="button" class="copy-btn border-2 border-white bg-white px-3 py-1 text-xs font-black text-slate-950 transition hover:-translate-y-0.5">Copier</button>'
+        "</div>"
+        '<pre class="max-w-full whitespace-pre-wrap break-words p-5 text-sm leading-7"><code>'
         + e("\n".join(lines))
         + "</code></pre></div>"
     )
@@ -462,7 +636,7 @@ def table(headers: list[str], rows: list[list[str]]) -> str:
     body = ""
     for row in rows:
         body += "<tr>" + "".join(f'<td class="border-2 border-slate-950 bg-white px-4 py-3 align-top text-sm leading-6 text-slate-700">{cell}</td>' for cell in row) + "</tr>"
-    return f'<div class="overflow-auto border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]"><table class="w-full min-w-[760px] border-collapse">{head and f"<thead><tr>{head}</tr></thead>"}<tbody>{body}</tbody></table></div>'
+    return f'<div class="max-w-full min-w-0 overflow-x-auto border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]"><table class="w-full min-w-[760px] border-collapse">{head and f"<thead><tr>{head}</tr></thead>"}<tbody>{body}</tbody></table></div>'
 
 
 def all_sections() -> list[dict[str, str]]:
@@ -497,9 +671,9 @@ def section_header(item: dict[str, str], n: int) -> str:
 def detail_cards(item: dict[str, str]) -> str:
     rows = [
         ("01", "Pourquoi c’est utile", item["story"], "bg-blue-50"),
-        ("02", "Ce que tu fais", item["action"], "bg-violet-50"),
-        ("03", "Comment tu vérifies", item["check"], "bg-white"),
-        ("04", "Question à te poser", question_for(item), "bg-cyan-50"),
+        ("02", "Ce que vous faites", item["action"], "bg-violet-50"),
+        ("03", "Comment vous vérifiez", item["check"], "bg-white"),
+        ("04", "Question à vous poser", question_for(item), "bg-cyan-50"),
     ]
     body = ""
     for number, title, content, tone in rows:
@@ -548,7 +722,7 @@ def layout_b(item: dict[str, str], n: int) -> str:
       {section_header(item, n)}
       <div class="grid gap-6 lg:grid-cols-3">
         <div class="border-2 border-slate-950 bg-blue-600 p-7 text-white shadow-[8px_8px_0_#111827] lg:col-span-1">
-          <p class="font-mono text-xs font-black uppercase tracking-[.16em] text-blue-100">Message élève</p>
+          <p class="font-mono text-xs font-black uppercase tracking-[.16em] text-blue-100">Message pour vous</p>
           <h2 class="mt-4 font-display text-3xl font-black">{e(item["title"])}</h2>
           <p class="mt-4 leading-7 text-blue-50">{e(item["story"])}</p>
         </div>
@@ -557,10 +731,10 @@ def layout_b(item: dict[str, str], n: int) -> str:
             <div class="border-2 border-slate-950 bg-violet-50 p-5"><p class="font-black">Étape</p><p class="mt-2 text-slate-700">{e(item["action"])}</p></div>
             <div class="border-2 border-slate-950 bg-white p-5"><p class="font-black">Résultat attendu</p><p class="mt-2 text-slate-700">{e(item["check"])}</p></div>
           </div>
-          <p class="mt-6 text-lg leading-8 text-slate-700">Lis cette section comme une consigne de travail. Tu n’as pas besoin de retenir chaque mot. Tu dois surtout comprendre le geste à faire et le point à vérifier.</p>
+          <p class="mt-6 text-lg leading-8 text-slate-700">Lisez cette section comme une consigne de travail. Vous n’avez pas besoin de retenir chaque mot. Vous devez surtout comprendre le geste à faire et le point à vérifier.</p>
           <div class="mt-6 grid gap-6 lg:grid-cols-[.85fr_1.15fr] lg:items-start">
             <div class="border-2 border-slate-950 bg-cyan-50 p-5 shadow-[5px_5px_0_#111827]">
-              <p class="font-black text-slate-950">Question à te poser</p>
+              <p class="font-black text-slate-950">Question à vous poser</p>
               <p class="mt-2 leading-7 text-slate-700">{e(question_for(item))}</p>
             </div>
             {visual_for(item, n + 11)}
@@ -577,18 +751,18 @@ def layout_c(item: dict[str, str], n: int) -> str:
       {section_header(item, n)}
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
         <div class="border-b-2 border-slate-950 bg-violet-600 px-5 py-3 font-mono text-xs font-black uppercase tracking-[.16em] text-white">Bloc pratique à copier</div>
-        <div class="grid gap-0 lg:grid-cols-[.95fr_1.05fr]">
-          <div class="p-7">
+        <div class="grid gap-0 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)]">
+          <div class="min-w-0 p-7">
             <h2 class="font-display text-3xl font-black text-slate-950 sm:text-5xl">{e(item["title"])}</h2>
             <p class="mt-5 text-lg leading-8 text-slate-700">{e(item["story"])}</p>
           </div>
-          <div class="border-t-2 border-slate-950 p-7 lg:border-l-2 lg:border-t-0">
+          <div class="min-w-0 border-t-2 border-slate-950 p-7 lg:border-l-2 lg:border-t-0">
             {code_block([item["action"], "", "Vérification :", item["check"]])}
           </div>
         </div>
         <div class="grid gap-6 border-t-2 border-slate-950 p-7 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
           <div class="border-2 border-slate-950 bg-cyan-50 p-5 shadow-[5px_5px_0_#111827]">
-            <p class="font-black text-slate-950">Question à te poser</p>
+            <p class="font-black text-slate-950">Question à vous poser</p>
             <p class="mt-2 leading-7 text-slate-700">{e(question_for(item))}</p>
           </div>
           {visual_for(item, n + 17)}
@@ -608,7 +782,7 @@ def layout_d(item: dict[str, str], n: int) -> str:
           <h2 class="font-display text-3xl font-black text-slate-950 sm:text-5xl">{e(item["title"])}</h2>
           <p class="mt-5 text-lg leading-8 text-slate-700">{e(item["story"])}</p>
           <div class="mt-6 border-2 border-slate-950 bg-white p-6 shadow-[8px_8px_0_#111827]">
-            <p class="font-black text-slate-950">Consigne simple pour toi</p>
+            <p class="font-black text-slate-950">Consigne simple pour vous</p>
             <p class="mt-2 text-slate-700">{e(item["action"])}</p>
             <p class="mt-4 border-l-4 border-blue-600 pl-4 font-semibold text-slate-800">{e(item["check"])}</p>
             <p class="mt-4 border-2 border-slate-950 bg-cyan-50 p-4 font-semibold text-slate-800">{e(question_for(item))}</p>
@@ -622,20 +796,20 @@ def layout_d(item: dict[str, str], n: int) -> str:
 def layout_e(item: dict[str, str], n: int) -> str:
     rows = [
         ["Point à comprendre", e(item["story"])],
-        ["Action élève", e(item["action"])],
+        ["Action à faire", e(item["action"])],
         ["Validation", e(item["check"])],
-        ["Question à te poser", e(question_for(item))],
+        ["Question à vous poser", e(question_for(item))],
         ["Erreur à éviter", "Passer à l’étape suivante sans avoir ouvert ou vérifié le résultat."],
     ]
     return f"""
     <section id="section-{n:02d}" class="section-block reveal mx-auto max-w-7xl bg-white px-4 py-14 sm:px-6 lg:px-8">
       {section_header(item, n)}
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
-        <div>
+        <div class="min-w-0">
           <h2 class="font-display text-3xl font-black text-slate-950 sm:text-5xl">{e(item["title"])}</h2>
           <p class="mt-5 text-lg leading-8 text-slate-700">{e(item["summary"])}</p>
         </div>
-        <div class="space-y-6">
+        <div class="min-w-0 space-y-6">
           {table(["Élément", "Explication"], rows)}
           {visual_for(item, n + 23)}
         </div>
@@ -653,7 +827,7 @@ def layout_f(item: dict[str, str], n: int) -> str:
           <h2 class="font-display text-3xl font-black text-slate-950 sm:text-5xl">{e(item["title"])}</h2>
           <p class="mt-5 text-lg leading-8 text-slate-700">{e(item["story"])}</p>
           <div class="mt-6 border-l-4 border-blue-600 bg-blue-50 px-5 py-4">
-            <p class="font-black text-slate-950">Question à te poser</p>
+            <p class="font-black text-slate-950">Question à vous poser</p>
             <p class="mt-2 leading-7 text-slate-700">{e(question_for(item))}</p>
           </div>
         </div>
@@ -690,11 +864,11 @@ def nav() -> str:
     links = [
         ("C’est quoi", "#intro-claude-code"),
         ("Départ", "#section-01"),
-        ("Installer", "#section-19"),
-        ("Exercice", "#section-33"),
-        ("Prompts", "#section-39"),
-        ("Sécurité", "#section-45"),
-        ("Récap", "#section-81"),
+        ("Installer", "#section-17"),
+        ("Exercice", "#section-21"),
+        ("Prompts", "#section-31"),
+        ("Sécurité", "#section-41"),
+        ("Livrer", "#section-71"),
     ]
     return "".join(
         f'<a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="{href}">{label}</a>'
@@ -706,8 +880,8 @@ def intro_block() -> str:
     cards = [
         (
             "01",
-            "Un assistant dans ton projet",
-            "Claude Code est un outil d’Anthropic qui se lance dans un dossier de travail. Il ne regarde pas juste une question isolée : il peut comprendre les fichiers autour, proposer une modification et t’aider à avancer sur un vrai projet.",
+            "Un assistant dans votre projet",
+            "Claude Code est un outil d’Anthropic qui se lance dans un dossier de travail. Il ne regarde pas seulement une question isolée : il peut comprendre les fichiers autour, proposer une modification et vous aider à avancer sur un vrai projet.",
             "bg-blue-50",
         ),
         (
@@ -718,14 +892,14 @@ def intro_block() -> str:
         ),
         (
             "03",
-            "Tu restes le pilote",
-            "Claude Code propose et exécute, mais toi tu décides. Tu lis ce qu’il veut faire, tu regardes les fichiers modifiés, tu ouvres le résultat, puis tu acceptes ou tu demandes une correction. L’outil ne valide pas à ta place.",
+            "Vous restez aux commandes",
+            "Claude Code propose et exécute, mais vous décidez. Vous lisez ce qu’il veut faire, vous regardez les fichiers modifiés, vous ouvrez le résultat, puis vous acceptez ou vous demandez une correction. L’outil ne valide pas à votre place.",
             "bg-cyan-50",
         ),
         (
             "04",
             "Le dossier compte beaucoup",
-            "La règle simple : Claude Code travaille là où tu le lances. Si tu l’ouvres dans le bon dossier, il a le bon contexte. Si tu l’ouvres au mauvais endroit, il peut regarder ou modifier des éléments qui ne concernent pas l’exercice.",
+            "La règle simple : Claude Code travaille là où vous le lancez. Si vous l’ouvrez dans le bon dossier, il a le bon contexte. Si vous l’ouvrez au mauvais endroit, il peut regarder ou modifier des éléments qui ne concernent pas l’exercice.",
             "bg-white",
         ),
     ]
@@ -739,10 +913,10 @@ def intro_block() -> str:
           </article>
         """
     decision_rows = [
-        ["Tu veux comprendre une idée", "Un chatbot suffit souvent. Tu poses une question, tu lis la réponse, tu réfléchis."],
-        ["Tu veux créer ou modifier des fichiers", "Claude Code est plus adapté. Il travaille dans ton dossier et peut produire un résultat concret."],
-        ["Tu veux corriger une erreur", "Claude Code peut lire les fichiers, proposer une piste, lancer une commande et expliquer le problème."],
-        ["Tu veux livrer proprement", "Tu lui demandes une checklist, puis tu vérifies toi-même le rendu, les liens, le mobile et les fichiers modifiés."],
+        ["Vous voulez comprendre une idée", "Un chatbot suffit souvent. Vous posez une question, vous lisez la réponse, puis vous réfléchissez."],
+        ["Vous voulez créer ou modifier des fichiers", "Claude Code est plus adapté. Il travaille dans votre dossier et peut produire un résultat concret."],
+        ["Vous voulez corriger une erreur", "Claude Code peut lire les fichiers, proposer une piste, lancer une commande et expliquer le problème."],
+        ["Vous voulez livrer proprement", "Vous lui demandez une checklist, puis vous vérifiez vous-même le rendu, les liens, le mobile et les fichiers modifiés."],
     ]
     decision_html = ""
     for situation, tool in decision_rows:
@@ -764,11 +938,11 @@ def intro_block() -> str:
       <div class="border-2 border-slate-950 bg-white p-7 shadow-[8px_8px_0_#111827]">
         <div class="mb-5 inline-flex border-2 border-slate-950 bg-violet-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Avant la pratique</div>
         <h2 class="font-display text-4xl font-black leading-tight text-slate-950 sm:text-6xl">C’est quoi Claude Code ?</h2>
-        <p class="mt-5 text-lg leading-8 text-slate-700">Imagine que tu ouvres un dossier sur ton ordinateur et que tu demandes à un assistant de t’aider dedans. Pas juste de parler du projet. De le lire, de proposer une action, de créer un fichier, de corriger une erreur, puis de t’expliquer ce qui a changé.</p>
-        <p class="mt-4 text-lg leading-8 text-slate-700">Claude Code sert à ça. C’est un agent de code. Il peut travailler dans le terminal ou dans l’interface Desktop. Il est pratique pour apprendre, créer un site, corriger un script, organiser un projet ou comprendre une erreur. Mais il faut garder une règle simple : tu demandes, il propose, tu vérifies.</p>
+        <p class="mt-5 text-lg leading-8 text-slate-700">Imaginez que vous ouvrez un dossier sur votre ordinateur et que vous demandez à un assistant de vous aider dedans. Pas juste de parler du projet. De le lire, de proposer une action, de créer un fichier, de corriger une erreur, puis de vous expliquer ce qui a changé.</p>
+        <p class="mt-4 text-lg leading-8 text-slate-700">Claude Code sert à ça. C’est un agent de code. Il peut travailler dans le terminal ou dans l’interface Desktop. Il est pratique pour apprendre, créer un site, corriger un script, organiser un projet ou comprendre une erreur. Mais il faut garder une règle simple : vous demandez, il propose, vous vérifiez.</p>
         <div class="mt-6 border-l-4 border-blue-600 bg-blue-50 px-5 py-4">
           <p class="font-black text-slate-950">Question simple</p>
-          <p class="mt-2 leading-7 text-slate-700">Est-ce que je veux seulement une explication, ou est-ce que je veux obtenir un vrai fichier dans un vrai dossier ? Cette question t’aide à savoir quand utiliser Claude Code.</p>
+          <p class="mt-2 leading-7 text-slate-700">Est-ce que vous voulez seulement une explication, ou est-ce que vous voulez obtenir un vrai fichier dans un vrai dossier ? Cette question aide à savoir quand utiliser Claude Code.</p>
         </div>
       </div>
       <figure class="overflow-hidden border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -785,10 +959,10 @@ def intro_block() -> str:
       <div class="border-2 border-slate-950 bg-slate-950 p-6 text-white shadow-[8px_8px_0_#111827]">
         <p class="font-mono text-xs font-black uppercase tracking-[.16em] text-cyan-200">La boucle à retenir</p>
         <ol class="mt-5 space-y-4 text-base leading-7">
-          <li><b>1. Tu ouvres le bon dossier.</b><br><span class="text-slate-300">Claude Code doit partir du bon contexte.</span></li>
-          <li><b>2. Tu formules une demande claire.</b><br><span class="text-slate-300">Tu dis le résultat attendu, le public et les contraintes.</span></li>
+          <li><b>1. Vous ouvrez le bon dossier.</b><br><span class="text-slate-300">Claude Code doit partir du bon contexte.</span></li>
+          <li><b>2. Vous formulez une demande claire.</b><br><span class="text-slate-300">Vous dites le résultat attendu, le public et les contraintes.</span></li>
           <li><b>3. Claude propose ou modifie.</b><br><span class="text-slate-300">Il peut écrire, corriger, lancer une commande ou expliquer.</span></li>
-          <li><b>4. Tu vérifies.</b><br><span class="text-slate-300">Tu ouvres le fichier, tu lis le diff, tu testes le rendu.</span></li>
+          <li><b>4. Vous vérifiez.</b><br><span class="text-slate-300">Vous ouvrez le fichier, vous lisez le diff, vous testez le rendu.</span></li>
         </ol>
       </div>
       <div>
@@ -806,12 +980,50 @@ def intro_block() -> str:
     """
 
 
+def journey_map() -> str:
+    cards = ""
+    start = 1
+    for index, (chapter, summary, tag, color, items) in enumerate(CHAPTERS, 1):
+        end = start + len(items) - 1
+        color_class = {
+            "blue": "bg-blue-50",
+            "violet": "bg-violet-50",
+            "cyan": "bg-cyan-50",
+            "orange": "bg-orange-50",
+            "green": "bg-emerald-50",
+        }[color]
+        cards += f"""
+          <a href="#section-{start:02d}" class="group block border-2 border-slate-950 {color_class} p-5 text-slate-950 no-underline shadow-[6px_6px_0_#111827] transition hover:-translate-y-1 hover:shadow-[9px_9px_0_#111827]">
+            <div class="flex items-center justify-between gap-3">
+              <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections {start:02d}-{end:02d}</span>
+              <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">{e(tag)}</span>
+            </div>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">{e(chapter)}</h3>
+            <p class="mt-3 text-[15px] leading-7 text-slate-700">{e(summary)}</p>
+            <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte {index:02d}</p>
+          </a>
+        """
+        start = end + 1
+    return f"""
+  <section id="plan-parcours" class="mx-auto max-w-7xl bg-white px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8 max-w-4xl">
+      <div class="mb-5 inline-flex border-2 border-slate-950 bg-slate-950 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Plan du support</div>
+      <h2 class="font-display text-4xl font-black leading-tight text-slate-950 sm:text-6xl">80 sections, une seule histoire.</h2>
+      <p class="mt-5 text-lg leading-8 text-slate-700">Le support avance comme une méthode : comprendre, installer, lancer, demander, contrôler, produire, dépanner, livrer. Vous pouvez lire dans l’ordre ou revenir à l’acte qui bloque.</p>
+    </div>
+    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      {cards}
+    </div>
+  </section>
+    """
+
+
 def source_table() -> str:
     rows = [
         ["Vue d’ensemble Claude Code", f'<a href="{DOCS["overview"]}" target="_blank" rel="noopener">Documentation officielle</a>'],
-        ["Installation", f'<a href="{DOCS["setup"]}" target="_blank" rel="noopener">Advanced setup Claude Code</a>'],
+        ["Installation", f'<a href="{DOCS["setup"]}" target="_blank" rel="noopener">Quickstart Claude Code</a>'],
         ["CLI", f'<a href="{DOCS["cli"]}" target="_blank" rel="noopener">CLI reference</a>'],
-        ["Application Desktop", f'<a href="https://code.claude.com/docs/en/desktop" target="_blank" rel="noopener">Claude Code on Desktop</a>'],
+        ["Application Desktop", f'<a href="{DOCS["desktop"]}" target="_blank" rel="noopener">Claude Code Desktop</a>'],
         ["Mémoire CLAUDE.md", f'<a href="{DOCS["memory"]}" target="_blank" rel="noopener">How Claude remembers your project</a>'],
         ["Sécurité", f'<a href="{DOCS["security"]}" target="_blank" rel="noopener">Security</a>'],
         ["Prix Claude", f'<a href="{DOCS["plans"]}" target="_blank" rel="noopener">Choisir un plan Claude</a>'],
@@ -855,7 +1067,7 @@ def render() -> str:
     <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
       <a href="#top" class="flex items-center gap-3 text-slate-950 no-underline">
         <img src="logo-denem.jpeg" alt="Logo DENEM" class="h-11 w-11 border-2 border-slate-950 object-cover shadow-[4px_4px_0_#111827]">
-        <span><b class="block font-display text-lg leading-none">DENEM Academy</b><small class="font-mono text-xs uppercase tracking-[.14em] text-slate-500">Support élèves - Séance 01</small></span>
+        <span><b class="block font-display text-lg leading-none">DENEM Academy</b><small class="font-mono text-xs uppercase tracking-[.14em] text-slate-500">Support formation - Séance 01</small></span>
       </a>
       <div class="flex flex-wrap gap-2">{nav()}</div>
     </div>
@@ -864,9 +1076,9 @@ def render() -> str:
   <header id="top" class="mx-auto max-w-7xl bg-white px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
     <div class="grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
       <div>
-        <div class="mb-5 inline-flex border-2 border-slate-950 bg-blue-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Support technique pour les élèves</div>
-        <h1 class="font-display text-5xl font-black leading-[.92] tracking-tight text-slate-950 sm:text-7xl lg:text-8xl">Claude Code.<br><span class="text-blue-600">Tu installes.</span><br><span class="text-violet-600">Tu pratiques.</span></h1>
-        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-700">Ce support est fait pour toi. Il ne répète pas la vidéo mot pour mot. Il transforme la séance en méthode claire : quoi faire, pourquoi le faire, quoi vérifier, et comment éviter les erreurs.</p>
+        <div class="mb-5 inline-flex border-2 border-slate-950 bg-blue-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Support technique guidé</div>
+        <h1 class="font-display text-5xl font-black leading-[.92] tracking-tight text-slate-950 sm:text-7xl lg:text-8xl">Claude Code.<br><span class="text-blue-600">Vous installez.</span><br><span class="text-violet-600">Vous livrez.</span></h1>
+        <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-700">Ce support ne répète pas la vidéo mot pour mot. Il transforme la séance en méthode claire : quoi faire, pourquoi le faire, quoi vérifier, et comment éviter les erreurs.</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#section-01" class="border-2 border-slate-950 bg-slate-950 px-5 py-3 font-black text-white no-underline shadow-[5px_5px_0_#111827] transition hover:-translate-y-1">Commencer</a>
           <a href="transcription/seance-01-transcription.md" class="border-2 border-slate-950 bg-white px-5 py-3 font-black text-slate-950 no-underline shadow-[5px_5px_0_#111827] transition hover:-translate-y-1">Transcription</a>
@@ -889,13 +1101,15 @@ def render() -> str:
 
   {intro_block()}
 
+  {journey_map()}
+
   <section class="mx-auto max-w-7xl bg-white px-4 py-8 sm:px-6 lg:px-8">
     <div class="grid gap-4 md:grid-cols-5">
-      <div class="border-2 border-slate-950 bg-blue-50 p-5 shadow-[4px_4px_0_#111827]"><b>Théorie</b><p class="mt-2 text-sm text-slate-700">Tu comprends avant de cliquer.</p></div>
-      <div class="border-2 border-slate-950 bg-cyan-50 p-5 shadow-[4px_4px_0_#111827]"><b>Pratique</b><p class="mt-2 text-sm text-slate-700">Tu fais une action simple.</p></div>
-      <div class="border-2 border-slate-950 bg-violet-50 p-5 shadow-[4px_4px_0_#111827]"><b>Méthode</b><p class="mt-2 text-sm text-slate-700">Tu gardes un réflexe.</p></div>
-      <div class="border-2 border-slate-950 bg-orange-50 p-5 shadow-[4px_4px_0_#111827]"><b>Vigilance</b><p class="mt-2 text-sm text-slate-700">Tu évites une erreur.</p></div>
-      <div class="border-2 border-slate-950 bg-emerald-50 p-5 shadow-[4px_4px_0_#111827]"><b>Validation</b><p class="mt-2 text-sm text-slate-700">Tu sais si c’est bon.</p></div>
+      <div class="border-2 border-slate-950 bg-blue-50 p-5 shadow-[4px_4px_0_#111827]"><b>Théorie</b><p class="mt-2 text-sm text-slate-700">Vous comprenez avant de cliquer.</p></div>
+      <div class="border-2 border-slate-950 bg-cyan-50 p-5 shadow-[4px_4px_0_#111827]"><b>Pratique</b><p class="mt-2 text-sm text-slate-700">Vous faites une action simple.</p></div>
+      <div class="border-2 border-slate-950 bg-violet-50 p-5 shadow-[4px_4px_0_#111827]"><b>Méthode</b><p class="mt-2 text-sm text-slate-700">Vous gardez un réflexe.</p></div>
+      <div class="border-2 border-slate-950 bg-orange-50 p-5 shadow-[4px_4px_0_#111827]"><b>Vigilance</b><p class="mt-2 text-sm text-slate-700">Vous évitez une erreur.</p></div>
+      <div class="border-2 border-slate-950 bg-emerald-50 p-5 shadow-[4px_4px_0_#111827]"><b>Validation</b><p class="mt-2 text-sm text-slate-700">Vous savez si c’est bon.</p></div>
     </div>
   </section>
 
@@ -905,13 +1119,13 @@ def render() -> str:
     <div class="border-2 border-slate-950 bg-white p-7 shadow-[8px_8px_0_#111827]">
       <div class="mb-5 inline-flex border-2 border-slate-950 bg-violet-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white">Sources</div>
       <h2 class="font-display text-4xl font-black text-slate-950 sm:text-6xl">Les liens à garder.</h2>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-700">Ces liens servent aux élèves qui veulent vérifier une commande ou reprendre l’installation depuis une source officielle.</p>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-slate-700">Ces liens servent à vérifier une commande, reprendre l’installation ou confirmer une information depuis une source officielle.</p>
       <p class="mt-3 max-w-3xl border-l-4 border-blue-600 pl-4 text-sm font-semibold leading-6 text-slate-700">Prix vérifiés le 3 juin 2026 sur le Help Center Claude : Pro 20 $/mois US, Max 5x 100 $/mois, Max 20x 200 $/mois. Les prix peuvent changer selon la région, les taxes et les décisions d’Anthropic.</p>
       <div class="mt-8">{source_table()}</div>
     </div>
   </section>
 
-  <div id="egg" class="pointer-events-none fixed bottom-5 left-1/2 z-[80] hidden -translate-x-1/2 border-2 border-slate-950 bg-white px-5 py-3 font-mono text-sm font-black shadow-[6px_6px_0_#111827]">Tu avances bien : petite étape, vraie vérification.</div>
+  <div id="egg" class="pointer-events-none fixed bottom-5 left-1/2 z-[80] hidden -translate-x-1/2 border-2 border-slate-950 bg-white px-5 py-3 font-mono text-sm font-black shadow-[6px_6px_0_#111827]">Vous avancez bien : petite étape, vraie vérification.</div>
 
   <script>
     const progress = document.getElementById('progress');
@@ -928,7 +1142,7 @@ def render() -> str:
     updateProgress();
     document.querySelectorAll('.copy-btn').forEach((btn) => {{
       btn.addEventListener('click', async () => {{
-        const code = btn.parentElement.querySelector('code').innerText;
+        const code = btn.closest('.code-panel').querySelector('code').innerText;
         await navigator.clipboard.writeText(code);
         btn.classList.add('copied');
         const old = btn.innerText;
@@ -952,7 +1166,7 @@ def render() -> str:
 
 
 if __name__ == "__main__":
-    html = render()
+    html = public_copy(render())
     OUT.write_text(html, encoding="utf-8")
     INDEX_OUT.write_text(html, encoding="utf-8")
     print(f"Wrote {OUT.name} and {INDEX_OUT.name}: {html.count('<section')} sections, {html.count('<img ')} images")
