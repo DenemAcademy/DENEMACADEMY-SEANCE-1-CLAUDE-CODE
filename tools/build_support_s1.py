@@ -6,6 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "support-technique-seance-01.html"
+INDEX_OUT = ROOT / "index.html"
 
 DOCS = {
     "overview": "https://code.claude.com/docs/en/overview",
@@ -846,4 +847,5 @@ def render() -> str:
 if __name__ == "__main__":
     html = render()
     OUT.write_text(html, encoding="utf-8")
-    print(f"Wrote {OUT.name}: {html.count('<section')} sections, {html.count('<img ')} images")
+    INDEX_OUT.write_text(html, encoding="utf-8")
+    print(f"Wrote {OUT.name} and {INDEX_OUT.name}: {html.count('<section')} sections, {html.count('<img ')} images")
