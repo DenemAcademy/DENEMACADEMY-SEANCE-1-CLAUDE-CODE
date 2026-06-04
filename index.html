@@ -3673,6 +3673,128 @@ Vous savez comment le lien public sera créé.</code></pre></div>
 
 
 
+
+
+<!-- DENEM documentation enrichment -->
+<style id="denem-docs-style">
+.denem-docs-section {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 72px 18px;
+  background: #fff;
+  color: var(--denem-ink, #111827);
+  border-bottom: 2px solid var(--denem-ink, #111827);
+}
+.denem-docs-wrap {
+  border: 2px solid var(--denem-ink, #111827);
+  box-shadow: var(--denem-shadow, 5px 5px 0 #111827);
+  padding: 26px;
+  background: #fff;
+}
+.denem-docs-kicker,
+.denem-inline-docs strong {
+  display: inline-flex;
+  border: 2px solid var(--denem-ink, #111827);
+  box-shadow: var(--denem-shadow-sm, 3px 3px 0 #111827);
+  background: var(--denem-accent, #2563eb);
+  color: #fff;
+  padding: 6px 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+.denem-docs-section h2 {
+  margin: 18px 0 10px;
+  font-size: clamp(32px, 4vw, 54px);
+  line-height: 1;
+  font-weight: 950;
+  letter-spacing: 0;
+}
+.denem-docs-section p {
+  max-width: 760px;
+  color: #334155;
+  line-height: 1.75;
+  font-size: 18px;
+}
+.denem-docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+.denem-doc-card,
+.denem-inline-docs a {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 2px solid var(--denem-ink, #111827);
+  box-shadow: var(--denem-shadow-sm, 3px 3px 0 #111827);
+  padding: 16px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+}
+.denem-doc-card span,
+.denem-inline-docs a span {
+  font-weight: 900;
+  color: var(--denem-accent, #2563eb);
+}
+.denem-doc-card small,
+.denem-inline-docs a small {
+  color: #475569;
+  line-height: 1.5;
+  font-size: 13px;
+}
+.denem-inline-docs {
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+@media (max-width: 900px) {
+  .denem-docs-grid { grid-template-columns: 1fr; }
+  .denem-docs-section { padding: 52px 16px; }
+  .denem-docs-wrap { padding: 18px; }
+}
+</style>
+<section id="documentation" class="denem-docs-section" aria-label="Documentation externe">
+  <div class="denem-docs-wrap">
+    <div class="denem-docs-kicker">Documentation</div>
+    <h2>Documentation</h2>
+    <p>Liens externes utiles pour refaire la methode, verifier un outil et aller plus loin sans chercher au hasard.</p>
+    <div class="denem-docs-grid">
+      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">
+        <span>Vue d&#x27;ensemble Claude Code</span>
+        <small>Comprendre le role de Claude Code dans un projet.</small>
+      </a>
+      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/quickstart" target="_blank" rel="noopener">
+        <span>Quickstart Claude Code</span>
+        <small>Installer et lancer les premieres commandes.</small>
+      </a>
+      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank" rel="noopener">
+        <span>Memoire CLAUDE.md</span>
+        <small>Garder les consignes projet au bon endroit.</small>
+      </a>
+      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener">
+        <span>Workflows Claude Code</span>
+        <small>Reprendre les usages courants sans repartir de zero.</small>
+      </a>
+      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/security" target="_blank" rel="noopener">
+        <span>Securite Claude Code</span>
+        <small>Verifier les limites, permissions et bonnes pratiques.</small>
+      </a>
+      <a class="denem-doc-card" href="https://nodejs.org/en/download" target="_blank" rel="noopener">
+        <span>Node.js</span>
+        <small>Pre-requis utile pour beaucoup d&#x27;outils CLI.</small>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- /DENEM documentation enrichment -->
+
+
 <!-- DENEM visual system normalization -->
 <style id="denem-visual-system">
 :root {
@@ -3681,6 +3803,28 @@ Vous savez comment le lien public sera créé.</code></pre></div>
   --denem-paper: #ffffff;
   --denem-shadow: 5px 5px 0 #111827;
   --denem-shadow-sm: 3px 3px 0 #111827;
+  --blue: var(--denem-accent);
+  --violet: var(--denem-accent);
+  --cyan: var(--denem-accent);
+  --green: var(--denem-accent);
+  --amber: var(--denem-accent);
+  --orange: var(--denem-accent);
+  --red: var(--denem-accent);
+  --red-dark: var(--denem-accent);
+  --teal: var(--denem-accent);
+  --brass: var(--denem-accent);
+  --purple: var(--denem-accent);
+  --pink: var(--denem-accent);
+  --red-soft: #fff;
+  --teal-soft: #fff;
+  --brass-soft: #fff;
+  --mint: #fff;
+  --lav: #fff;
+  --sky: #fff;
+  --rose: #fff;
+  --cream: #fff;
+  --soft: #fff;
+  --gray: #fff;
 }
 html { background: var(--denem-paper) !important; }
 body {
@@ -3762,6 +3906,37 @@ svg {
 pre,
 code {
   max-width: 100% !important;
+}
+span,
+p,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.flow span,
+.mini-flow span,
+.checklist li,
+.check-list li,
+.timeline li,
+.timeline div,
+.cards article,
+.card-grid article,
+.summary-card,
+.act,
+.badge,
+.eyebrow,
+.stat,
+.note,
+.final-box {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
 }
 pre,
 .prompt-card pre {
@@ -3940,6 +4115,10 @@ blockquote {
   background: var(--denem-accent) !important;
   background-image: none !important;
 }
+.section-counter,
+#counter {
+  display: none !important;
+}
 [class*="bg-gradient"] {
   background: #fff !important;
   background-image: none !important;
@@ -4019,6 +4198,19 @@ tbody tr:nth-child(even) td,
 .stats {
   background: #fff !important;
 }
+.flow,
+.mini-flow {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+.flow span,
+.mini-flow span {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 0 !important;
+  line-height: 1.35 !important;
+}
 @media (max-width: 700px) {
   .nav a,
   .links a {
@@ -4086,125 +4278,6 @@ tbody tr:nth-child(even) td,
   setActive();
 })();
 </script>
-
-<!-- DENEM documentation enrichment -->
-<style id="denem-docs-style">
-.denem-docs-section {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 72px 18px;
-  background: #fff;
-  color: var(--denem-ink, #111827);
-  border-bottom: 2px solid var(--denem-ink, #111827);
-}
-.denem-docs-wrap {
-  border: 2px solid var(--denem-ink, #111827);
-  box-shadow: var(--denem-shadow, 5px 5px 0 #111827);
-  padding: 26px;
-  background: #fff;
-}
-.denem-docs-kicker,
-.denem-inline-docs strong {
-  display: inline-flex;
-  border: 2px solid var(--denem-ink, #111827);
-  box-shadow: var(--denem-shadow-sm, 3px 3px 0 #111827);
-  background: var(--denem-accent, #2563eb);
-  color: #fff;
-  padding: 6px 10px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0;
-}
-.denem-docs-section h2 {
-  margin: 18px 0 10px;
-  font-size: clamp(32px, 4vw, 54px);
-  line-height: 1;
-  font-weight: 950;
-  letter-spacing: 0;
-}
-.denem-docs-section p {
-  max-width: 760px;
-  color: #334155;
-  line-height: 1.75;
-  font-size: 18px;
-}
-.denem-docs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 22px;
-}
-.denem-doc-card,
-.denem-inline-docs a {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  border: 2px solid var(--denem-ink, #111827);
-  box-shadow: var(--denem-shadow-sm, 3px 3px 0 #111827);
-  padding: 16px;
-  background: #fff;
-  color: inherit;
-  text-decoration: none;
-}
-.denem-doc-card span,
-.denem-inline-docs a span {
-  font-weight: 900;
-  color: var(--denem-accent, #2563eb);
-}
-.denem-doc-card small,
-.denem-inline-docs a small {
-  color: #475569;
-  line-height: 1.5;
-  font-size: 13px;
-}
-.denem-inline-docs {
-  margin-top: 22px;
-  display: grid;
-  gap: 12px;
-  max-width: 760px;
-}
-@media (max-width: 900px) {
-  .denem-docs-grid { grid-template-columns: 1fr; }
-  .denem-docs-section { padding: 52px 16px; }
-  .denem-docs-wrap { padding: 18px; }
-}
-</style>
-<section id="documentation" class="denem-docs-section" aria-label="Documentation externe">
-  <div class="denem-docs-wrap">
-    <div class="denem-docs-kicker">Documentation</div>
-    <h2>Documentation</h2>
-    <p>Liens externes utiles pour refaire la methode, verifier un outil et aller plus loin sans chercher au hasard.</p>
-    <div class="denem-docs-grid">
-      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">
-        <span>Vue d&#x27;ensemble Claude Code</span>
-        <small>Comprendre le role de Claude Code dans un projet.</small>
-      </a>
-      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/quickstart" target="_blank" rel="noopener">
-        <span>Quickstart Claude Code</span>
-        <small>Installer et lancer les premieres commandes.</small>
-      </a>
-      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/memory" target="_blank" rel="noopener">
-        <span>Memoire CLAUDE.md</span>
-        <small>Garder les consignes projet au bon endroit.</small>
-      </a>
-      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/common-workflows" target="_blank" rel="noopener">
-        <span>Workflows Claude Code</span>
-        <small>Reprendre les usages courants sans repartir de zero.</small>
-      </a>
-      <a class="denem-doc-card" href="https://docs.anthropic.com/en/docs/claude-code/security" target="_blank" rel="noopener">
-        <span>Securite Claude Code</span>
-        <small>Verifier les limites, permissions et bonnes pratiques.</small>
-      </a>
-      <a class="denem-doc-card" href="https://nodejs.org/en/download" target="_blank" rel="noopener">
-        <span>Node.js</span>
-        <small>Pre-requis utile pour beaucoup d&#x27;outils CLI.</small>
-      </a>
-    </div>
-  </div>
-</section>
-<!-- /DENEM documentation enrichment -->
 
 </body>
 </html>
