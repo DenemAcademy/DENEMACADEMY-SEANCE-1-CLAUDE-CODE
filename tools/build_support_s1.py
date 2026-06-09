@@ -1078,7 +1078,7 @@ def render() -> str:
     <div class="grid gap-8 lg:grid-cols-[1.04fr_.96fr] lg:items-center">
       <div>
         <div class="mb-5 inline-flex border-2 border-slate-950 bg-blue-600 px-4 py-2 font-mono text-xs font-black uppercase tracking-[.18em] text-white shadow-[5px_5px_0_#111827]">Séance 01 · Claude Code</div>
-        <h1 class="font-display text-5xl font-black leading-[.92] tracking-tight text-slate-950 sm:text-7xl lg:text-8xl">Le Comptoir Bleu.<br><span class="text-blue-600">Un dossier.</span><br><span class="text-violet-600">Une page.</span></h1>
+        <h1 class="font-display text-5xl font-black leading-[.92] tracking-tight text-slate-950 sm:text-7xl lg:text-8xl">Un dossier.<br><span class="text-blue-600">Une page.</span></h1>
         <p class="mt-7 max-w-3xl text-xl leading-9 text-slate-700">Vous partez de zéro. Vous installez Claude Code, vous créez le dossier du restaurant, vous générez une première page, vous l’améliorez, puis vous vérifiez le résultat comme dans un vrai travail quotidien.</p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#section-01" class="border-2 border-slate-950 bg-slate-950 px-5 py-3 font-black text-white no-underline shadow-[5px_5px_0_#111827] transition hover:-translate-y-1">Commencer</a>
