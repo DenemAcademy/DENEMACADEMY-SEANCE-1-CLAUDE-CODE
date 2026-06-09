@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support technique - Séance 01 - Claude Code | DENEM Academy</title>
+  <title>DENEM Academy · Séance 01 · Claude Code : agents IA &amp; automatisations</title>
   <link rel="icon" href="logo-denem.jpeg">
   <link href="assets/tailwind-s1.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
 
 <style id="denem-act-system">
 :root {
-  --denem-act-color: #1E3A8A;
+  --denem-act-color: #60A5FA;
   --denem-act-bg: #ffffff;
 }
 body {
@@ -39,70 +39,101 @@ body {
 .denem-act-ribbon,
 .denem-sources-final {
   background: #ffffff;
-  color: #0f172a;
-  border-top: 4px solid var(--denem-act-color);
-  border-bottom: 4px solid var(--denem-act-color);
+  color: #000000;
+  border-top: 6px solid var(--denem-act-color);
+  border-bottom: 4px solid #000000;
 }
 .denem-act-ribbon {
-  padding: 18px;
+  padding: clamp(18px, 3vw, 34px) 18px;
 }
 .denem-act-ribbon__inner,
 .denem-sources-final__inner {
   max-width: 1320px;
   margin: 0 auto;
 }
-.denem-act-ribbon__kicker,
-.denem-sources-final__kicker {
-  display: inline-flex;
+.denem-act-ribbon__topline,
+.denem-act-ribbon__meta,
+.denem-act-ribbon__chips,
+.denem-act-ribbon__phase-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
-  border: 2px solid var(--denem-act-color);
-  background: var(--denem-act-color);
-  color: #ffffff;
+}
+.denem-act-ribbon__topline {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.denem-act-ribbon__kicker,
+.denem-sources-final__kicker,
+.denem-act-ribbon__session,
+.denem-act-ribbon__meta span,
+.denem-act-ribbon__phase-nav strong,
+.denem-act-ribbon__phase-nav a {
+  border: 2px solid #000000;
+  background: #ffffff;
+  color: #000000;
   padding: 8px 12px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 12px;
   font-weight: 900;
+  line-height: 1;
   text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--denem-act-color);
+}
+.denem-act-ribbon__kicker,
+.denem-act-ribbon__phase-nav a.is-current,
+.denem-act-ribbon__phase-nav strong {
+  background: var(--denem-act-color);
+}
+.denem-act-ribbon__session {
+  background: #000000;
+  color: #ffffff;
+  box-shadow: 4px 4px 0 var(--denem-act-color);
 }
 .denem-act-ribbon h2,
 .denem-sources-final h2 {
-  margin: 14px 0 8px;
-  color: var(--denem-act-color);
-  font-size: 48px;
-  line-height: 1.03;
+  max-width: 1120px;
+  margin: 10px 0 10px;
+  color: #000000;
+  font-size: clamp(38px, 6vw, 86px);
+  line-height: .94;
   font-weight: 950;
   letter-spacing: 0;
+  border-left: 14px solid var(--denem-act-color);
+  padding-left: clamp(14px, 2vw, 24px);
 }
 .denem-act-ribbon p {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0;
-  color: #334155;
-  font-size: 18px;
-  line-height: 1.7;
+  color: #000000;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.65;
 }
 .denem-act-ribbon__chips,
-.denem-sources-final ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 16px 0 0;
+.denem-act-ribbon__phase-nav {
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 }
-.denem-act-ribbon__chips span,
-.denem-sources-final a {
+.denem-act-ribbon__chips span {
   display: inline-flex;
   align-items: center;
-  border: 2px solid var(--denem-act-color);
+  border: 2px solid #000000;
   background: #ffffff;
-  color: #0f172a;
+  color: #000000;
   padding: 10px 12px;
   text-decoration: none;
   font-weight: 900;
+  box-shadow: 3px 3px 0 var(--denem-act-color);
 }
-.denem-sources-final a:hover {
+.denem-act-ribbon__phase-nav {
+  padding-top: 14px;
+  border-top: 2px solid #000000;
+}
+.denem-act-ribbon__phase-nav a:hover {
   background: var(--denem-act-color);
-  color: #ffffff;
 }
 .denem-sources-final {
   padding: 56px 18px;
@@ -114,23 +145,20 @@ body {
 .nav-chip.is-active,
 .summary-card b {
   background-color: var(--denem-act-color) !important;
-  border-color: var(--denem-act-color) !important;
-  color: #ffffff !important;
+  border-color: #000000 !important;
+  color: #000000 !important;
 }
-
 @media (max-width: 700px) {
-  .denem-act-ribbon h2,
-  .denem-sources-final h2 {
-    font-size: 32px;
+  .denem-act-ribbon__topline {
+    justify-content: flex-start;
   }
-  .denem-act-ribbon,
-  .denem-sources-final {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .denem-sources-final ul {
+  .denem-act-ribbon__phase-nav {
     display: grid;
     grid-template-columns: 1fr;
+  }
+  .denem-act-ribbon h2,
+  .denem-sources-final h2 {
+    font-size: 34px;
   }
 }
 </style>
@@ -140,8 +168,8 @@ body {
   color-scheme: light;
   --denem-white: #FFFFFF;
   --denem-black: #000000;
-  --denem-act: #C8A46A;
-  --denem-act-number: "1";
+  --denem-act: #60A5FA;
+  --denem-act-number: "0";
   --ink: #000000;
   --muted: #000000;
   --line: #000000;
@@ -1135,22 +1163,210 @@ blockquote span:not(.num):not(.badge),
 }
 </style>
 
+<style id="denem-session-media-system">
+.denem-session-switcher {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(280px, 720px);
+  gap: 10px;
+  align-items: center;
+  margin: 18px auto 0;
+  padding: 14px 0;
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  max-width: 980px;
+}
+.denem-session-switcher label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 2px solid #000000;
+  background: var(--denem-act-color, var(--denem-act, #60A5FA));
+  color: #000000;
+  box-shadow: 4px 4px 0 var(--denem-act-color, var(--denem-act, #60A5FA));
+  padding: 10px 12px;
+  font: 950 12px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.denem-session-switcher select {
+  width: 100%;
+  min-height: 44px;
+  border: 2px solid #000000;
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 4px 4px 0 var(--denem-act-color, var(--denem-act, #60A5FA));
+  padding: 0 44px 0 14px;
+  font: 900 14px/1.1 ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+  appearance: auto;
+}
+.media-card,
+.shot,
+.visual,
+.hero-card,
+.poster,
+.image-card,
+.screen,
+.capture,
+figure[class*="media"],
+figure[class*="visual"],
+figure[class*="shot"] {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: #ffffff !important;
+  background-image:
+    linear-gradient(45deg, rgba(0,0,0,.035) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,0,0,.035) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0,0,0,.035) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0,0,0,.035) 75%) !important;
+  background-size: 18px 18px !important;
+  background-position: 0 0, 0 9px, 9px -9px, -9px 0 !important;
+}
+.media-card > img,
+.shot > img,
+.visual > img,
+.hero-card > img,
+figure[class*="media"] > img,
+figure[class*="visual"] > img,
+figure[class*="shot"] > img {
+  position: relative !important;
+  z-index: 1 !important;
+  background: #ffffff !important;
+}
+.media-card::after,
+.shot::after,
+.visual::after,
+.hero-card::after,
+figure[class*="media"]::after,
+figure[class*="visual"]::after,
+figure[class*="shot"]::after {
+  content: "Capture";
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+  border: 2px solid #000000;
+  background: var(--denem-act-color, var(--denem-act, #60A5FA));
+  color: #000000;
+  padding: 6px 8px;
+  font: 950 10px/1 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  pointer-events: none;
+}
+.media-card:has(figcaption)::after,
+.shot:has(figcaption)::after,
+.visual:has(figcaption)::after,
+figure[class*="media"]:has(figcaption)::after,
+figure[class*="visual"]:has(figcaption)::after,
+figure[class*="shot"]:has(figcaption)::after {
+  content: none;
+}
+.media-card:empty,
+.shot:empty,
+.visual:empty,
+.hero-card:empty,
+figure[class*="media"]:empty,
+figure[class*="visual"]:empty,
+figure[class*="shot"]:empty {
+  min-height: 220px !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.media-card:empty::before,
+.shot:empty::before,
+.visual:empty::before,
+.hero-card:empty::before,
+figure[class*="media"]:empty::before,
+figure[class*="visual"]:empty::before,
+figure[class*="shot"]:empty::before,
+.is-media-missing::before {
+  content: "Bloc media a completer";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #000000;
+  background: var(--denem-act-color, var(--denem-act, #60A5FA));
+  color: #000000;
+  padding: 12px 14px;
+  font: 950 12px/1.15 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+.is-media-missing {
+  min-height: 220px !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.is-media-missing > img {
+  display: none !important;
+}
+@media (max-width: 700px) {
+  .denem-session-switcher {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+  .denem-session-switcher select {
+    font-size: 13px;
+  }
+}
+</style>
 </head>
-<body class="bg-white">
+<body class="bg-white" data-phase="0" data-session="01" data-old-session="01">
 
 <section class="denem-act-ribbon" aria-label="En-tête du support de cours">
   <div class="denem-act-ribbon__inner">
     <div class="denem-act-ribbon__topline">
-      <span class="denem-act-ribbon__kicker">Acte 1 · Séances 1-3</span>
-      <span class="denem-act-ribbon__session">Séance 01</span>
+      <span class="denem-act-ribbon__kicker">Phase 0 · Socle technique &amp; outils</span>
+      <span class="denem-act-ribbon__session">Séance 01 · ex-01</span>
     </div>
-    <h2>Claude Code</h2>
-    <p>Un repère simple pour savoir où tu es, quoi faire et comment retrouver les étapes importantes.</p>
+    <h2>Claude Code : agents IA &amp; automatisations</h2>
+    <p>On installe le socle technique : agents IA, automatisations, n8n, Claude Cowork et QG de travail.</p>
     <div class="denem-act-ribbon__chips" aria-label="Repères utiles du support">
-      <span>Parcours · Installer les bases IA : Claude Code, Codex et n8n</span>
-      <span>À faire · Suivre la séance puis refaire seul</span>
-      <span>Navigation · Boutons 01, 02, 03... pour retrouver une étape</span>
+      <span>Technique</span>
+      <span>Séances 1 à 5</span>
+      <span>Parcours DENEM Academy</span>
+      <span>Support technique séances 1 à 24</span>
     </div>
+    <div class="denem-session-switcher" aria-label="Changer de séance">
+      <label for="denem-session-switch">Changer de séance</label>
+      <select id="denem-session-switch">
+        <option value="#top" selected>01 — Claude Code : agents IA &amp; automatisations · Phase 0</option>
+        <option value="../seance-02-codex/index.html">02 — Codex : agents IA &amp; automatisations · Phase 0</option>
+        <option value="../seance-03-n8n/index.html">03 — Découverte et prise en main de n8n · Phase 0</option>
+        <option value="../seance-04-cowork/index.html">04 — Maîtriser Claude Cowork · Phase 0</option>
+        <option value="../formation-seance-06-qg-cowork/index.html">05 — Créer son QG de travail Cowork · Phase 0</option>
+        <option value="../seance-05-etude-marche/index.html">06 — Étude de marché complète · Phase 1</option>
+        <option value="../seance-07-identite-marque/index.html">07 — Créer son identité de marque · Phase 1</option>
+        <option value="../seance-09-site-web-wordpress/index.html">08 — Créer et déployer son site WordPress · Phase 2</option>
+        <option value="../formation-seance-08-audit-seo-geo/index.html">09 — Audit &amp; stratégie SEO/GEO automatisé · Phase 2</option>
+        <option value="../denemacademy-seance-10-blog-automatique/index.html">10 — Créer son blog pour attirer des leads · Phase 2</option>
+        <option value="../seance-11-automatiser-publication-article/index.html">11 — Automatiser la publication d'articles · Phase 2</option>
+        <option value="../formation-seance-12-profil-linkedin/index.html">12 — Profil LinkedIn optimisé · Phase 3</option>
+        <option value="../seance-13-creer-son-lead-magnet/index.html">13 — Créer son lead magnet · Phase 3</option>
+        <option value="../seance-14-automatiser-posts-linkedin/index.html">14 — Automatiser ses posts LinkedIn · Phase 3</option>
+        <option value="../denemacademy-seance-15-leads-gratuits/index.html">15 — Obtenir des leads gratuits · Phase 4</option>
+        <option value="../seance-16-enrichir-leads-data-gouv/index.html">16 — Enrichir ses leads avec data.gouv · Phase 4</option>
+        <option value="../formation-seance-17-enrichir-leads-apify/index.html">17 — Enrichir ses leads avec Apify · Phase 4</option>
+        <option value="../seance-18-nettoyer-scorer-bdd/index.html">18 — Nettoyer / scorer sa BDD · Phase 4</option>
+        <option value="../seance-19-prospection-automatisee/index.html">19 — Stratégie de prospection automatisée · Phase 4</option>
+        <option value="../seance-20-audit-technique-client/index.html">20 — Premier RDV commercial &amp; audit client · Phase 5</option>
+        <option value="../seance-21-organisation-projet-client/index.html">21 — Organiser son projet client · Phase 5</option>
+        <option value="../seance-22-rag-supabase/index.html">22 — Créer un RAG sur mesure · Phase 5</option>
+        <option value="../seance-23-chatbot-ia-vocal-texte/index.html">23 — Créer un chatbot IA vocal/texte pour ses clients · Phase 5</option>
+        <option value="../seance-24-evaluation-finale/index.html">24 — Évaluation finale · Phase 6</option>
+      </select>
+    </div>
+    <nav class="denem-act-ribbon__phase-nav" aria-label="Navigation dans la phase">
+      <strong>Dans cette phase</strong>
+      <a class="is-current" aria-current="page" href="#top">01 · Claude Code</a>
+      <a href="../seance-02-codex/index.html">02 · Codex</a>
+      <a href="../seance-03-n8n/index.html">03 · n8n</a>
+      <a href="../seance-04-cowork/index.html">04 · Claude Cowork</a>
+      <a href="../formation-seance-06-qg-cowork/index.html">05 · QG Cowork</a>
+    </nav>
   </div>
 </section>
 
@@ -1160,7 +1376,7 @@ blockquote span:not(.num):not(.badge),
     <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
       <a href="#top" class="flex items-center gap-3 text-slate-950 no-underline">
         <img src="logo-denem.jpeg" alt="Logo DENEM" class="h-11 w-11 border-2 border-slate-950 object-cover shadow-[4px_4px_0_#111827]">
-        <span><b class="block font-display text-lg leading-none">DENEM Academy</b><small class="font-mono text-xs uppercase tracking-[.14em] text-slate-500">Support formation - Séance 01</small></span>
+        <span><b class="block font-display text-lg leading-none">DENEM Academy</b><small class="font-mono text-xs uppercase tracking-[.14em] text-slate-500">Phase 0 · Socle technique &amp; outils</small></span>
       </a>
       <div class="flex flex-wrap gap-2"><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#intro-claude-code">C’est quoi</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-01">Comprendre</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-11">Installer</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-21">Dossier</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-31">Page</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-61">Contrôle</a><a class="border-2 border-slate-950 bg-white px-3 py-2 text-xs font-black uppercase tracking-[.12em] text-slate-950 no-underline shadow-[3px_3px_0_#111827] transition hover:-translate-y-0.5 hover:bg-blue-600 hover:text-white" href="#section-71">Lien final</a></div>
     </div>
@@ -1321,7 +1537,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 01-10</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Découverte</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 1 - Avant même d’installer</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 1 - Avant même d’installer</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">Le point de départ est simple : comprendre ce que Claude Code va faire dans un vrai dossier.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 01</p>
           </a>
@@ -1331,7 +1547,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 11-20</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Installation</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 2 - Installer sans se perdre</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 2 - Installer sans se perdre</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">La machine doit être prête avant de créer la page du restaurant.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 02</p>
           </a>
@@ -1341,7 +1557,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 21-30</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Dossier</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 3 - Le dossier du Comptoir Bleu</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 3 - Le dossier du Comptoir Bleu</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">Le projet commence vraiment quand le dossier est clair.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 03</p>
           </a>
@@ -1351,7 +1567,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 31-40</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Création</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 4 - La première page apparaît</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 4 - La première page apparaît</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">La page du restaurant naît dans le dossier, puis se vérifie dans le navigateur.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 04</p>
           </a>
@@ -1361,7 +1577,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 41-50</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Contenu</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 5 - Le contenu devient utile</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 5 - Le contenu devient utile</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">La page commence à parler comme une vraie page de commerce local.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 05</p>
           </a>
@@ -1371,7 +1587,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 51-60</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Design</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 6 - Le rendu devient propre</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 6 - Le rendu devient propre</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">La page doit rester simple, mais elle doit être lisible et sérieuse.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 06</p>
           </a>
@@ -1381,7 +1597,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 61-70</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Contrôle</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 7 - Le contrôle de Claude Code</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 7 - Le contrôle de Claude Code</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">Vous apprenez à vérifier l’outil au lieu de lui faire confiance trop vite.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 07</p>
           </a>
@@ -1391,7 +1607,7 @@ blockquote span:not(.num):not(.badge),
               <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-[11px] font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Sections 71-80</span>
               <span class="font-mono text-[11px] font-black uppercase tracking-[.14em] text-slate-500">Livraison</span>
             </div>
-            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Acte 8 - Le lien final et la méthode du quotidien</h3>
+            <h3 class="mt-5 text-2xl font-black leading-7 text-slate-950">Partie 8 - Le lien final et la méthode du quotidien</h3>
             <p class="mt-3 text-[15px] leading-7 text-slate-700">Le projet se termine avec une page vérifiée et une méthode réutilisable.</p>
             <p class="mt-5 font-mono text-xs font-black uppercase tracking-[.16em] text-blue-700">Ouvrir l’acte 08</p>
           </a>
@@ -1416,7 +1632,7 @@ blockquote span:not(.num):not(.badge),
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">01</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -1497,7 +1713,7 @@ blockquote span:not(.num):not(.badge),
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">02</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -1534,7 +1750,7 @@ blockquote span:not(.num):not(.badge),
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">03</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -1572,7 +1788,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">04</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -1601,7 +1817,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">05</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -1627,7 +1843,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">06</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -1670,7 +1886,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">07</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -1743,7 +1959,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">08</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -1780,7 +1996,7 @@ Vous savez pourquoi Claude Code devient utile dès qu’un fichier doit exister.
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">09</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -1818,7 +2034,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">10</span>
         <span class="bg-blue-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Découverte</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 1 - Avant même d’installer</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 1 - Avant même d’installer</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -1847,7 +2063,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">11</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -1873,7 +2089,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">12</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -1916,7 +2132,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">13</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -1989,7 +2205,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">14</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -2026,7 +2242,7 @@ Vous savez avancer sans transformer la séance en brouillard.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">15</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -2064,7 +2280,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">16</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -2093,7 +2309,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">17</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -2119,7 +2335,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">18</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -2162,7 +2378,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">19</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -2235,7 +2451,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">20</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Installation</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 2 - Installer sans se perdre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 2 - Installer sans se perdre</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -2272,7 +2488,7 @@ Vous installez Claude Code avec une source récente.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">21</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -2310,7 +2526,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">22</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -2339,7 +2555,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">23</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -2365,7 +2581,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">24</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -2408,7 +2624,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">25</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -2481,7 +2697,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">26</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -2518,7 +2734,7 @@ Le dossier existe et son nom est facile à reconnaître.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">27</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -2564,7 +2780,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">28</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -2593,7 +2809,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">29</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -2619,7 +2835,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">30</span>
         <span class="bg-cyan-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Dossier</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 3 - Le dossier du Comptoir Bleu</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 3 - Le dossier du Comptoir Bleu</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -2662,7 +2878,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">31</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -2735,7 +2951,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">32</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -2772,7 +2988,7 @@ Vous savez quels fichiers seront créés.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">33</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -2810,7 +3026,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">34</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -2839,7 +3055,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">35</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -2865,7 +3081,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">36</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -2908,7 +3124,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">37</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -2981,7 +3197,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">38</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -3018,7 +3234,7 @@ Vous voyez la première page du Comptoir Bleu.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">39</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -3056,7 +3272,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">40</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Création</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 4 - La première page apparaît</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 4 - La première page apparaît</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -3085,7 +3301,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">41</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -3111,7 +3327,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">42</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -3154,7 +3370,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">43</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -3227,7 +3443,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">44</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -3264,7 +3480,7 @@ La page répond aux besoins de base.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">45</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -3302,7 +3518,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">46</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -3331,7 +3547,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">47</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -3357,7 +3573,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">48</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -3400,7 +3616,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">49</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -3473,7 +3689,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">50</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contenu</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 5 - Le contenu devient utile</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 5 - Le contenu devient utile</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -3510,7 +3726,7 @@ Les prix ne cassent pas la crédibilité.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">51</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -3548,7 +3764,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">52</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -3577,7 +3793,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">53</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -3603,7 +3819,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">54</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -3654,7 +3870,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">55</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -3727,7 +3943,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">56</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -3764,7 +3980,7 @@ La page respire mieux.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">57</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -3802,7 +4018,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">58</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -3831,7 +4047,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">59</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -3857,7 +4073,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">60</span>
         <span class="bg-violet-600 text-white border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Design</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 6 - Le rendu devient propre</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 6 - Le rendu devient propre</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -3900,7 +4116,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">61</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -3973,7 +4189,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">62</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -4010,7 +4226,7 @@ Aucun élément important ne sort de son cadre.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">63</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -4048,7 +4264,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">64</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -4077,7 +4293,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">65</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -4103,7 +4319,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">66</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -4146,7 +4362,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">67</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -4219,7 +4435,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">68</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -4256,7 +4472,7 @@ Vous savez ce qui a été modifié.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">69</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -4294,7 +4510,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">70</span>
         <span class="bg-orange-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Contrôle</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 7 - Le contrôle de Claude Code</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 7 - Le contrôle de Claude Code</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -4323,7 +4539,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">71</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -4349,7 +4565,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">72</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -4392,7 +4608,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">73</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -4465,7 +4681,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">74</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -4502,7 +4718,7 @@ Les prochaines demandes restent mieux cadrées.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">75</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="border-2 border-slate-950 bg-white shadow-[8px_8px_0_#111827]">
@@ -4540,7 +4756,7 @@ Vous savez comment le lien public sera créé.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">76</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
@@ -4569,7 +4785,7 @@ Vous savez comment le lien public sera créé.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">77</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr]">
@@ -4595,7 +4811,7 @@ Vous savez comment le lien public sera créé.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">78</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[.95fr_1.05fr] lg:items-start">
@@ -4638,7 +4854,7 @@ Vous savez comment le lien public sera créé.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">79</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-8 lg:grid-cols-[1.05fr_.95fr] lg:items-start">
@@ -4711,7 +4927,7 @@ Vous savez comment le lien public sera créé.</code></pre></div>
       <div class="mb-6 flex flex-wrap items-center gap-3">
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">80</span>
         <span class="bg-emerald-200 text-slate-950 border-2 border-slate-950 px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] shadow-[3px_3px_0_#111827]">Livraison</span>
-        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Acte 8 - Le lien final et la méthode du quotidien</span>
+        <span class="border-2 border-slate-950 bg-white px-3 py-1 font-mono text-xs font-black uppercase tracking-[.14em] text-slate-700 shadow-[3px_3px_0_#111827]">Partie 8 - Le lien final et la méthode du quotidien</span>
       </div>
     
       <div class="grid gap-6 lg:grid-cols-3">
@@ -4931,5 +5147,27 @@ Vous savez comment le lien public sera créé.</code></pre></div>
 })();
 </script>
 
+<script id="denem-session-media-script">
+(() => {
+  const select = document.getElementById('denem-session-switch');
+  if (select) {
+    select.addEventListener('change', () => {
+      const value = select.value;
+      if (value && value !== '#top') window.location.href = value;
+    });
+  }
+  const markMissing = (img) => {
+    const frame = img.closest('figure, .media-card, .shot, .visual, .hero-card, .poster, .image-card, .screen, .capture');
+    if (!frame) return;
+    frame.classList.add('is-media-missing');
+    frame.setAttribute('aria-label', 'Bloc media a completer');
+  };
+  document.querySelectorAll('img').forEach((img) => {
+    if (!img.getAttribute('src')) markMissing(img);
+    if (img.complete && img.naturalWidth === 0) markMissing(img);
+    img.addEventListener('error', () => markMissing(img), { once: true });
+  });
+})();
+</script>
 </body>
 </html>
